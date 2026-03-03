@@ -5,10 +5,212 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c58b4bf4-9d1b-48cb-b237-74d1abe282e3" name="Changes" comment="Merge branch 'main' of https://github.com/Roo-Master/Campus-connect-app-&#10;git push origin main# the commit.">
-      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/526aa2987d41a01470a42bc1f94262b1/.filecache" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/526aa2987d41a01470a42bc1f94262b1/.filecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/526aa2987d41a01470a42bc1f94262b1/app.dill" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/526aa2987d41a01470a42bc1f94262b1/app.dill" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/526aa2987d41a01470a42bc1f94262b1/kernel_snapshot_program.d" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/526aa2987d41a01470a42bc1f94262b1/kernel_snapshot_program.d" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/firebender/chat_history.db" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/firebender/chat_history.db-shm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/firebender/chat_history.db-wal" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/526aa2987d41a01470a42bc1f94262b1/.filecache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/526aa2987d41a01470a42bc1f94262b1/app.dill" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/526aa2987d41a01470a42bc1f94262b1/dart_build.d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/526aa2987d41a01470a42bc1f94262b1/dart_build.stamp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/526aa2987d41a01470a42bc1f94262b1/dart_build_result.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/526aa2987d41a01470a42bc1f94262b1/debug_bundle_linux-x64_assets.stamp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/526aa2987d41a01470a42bc1f94262b1/flutter_assets.d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/526aa2987d41a01470a42bc1f94262b1/gen_dart_plugin_registrant.stamp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/526aa2987d41a01470a42bc1f94262b1/gen_localizations.stamp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/526aa2987d41a01470a42bc1f94262b1/install_code_assets.d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/526aa2987d41a01470a42bc1f94262b1/install_code_assets.stamp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/526aa2987d41a01470a42bc1f94262b1/kernel_snapshot_program.d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/526aa2987d41a01470a42bc1f94262b1/kernel_snapshot_program.stamp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/526aa2987d41a01470a42bc1f94262b1/linux_engine_sources.d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/526aa2987d41a01470a42bc1f94262b1/native_assets.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/526aa2987d41a01470a42bc1f94262b1/outputs.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/526aa2987d41a01470a42bc1f94262b1/unpack_linux.stamp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Campus-connect-app-.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Campus-connect-app-.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-chat-backend/Campus-connect-app-/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-chat-backend/Campus-connect-app-/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-chat-backend/Campus-connect-app-/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-chat-backend/Campus-connect-app-/analysis_options.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-chat-backend/Campus-connect-app-/android/app/build.gradle.kts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-chat-backend/Campus-connect-app-/android/app/src/debug/AndroidManifest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-chat-backend/Campus-connect-app-/android/app/src/main/AndroidManifest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-chat-backend/Campus-connect-app-/android/app/src/main/java/io/flutter/plugins/GeneratedPluginRegistrant.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-chat-backend/Campus-connect-app-/android/app/src/main/kotlin/com/example/campus_connect/MainActivity.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-chat-backend/Campus-connect-app-/android/app/src/main/res/drawable-v21/launch_background.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-chat-backend/Campus-connect-app-/android/app/src/main/res/drawable/launch_background.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-chat-backend/Campus-connect-app-/android/app/src/main/res/mipmap-hdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-chat-backend/Campus-connect-app-/android/app/src/main/res/mipmap-mdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-chat-backend/Campus-connect-app-/android/app/src/main/res/mipmap-xhdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-chat-backend/Campus-connect-app-/android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-chat-backend/Campus-connect-app-/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-chat-backend/Campus-connect-app-/android/app/src/main/res/values-night/styles.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-chat-backend/Campus-connect-app-/android/app/src/main/res/values/styles.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-chat-backend/Campus-connect-app-/android/app/src/profile/AndroidManifest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-chat-backend/Campus-connect-app-/android/build.gradle.kts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-chat-backend/Campus-connect-app-/android/campus_connect_android.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-chat-backend/Campus-connect-app-/android/gradle.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-chat-backend/Campus-connect-app-/android/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-chat-backend/Campus-connect-app-/android/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-chat-backend/Campus-connect-app-/android/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-chat-backend/Campus-connect-app-/android/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-chat-backend/Campus-connect-app-/android/local.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-chat-backend/Campus-connect-app-/android/settings.gradle.kts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-chat-backend/Campus-connect-app-/campus_connect.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-chat-backend/Campus-connect-app-/devtools_options.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-chat-backend/Campus-connect-app-/lib/config/theme.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-chat-backend/Campus-connect-app-/lib/firebase_options.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-chat-backend/Campus-connect-app-/lib/main.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-chat-backend/Campus-connect-app-/lib/models/building_model.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-chat-backend/Campus-connect-app-/lib/models/course_model.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-chat-backend/Campus-connect-app-/lib/models/event_model.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-chat-backend/Campus-connect-app-/lib/models/grade_model.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-chat-backend/Campus-connect-app-/lib/models/notification_model.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-chat-backend/Campus-connect-app-/lib/models/user_model.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-chat-backend/Campus-connect-app-/lib/screens/academic/courses_screen.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-chat-backend/Campus-connect-app-/lib/screens/academic/grades_screen.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-chat-backend/Campus-connect-app-/lib/screens/auth/login_screen.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-chat-backend/Campus-connect-app-/lib/screens/auth/register_screen.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-chat-backend/Campus-connect-app-/lib/screens/auth/splash_screen.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-chat-backend/Campus-connect-app-/lib/screens/dashboard/dashboard_screen.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-chat-backend/Campus-connect-app-/lib/screens/dashboard/news_feed_widget.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-chat-backend/Campus-connect-app-/lib/screens/dashboard/quick_actions_widget.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-chat-backend/Campus-connect-app-/lib/screens/emergency/emergency_screen.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-chat-backend/Campus-connect-app-/lib/screens/events/events_screen.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-chat-backend/Campus-connect-app-/lib/screens/map/campus_map_screen.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-chat-backend/Campus-connect-app-/lib/screens/profile/edit_profile_screen.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-chat-backend/Campus-connect-app-/lib/screens/profile/profile_screen.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-chat-backend/Campus-connect-app-/lib/screens/profile/settings_screen.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-chat-backend/Campus-connect-app-/lib/screens/services/fees_screen.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-chat-backend/Campus-connect-app-/lib/screens/services/health_screen.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-chat-backend/Campus-connect-app-/lib/screens/services/hostel_screen.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-chat-backend/Campus-connect-app-/lib/screens/services/transport_screen.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-chat-backend/Campus-connect-app-/lib/services/api_service.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-chat-backend/Campus-connect-app-/lib/services/auth_service.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-chat-backend/Campus-connect-app-/lib/services/notification_service.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-chat-backend/Campus-connect-app-/lib/utils/constants.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-chat-backend/Campus-connect-app-/lib/utils/helpers.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-chat-backend/Campus-connect-app-/lib/widgets/course_card.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-chat-backend/Campus-connect-app-/lib/widgets/custom_bottom_nav.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-chat-backend/Campus-connect-app-/lib/widgets/event_card.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-chat-backend/Campus-connect-app-/lib/widgets/grade_card.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-chat-backend/Campus-connect-app-/lib/widgets/loading_indicator.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-chat-backend/Campus-connect-app-/linux/CMakeLists.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-chat-backend/Campus-connect-app-/linux/flutter/CMakeLists.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-chat-backend/Campus-connect-app-/linux/flutter/generated_plugin_registrant.cc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-chat-backend/Campus-connect-app-/linux/flutter/generated_plugin_registrant.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-chat-backend/Campus-connect-app-/linux/flutter/generated_plugins.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-chat-backend/Campus-connect-app-/linux/runner/CMakeLists.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-chat-backend/Campus-connect-app-/linux/runner/main.cc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-chat-backend/Campus-connect-app-/linux/runner/my_application.cc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-chat-backend/Campus-connect-app-/linux/runner/my_application.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-chat-backend/Campus-connect-app-/macos/Flutter/Flutter-Debug.xcconfig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-chat-backend/Campus-connect-app-/macos/Flutter/Flutter-Release.xcconfig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-chat-backend/Campus-connect-app-/macos/Flutter/GeneratedPluginRegistrant.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-chat-backend/Campus-connect-app-/macos/Flutter/ephemeral/Flutter-Generated.xcconfig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-chat-backend/Campus-connect-app-/macos/Flutter/ephemeral/flutter_export_environment.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-chat-backend/Campus-connect-app-/macos/Runner.xcodeproj/project.pbxproj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-chat-backend/Campus-connect-app-/macos/Runner.xcodeproj/project.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-chat-backend/Campus-connect-app-/macos/Runner.xcodeproj/xcshareddata/xcschemes/Runner.xcscheme" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-chat-backend/Campus-connect-app-/macos/Runner.xcworkspace/contents.xcworkspacedata" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-chat-backend/Campus-connect-app-/macos/Runner.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-chat-backend/Campus-connect-app-/macos/Runner/AppDelegate.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-chat-backend/Campus-connect-app-/macos/Runner/Assets.xcassets/AppIcon.appiconset/Contents.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-chat-backend/Campus-connect-app-/macos/Runner/Assets.xcassets/AppIcon.appiconset/app_icon_1024.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-chat-backend/Campus-connect-app-/macos/Runner/Assets.xcassets/AppIcon.appiconset/app_icon_128.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-chat-backend/Campus-connect-app-/macos/Runner/Assets.xcassets/AppIcon.appiconset/app_icon_16.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-chat-backend/Campus-connect-app-/macos/Runner/Assets.xcassets/AppIcon.appiconset/app_icon_256.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-chat-backend/Campus-connect-app-/macos/Runner/Assets.xcassets/AppIcon.appiconset/app_icon_32.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-chat-backend/Campus-connect-app-/macos/Runner/Assets.xcassets/AppIcon.appiconset/app_icon_512.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-chat-backend/Campus-connect-app-/macos/Runner/Assets.xcassets/AppIcon.appiconset/app_icon_64.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-chat-backend/Campus-connect-app-/macos/Runner/Base.lproj/MainMenu.xib" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-chat-backend/Campus-connect-app-/macos/Runner/Configs/AppInfo.xcconfig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-chat-backend/Campus-connect-app-/macos/Runner/Configs/Debug.xcconfig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-chat-backend/Campus-connect-app-/macos/Runner/Configs/Release.xcconfig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-chat-backend/Campus-connect-app-/macos/Runner/Configs/Warnings.xcconfig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-chat-backend/Campus-connect-app-/macos/Runner/DebugProfile.entitlements" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-chat-backend/Campus-connect-app-/macos/Runner/Info.plist" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-chat-backend/Campus-connect-app-/macos/Runner/MainFlutterWindow.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-chat-backend/Campus-connect-app-/macos/Runner/Release.entitlements" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-chat-backend/Campus-connect-app-/macos/RunnerTests/RunnerTests.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-chat-backend/Campus-connect-app-/pubspec.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-chat-backend/Campus-connect-app-/pubspec.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-chat-backend/Campus-connect-app-/test/api_service_test.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-chat-backend/Campus-connect-app-/test/widget_test.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-chat-backend/Campus-connect-app-/web/favicon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-chat-backend/Campus-connect-app-/web/icons/Icon-192.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-chat-backend/Campus-connect-app-/web/icons/Icon-512.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-chat-backend/Campus-connect-app-/web/icons/Icon-maskable-192.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-chat-backend/Campus-connect-app-/web/icons/Icon-maskable-512.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-chat-backend/Campus-connect-app-/web/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-chat-backend/Campus-connect-app-/web/manifest.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-chat-backend/Campus-connect-app-/windows/CMakeLists.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-chat-backend/Campus-connect-app-/windows/flutter/CMakeLists.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-chat-backend/Campus-connect-app-/windows/flutter/generated_plugin_registrant.cc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-chat-backend/Campus-connect-app-/windows/flutter/generated_plugin_registrant.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-chat-backend/Campus-connect-app-/windows/flutter/generated_plugins.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-chat-backend/Campus-connect-app-/windows/runner/CMakeLists.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-chat-backend/Campus-connect-app-/windows/runner/Runner.rc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-chat-backend/Campus-connect-app-/windows/runner/flutter_window.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-chat-backend/Campus-connect-app-/windows/runner/flutter_window.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-chat-backend/Campus-connect-app-/windows/runner/main.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-chat-backend/Campus-connect-app-/windows/runner/resource.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-chat-backend/Campus-connect-app-/windows/runner/resources/app_icon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-chat-backend/Campus-connect-app-/windows/runner/runner.exe.manifest" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-chat-backend/Campus-connect-app-/windows/runner/utils.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-chat-backend/Campus-connect-app-/windows/runner/utils.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-chat-backend/Campus-connect-app-/windows/runner/win32_window.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-chat-backend/Campus-connect-app-/windows/runner/win32_window.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/gradlew" beforeDir="false" afterPath="$PROJECT_DIR$/android/gradlew" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/.last_build_id" beforeDir="false" afterPath="$PROJECT_DIR$/build/.last_build_id" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/6f4a15e49d0bc622ec76656f5f470141.cache.dill.track.dill" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/ff7531df69af91e999dc1e48b0e5ac38/.filecache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/ff7531df69af91e999dc1e48b0e5ac38/_composite.stamp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/ff7531df69af91e999dc1e48b0e5ac38/dart_build.d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/ff7531df69af91e999dc1e48b0e5ac38/dart_build.stamp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/ff7531df69af91e999dc1e48b0e5ac38/dart_build_result.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/ff7531df69af91e999dc1e48b0e5ac38/gen_dart_plugin_registrant.stamp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/ff7531df69af91e999dc1e48b0e5ac38/gen_localizations.stamp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/ff7531df69af91e999dc1e48b0e5ac38/outputs.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/flutter_assets/kernel_blob.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/flutter_assets/kernel_blob.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/linux/x64/debug/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/build/linux/x64/debug/.ninja_deps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/linux/x64/debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/build/linux/x64/debug/.ninja_log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/linux/x64/debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/linux/x64/debug/CMakeCache.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/linux/x64/debug/CMakeFiles/3.16.3/CMakeCXXCompiler.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/build/linux/x64/debug/CMakeFiles/3.16.3/CMakeCXXCompiler.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/linux/x64/debug/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/build/linux/x64/debug/CMakeFiles/CMakeOutput.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/linux/x64/debug/CMakeFiles/TargetDirectories.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/linux/x64/debug/CMakeFiles/TargetDirectories.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/linux/x64/debug/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/build/linux/x64/debug/build.ninja" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/linux/x64/debug/bundle/campus_connect" beforeDir="false" afterPath="$PROJECT_DIR$/build/linux/x64/debug/bundle/campus_connect" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/linux/x64/debug/bundle/data/flutter_assets/kernel_blob.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/linux/x64/debug/bundle/data/flutter_assets/kernel_blob.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/linux/x64/debug/bundle/lib/liburl_launcher_linux_plugin.so" beforeDir="false" afterPath="$PROJECT_DIR$/build/linux/x64/debug/bundle/lib/liburl_launcher_linux_plugin.so" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/linux/x64/debug/cmake_install.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/build/linux/x64/debug/cmake_install.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/linux/x64/debug/flutter/cmake_install.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/build/linux/x64/debug/flutter/cmake_install.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/linux/x64/debug/install_manifest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/linux/x64/debug/install_manifest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/linux/x64/debug/intermediates_do_not_run/campus_connect" beforeDir="false" afterPath="$PROJECT_DIR$/build/linux/x64/debug/intermediates_do_not_run/campus_connect" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/linux/x64/debug/plugins/url_launcher_linux/CMakeFiles/url_launcher_linux_plugin.dir/messages.g.cc.o" beforeDir="false" afterPath="$PROJECT_DIR$/build/linux/x64/debug/plugins/url_launcher_linux/CMakeFiles/url_launcher_linux_plugin.dir/messages.g.cc.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/linux/x64/debug/plugins/url_launcher_linux/CMakeFiles/url_launcher_linux_plugin.dir/url_launcher_plugin.cc.o" beforeDir="false" afterPath="$PROJECT_DIR$/build/linux/x64/debug/plugins/url_launcher_linux/CMakeFiles/url_launcher_linux_plugin.dir/url_launcher_plugin.cc.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/linux/x64/debug/plugins/url_launcher_linux/cmake_install.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/build/linux/x64/debug/plugins/url_launcher_linux/cmake_install.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/linux/x64/debug/plugins/url_launcher_linux/liburl_launcher_linux_plugin.so" beforeDir="false" afterPath="$PROJECT_DIR$/build/linux/x64/debug/plugins/url_launcher_linux/liburl_launcher_linux_plugin.so" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/linux/x64/debug/rules.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/build/linux/x64/debug/rules.ninja" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/linux/x64/debug/runner/CMakeFiles/campus_connect.dir/__/flutter/generated_plugin_registrant.cc.o" beforeDir="false" afterPath="$PROJECT_DIR$/build/linux/x64/debug/runner/CMakeFiles/campus_connect.dir/__/flutter/generated_plugin_registrant.cc.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/linux/x64/debug/runner/CMakeFiles/campus_connect.dir/main.cc.o" beforeDir="false" afterPath="$PROJECT_DIR$/build/linux/x64/debug/runner/CMakeFiles/campus_connect.dir/main.cc.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/linux/x64/debug/runner/CMakeFiles/campus_connect.dir/my_application.cc.o" beforeDir="false" afterPath="$PROJECT_DIR$/build/linux/x64/debug/runner/CMakeFiles/campus_connect.dir/my_application.cc.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/linux/x64/debug/runner/cmake_install.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/build/linux/x64/debug/runner/cmake_install.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/native_hooks/.last_build_id" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Flutter/Generated.xcconfig" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Flutter/Generated.xcconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Flutter/flutter_export_environment.sh" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Flutter/flutter_export_environment.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/models/notification_model.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/models/notification_model.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/models/notification_model2.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/screens/dashboard/dashboard_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/dashboard/dashboard_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/screens/notifications/notifications_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/notifications/notifications_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/services/notification_model2.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/services/notification_service.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/services/notification_service.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/linux/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/linux/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/macos/Flutter/ephemeral/Flutter-Generated.xcconfig" beforeDir="false" afterPath="$PROJECT_DIR$/macos/Flutter/ephemeral/Flutter-Generated.xcconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/macos/Flutter/ephemeral/flutter_export_environment.sh" beforeDir="false" afterPath="$PROJECT_DIR$/macos/Flutter/ephemeral/flutter_export_environment.sh" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,21 +234,21 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "Roo-Master"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Roo-Master&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/Roo-Master/Campus-connect-app-",
-    "accountId": "d954420a-3ea5-441a-8a33-996c888895c1"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Roo-Master/Campus-connect-app-&quot;,
+    &quot;accountId&quot;: &quot;d954420a-3ea5-441a-8a33-996c888895c1&quot;
   }
-}]]></component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 2
-}]]></component>
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 2
+}</component>
   <component name="ProjectId" id="3AQvdh8p7TpoABtjFlWu4Fd5FC4" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -55,6 +257,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Flutter.main.dart.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager": "true",
     "RunOnceActivity.cidr.known.project.marker": "true",
@@ -66,7 +269,8 @@
     "dart.analysis.tool.window.visible": "false",
     "git-widget-placeholder": "main",
     "io.flutter.project.isFirstOpen": "true",
-    "last_opened_file_path": "/home/roomaster/Downloads/StudioProjects-20260228T093506Z-3-001/StudioProjects/Campus-connect-app-/lib/screens/profile",
+    "io.flutter.reload.alreadyRun": "true",
+    "last_opened_file_path": "/home/roomaster/Android/Studio projects/Campus-connect-app-",
     "settings.editor.selected.configurable": "dart.settings",
     "show.migrate.to.gradle.popup": "false"
   }
@@ -165,7 +369,23 @@
       <option name="project" value="LOCAL" />
       <updated>1772543164503</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Merge branch 'main' of https://github.com/Roo-Master/Campus-connect-app-&#10;git push origin main# the commit.">
+      <option name="closed" value="true" />
+      <created>1772543635289</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1772543635289</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Merge branch 'main' of https://github.com/Roo-Master/Campus-connect-app-&#10;git push origin main# the commit.">
+      <option name="closed" value="true" />
+      <created>1772543671644</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1772543671644</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

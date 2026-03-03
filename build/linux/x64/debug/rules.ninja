@@ -61,7 +61,7 @@ rule CXX_SHARED_LIBRARY_LINKER__url_launcher_linux_plugin
 # Rule for re-running cmake.
 
 rule RERUN_CMAKE
-  command = /snap/flutter/149/usr/bin/cmake -S/home/roomaster/Downloads/StudioProjects-20260228T093506Z-3-001/StudioProjects/Campus-connect-app-/linux -B/home/roomaster/Downloads/StudioProjects-20260228T093506Z-3-001/StudioProjects/Campus-connect-app-/build/linux/x64/debug
+  command = /snap/flutter/149/usr/bin/cmake -S"/home/roomaster/Android/Studio projects/Campus-connect-app-/linux" -B"/home/roomaster/Android/Studio projects/Campus-connect-app-/build/linux/x64/debug"
   description = Re-running CMake...
   generator = 1
 

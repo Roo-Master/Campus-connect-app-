@@ -1,7 +1,7 @@
 #!/bin/sh
 # This is a generated file; do not edit or check into version control.
 export "FLUTTER_ROOT=/home/roomaster/snap/flutter/common/flutter"
-export "FLUTTER_APPLICATION_PATH=/home/roomaster/Downloads/StudioProjects-20260228T093506Z-3-001/StudioProjects/Campus-connect-app-"
+export "FLUTTER_APPLICATION_PATH=/home/roomaster/Android/Studio projects/Campus-connect-app-"
 export "COCOAPODS_PARALLEL_CODE_SIGN=true"
 export "FLUTTER_TARGET=lib/main.dart"
 export "FLUTTER_BUILD_DIR=build"

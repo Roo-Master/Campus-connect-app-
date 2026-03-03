@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import '../../services/notification_model2.dart';
-import '../../services/notification_service.dart';
+import '../../services/notification_service.dart' hide NotificationType;
 import '../../config/theme.dart';
-import '../../models/notification_model2.dart';
+import '../../models/notification_model.dart';
+
 
 class NotificationsScreen extends StatelessWidget {
   const NotificationsScreen({super.key});
@@ -14,7 +14,7 @@ class NotificationsScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Notifications'),
         actions: [
-          Consumer<NotificationService2>(
+          Consumer<NotificationService>(
             builder: (context, service, _) {
               if (service.unreadCount > 0) {
                 return TextButton(
@@ -27,7 +27,7 @@ class NotificationsScreen extends StatelessWidget {
           ),
         ],
       ),
-      body: Consumer<NotificationService2>(
+      body: Consumer<NotificationService>(
         builder: (context, service, _) {
           if (service.notifications.isEmpty) {
             return Center(
@@ -72,7 +72,7 @@ class NotificationsScreen extends StatelessWidget {
     );
   }
 
-  void _showNotificationDetails(BuildContext context, NotificationModel2 notification) {
+  void _showNotificationDetails(BuildContext context, NotificationModel notification) {
     showModalBottomSheet(
       context: context,
       shape: const RoundedRectangleBorder(
@@ -86,7 +86,7 @@ class NotificationsScreen extends StatelessWidget {
           children: [
             Row(
               children: [
-                _getTypeIcon(notification.type),
+                _getTypeIcon(notification.type as NotificationType),
                 const SizedBox(width: 12),
                 Expanded(
                   child: Text(
@@ -172,7 +172,7 @@ class NotificationsScreen extends StatelessWidget {
 }
 
 class _NotificationTile extends StatelessWidget {
-  final NotificationModel2 notification;
+  final NotificationModel notification;
   final VoidCallback onTap;
   final VoidCallback onDelete;
 

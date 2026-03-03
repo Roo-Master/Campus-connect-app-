@@ -20,6 +20,7 @@ import '../services/transport_screen.dart';
 import '../emergency/emergency_screen.dart';
 import 'quick_actions_widget.dart';
 import 'news_feed_widget.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class DashboardScreen extends StatefulWidget {
   const DashboardScreen({super.key});
@@ -165,17 +166,22 @@ class HomeTab extends StatelessWidget {
               },
             icon: const Icon(Icons.settings_outlined),
           ),
-
           IconButton(
-              onPressed:() {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context )=> const AiChatScreen()),
-                );},
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const AiChatScreen(),
+                ),
+              );
+            },
+            icon: const Icon(
+              Icons.psychology_alt,
+              size: 28,
+              color: Colors.deepPurple,
+            ),
+          )
 
-              icon:  const Icon(Icons.chat_outlined),
-
-          ),
         ],
       ),
       drawer: _buildDrawer(context),
