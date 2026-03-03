@@ -4,6 +4,7 @@ import '../../services/auth_service.dart';
 import '../../config/theme.dart';
 import '../../widgets/loading_indicator.dart';
 import '../dashboard/dashboard_screen.dart';
+import 'forget_password_screen.dart';
 import 'register_screen.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -95,7 +96,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
                 textAlign: TextAlign.center,
               ),
-              const SizedBox(height: 48),
+              const SizedBox(height: 48 , width: 50,),
               Form(
                 key: _formKey,
                 child: Column(
@@ -116,7 +117,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         return null;
                       },
                     ),
-                    const SizedBox(height: 16),
+                    const SizedBox(height: 16 , width: 50,),
                     TextFormField(
                       controller: _passwordController,
                       decoration: InputDecoration(
@@ -149,7 +150,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   ],
                 ),
               ),
-              const SizedBox(height: 24),
+              const SizedBox(height: 24 , width: 50,),
               LoadingButton(
                 isLoading: authService.isLoading,
                 onPressed: _handleLogin,
@@ -160,7 +161,14 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
               const SizedBox(height: 16),
               TextButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const ForgetPasswordScreen(),
+                    ),
+                  );
+                },
                 child: const Text('Forgot Password?'),
               ),
               const SizedBox(height: 24),
@@ -191,7 +199,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 icon: const Icon(Icons.school),
                 label: const Text('Sign in with SSO'),
               ),
-              const SizedBox(height: 24),
+              const SizedBox(height: 24, width: 50),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -199,34 +207,30 @@ class _LoginScreenState extends State<LoginScreen> {
                     "Don't have an account?",
                     style: TextStyle(color: Colors.grey.shade600),
                   ),
-                  TextButton(
-                    onPressed: () {
-                      Navigator.of(context).push(
+                  GestureDetector(
+                    onTap: () {
+                      // Navigate to RegisterScreen when 'Sign Up' text is pressed
+                      Navigator.push(
+                        context,
                         MaterialPageRoute(
-                            builder: (context) => const RegisterScreen()),
+                          builder: (context) => const RegisterScreen(),
+                        ),
                       );
                     },
-                    child: const Text('Sign Up'),
+                    child: const Text(
+                      'Sign Up',
+                      style: TextStyle(
+                        color: Colors.blue, // Make it stand out as clickable
+                        fontWeight: FontWeight.bold,
+                        fontSize: 18,
+                      ),
+                    ),
                   ),
                 ],
               ),
             ],
           ),
         ),
-      ),
-    );
-  }
-}
-
-class RegisterScreen extends StatelessWidget {
-  const RegisterScreen({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: const Text('Create Account')),
-      body: Center(
-        child: const Text('Registration form would go here'),
       ),
     );
   }

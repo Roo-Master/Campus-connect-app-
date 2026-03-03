@@ -30,11 +30,11 @@ class UserModel with ChangeNotifier {
   // Mock User Data
   void loadMockUser() {
     id = 'user_001';
-    email = 'john.doe@campus.edu';
+    email = 'register@example.com';
     firstName = 'John';
-    lastName = 'Doe';
-    studentId = '2023001';
-    department = 'Computer Science';
+    lastName = 'Register';
+    studentId = 'IN16/00000/01';
+    department = 'Software Engineering';
     program = 'B.Tech';
     year = 3;
     role = 'student';

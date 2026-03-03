@@ -56,7 +56,7 @@ class BuildingModel {
       ),
       BuildingModel(
         id: 'b002',
-        name: 'Tution Complex',
+        name: 'Tuition Complex',
         code: 'TC',
         description: 'The TC building Block Lecture Halls',
         imageUrl: '',
@@ -97,7 +97,7 @@ class BuildingModel {
       BuildingModel(
         id: 'b003',
         name: 'Main Library',
-        code: 'Libo',
+        code: 'Library',
         description: '',
         imageUrl: '',
         latitude: 40.7135,
@@ -128,7 +128,7 @@ class BuildingModel {
         id: 'b005',
         name: 'Chancellors Pavilion',
         code: 'PV',
-        description: 'Chancellors kisii university stadium view point',
+        description: 'Chancellors Kisii university stadium view point',
         imageUrl: '',
         latitude: 40.7145,
         longitude: -74.0070,
