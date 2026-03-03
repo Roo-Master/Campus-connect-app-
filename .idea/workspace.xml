@@ -5,43 +5,90 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c58b4bf4-9d1b-48cb-b237-74d1abe282e3" name="Changes" comment="Merge branch 'main' of https://github.com/Roo-Master/Campus-connect-app-&#10;git push origin main# the commit.">
-      <change afterPath="$PROJECT_DIR$/linux/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/linux/CMakeLists.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/linux/flutter/CMakeLists.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/linux/runner/CMakeLists.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/linux/runner/main.cc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/linux/runner/my_application.cc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/linux/runner/my_application.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/config/theme.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/screens/dashboard/dashboard_screen.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/screens/dashboard/news_feed_widget.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/screens/dashboard/quick_actions_widget.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/screens/emergency/emergency_screen.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/screens/events/create_event_screen.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/screens/events/events_screen.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/screens/map/campus_map_screen.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/screens/map/location_screen.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/screens/notifications/notifications_screen.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/screens/services/fees_screen.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/screens/services/health_screen.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/screens/services/hostel_screen.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/screens/services/profile_services.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/screens/services/transport_screen.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/screens/settings/settings_screen.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/services/api_service.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/services/auth_service.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/services/notification_model2.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/services/notification_service.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/linux/flutter/ephemeral/.plugin_symlinks/path_provider_linux" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/linux/flutter/ephemeral/.plugin_symlinks/shared_preferences_linux" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/linux/flutter/ephemeral/.plugin_symlinks/url_launcher_linux" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/linux/flutter/ephemeral/flutter_linux/fl_application.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/linux/flutter/ephemeral/flutter_linux/fl_basic_message_channel.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/linux/flutter/ephemeral/flutter_linux/fl_binary_codec.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/linux/flutter/ephemeral/flutter_linux/fl_binary_messenger.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/linux/flutter/ephemeral/flutter_linux/fl_dart_project.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/linux/flutter/ephemeral/flutter_linux/fl_engine.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/linux/flutter/ephemeral/flutter_linux/fl_event_channel.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/linux/flutter/ephemeral/flutter_linux/fl_json_message_codec.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/linux/flutter/ephemeral/flutter_linux/fl_json_method_codec.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/linux/flutter/ephemeral/flutter_linux/fl_message_codec.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/linux/flutter/ephemeral/flutter_linux/fl_method_call.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/linux/flutter/ephemeral/flutter_linux/fl_method_channel.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/linux/flutter/ephemeral/flutter_linux/fl_method_codec.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/linux/flutter/ephemeral/flutter_linux/fl_method_response.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/linux/flutter/ephemeral/flutter_linux/fl_pixel_buffer_texture.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/linux/flutter/ephemeral/flutter_linux/fl_plugin_registrar.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/linux/flutter/ephemeral/flutter_linux/fl_plugin_registry.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/linux/flutter/ephemeral/flutter_linux/fl_standard_message_codec.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/linux/flutter/ephemeral/flutter_linux/fl_standard_method_codec.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/linux/flutter/ephemeral/flutter_linux/fl_string_codec.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/linux/flutter/ephemeral/flutter_linux/fl_texture.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/linux/flutter/ephemeral/flutter_linux/fl_texture_gl.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/linux/flutter/ephemeral/flutter_linux/fl_texture_registrar.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/linux/flutter/ephemeral/flutter_linux/fl_value.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/linux/flutter/ephemeral/flutter_linux/fl_view.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/linux/flutter/ephemeral/flutter_linux/flutter_linux.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/.last_build_id" beforeDir="false" afterPath="$PROJECT_DIR$/build/.last_build_id" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/3bf342829f4d3b1330c114bfc2c3f7f2.cache.dill.track.dill" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/68323ebaaeb119f087ca8ec9507cae8b/_composite.stamp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/68323ebaaeb119f087ca8ec9507cae8b/gen_dart_plugin_registrant.stamp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/68323ebaaeb119f087ca8ec9507cae8b/gen_localizations.stamp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/6f4a15e49d0bc622ec76656f5f470141.cache.dill.track.dill" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/flutter_assets/AssetManifest.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/flutter_assets/FontManifest.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/flutter_assets/NOTICES.Z" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/flutter_assets/NativeAssetsManifest.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/flutter_assets/fonts/MaterialIcons-Regular.otf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/flutter_assets/kernel_blob.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/flutter_assets/packages/font_awesome_flutter/lib/fonts/Font-Awesome-7-Brands-Regular-400.otf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/flutter_assets/packages/font_awesome_flutter/lib/fonts/Font-Awesome-7-Free-Regular-400.otf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/flutter_assets/packages/font_awesome_flutter/lib/fonts/Font-Awesome-7-Free-Solid-900.otf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/flutter_assets/shaders/ink_sparkle.frag" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/flutter_assets/shaders/stretch_effect.frag" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/flutter_assets/version.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/last_build_run.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/linux/x64/debug/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/build/linux/x64/debug/.ninja_deps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/linux/x64/debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/build/linux/x64/debug/.ninja_log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/linux/x64/debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/linux/x64/debug/CMakeCache.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/linux/x64/debug/CMakeFiles/3.16.3/CMakeCXXCompiler.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/build/linux/x64/debug/CMakeFiles/3.16.3/CMakeCXXCompiler.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/linux/x64/debug/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/build/linux/x64/debug/CMakeFiles/CMakeOutput.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/linux/x64/debug/CMakeFiles/TargetDirectories.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/linux/x64/debug/CMakeFiles/TargetDirectories.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/linux/x64/debug/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/build/linux/x64/debug/build.ninja" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/linux/x64/debug/bundle/campus_connect" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/linux/x64/debug/bundle/data/flutter_assets/AssetManifest.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/linux/x64/debug/bundle/data/flutter_assets/FontManifest.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/linux/x64/debug/bundle/data/flutter_assets/NOTICES.Z" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/linux/x64/debug/bundle/data/flutter_assets/NativeAssetsManifest.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/linux/x64/debug/bundle/data/flutter_assets/fonts/MaterialIcons-Regular.otf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/linux/x64/debug/bundle/data/flutter_assets/kernel_blob.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/linux/x64/debug/bundle/data/flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/linux/x64/debug/bundle/data/flutter_assets/packages/font_awesome_flutter/lib/fonts/Font-Awesome-7-Brands-Regular-400.otf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/linux/x64/debug/bundle/data/flutter_assets/packages/font_awesome_flutter/lib/fonts/Font-Awesome-7-Free-Regular-400.otf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/linux/x64/debug/bundle/data/flutter_assets/packages/font_awesome_flutter/lib/fonts/Font-Awesome-7-Free-Solid-900.otf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/linux/x64/debug/bundle/data/flutter_assets/shaders/ink_sparkle.frag" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/linux/x64/debug/bundle/data/flutter_assets/shaders/stretch_effect.frag" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/linux/x64/debug/bundle/data/flutter_assets/version.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/linux/x64/debug/bundle/data/icudtl.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/linux/x64/debug/bundle/lib/libflutter_linux_gtk.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/linux/x64/debug/bundle/lib/liburl_launcher_linux_plugin.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/linux/x64/debug/cmake_install.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/build/linux/x64/debug/cmake_install.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/linux/x64/debug/flutter/cmake_install.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/build/linux/x64/debug/flutter/cmake_install.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/linux/x64/debug/install_manifest.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/linux/x64/debug/intermediates_do_not_run/campus_connect" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/linux/x64/debug/plugins/url_launcher_linux/CMakeFiles/url_launcher_linux_plugin.dir/messages.g.cc.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/linux/x64/debug/plugins/url_launcher_linux/CMakeFiles/url_launcher_linux_plugin.dir/url_launcher_plugin.cc.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/linux/x64/debug/plugins/url_launcher_linux/cmake_install.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/build/linux/x64/debug/plugins/url_launcher_linux/cmake_install.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/linux/x64/debug/plugins/url_launcher_linux/liburl_launcher_linux_plugin.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/linux/x64/debug/rules.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/build/linux/x64/debug/rules.ninja" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/linux/x64/debug/runner/CMakeFiles/campus_connect.dir/__/flutter/generated_plugin_registrant.cc.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/linux/x64/debug/runner/CMakeFiles/campus_connect.dir/main.cc.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/linux/x64/debug/runner/CMakeFiles/campus_connect.dir/my_application.cc.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/linux/x64/debug/runner/cmake_install.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/build/linux/x64/debug/runner/cmake_install.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/native_hooks/.last_build_id" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Flutter/Generated.xcconfig" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Flutter/Generated.xcconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Flutter/flutter_export_environment.sh" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Flutter/flutter_export_environment.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/macos/Flutter/ephemeral/Flutter-Generated.xcconfig" beforeDir="false" afterPath="$PROJECT_DIR$/macos/Flutter/ephemeral/Flutter-Generated.xcconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/macos/Flutter/ephemeral/flutter_export_environment.sh" beforeDir="false" afterPath="$PROJECT_DIR$/macos/Flutter/ephemeral/flutter_export_environment.sh" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,12 +146,15 @@
     "dart.analysis.tool.window.visible": "false",
     "git-widget-placeholder": "main",
     "io.flutter.project.isFirstOpen": "true",
-    "last_opened_file_path": "/home/roomaster/Downloads/StudioProjects-20260228T093506Z-3-001/StudioProjects/Campus-connect-app-",
+    "last_opened_file_path": "/home/roomaster/Downloads/StudioProjects-20260228T093506Z-3-001/StudioProjects/Campus-connect-app-/lib",
+    "settings.editor.selected.configurable": "dart.settings",
     "show.migrate.to.gradle.popup": "false"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/lib" />
+      <recent name="$PROJECT_DIR$/lib/screens" />
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
@@ -162,7 +212,23 @@
       <option name="project" value="LOCAL" />
       <updated>1772540059675</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Merge branch 'main' of https://github.com/Roo-Master/Campus-connect-app-&#10;git push origin main# the commit.">
+      <option name="closed" value="true" />
+      <created>1772540765598</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1772540765598</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Merge branch 'main' of https://github.com/Roo-Master/Campus-connect-app-&#10;git push origin main# the commit.">
+      <option name="closed" value="true" />
+      <created>1772540861629</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1772540861629</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

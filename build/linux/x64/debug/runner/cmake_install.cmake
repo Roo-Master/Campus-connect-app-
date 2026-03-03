@@ -1,8 +1,8 @@
-# Install script for directory: /home/roomaster/Downloads/StudioProjects-20260228T093506Z-3-001/StudioProjects/campus_connect/linux/runner
+# Install script for directory: /home/roomaster/Downloads/StudioProjects-20260228T093506Z-3-001/StudioProjects/Campus-connect-app-/linux/runner
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/roomaster/Downloads/StudioProjects-20260228T093506Z-3-001/StudioProjects/campus_connect/build/linux/x64/debug/bundle")
+  set(CMAKE_INSTALL_PREFIX "/home/roomaster/Downloads/StudioProjects-20260228T093506Z-3-001/StudioProjects/Campus-connect-app-/build/linux/x64/debug/bundle")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 

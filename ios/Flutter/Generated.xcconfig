@@ -1,6 +1,6 @@
 // This is a generated file; do not edit or check into version control.
 FLUTTER_ROOT=/home/roomaster/snap/flutter/common/flutter
-FLUTTER_APPLICATION_PATH=/home/roomaster/Downloads/StudioProjects-20260228T093506Z-3-001/StudioProjects/campus_connect
+FLUTTER_APPLICATION_PATH=/home/roomaster/Downloads/StudioProjects-20260228T093506Z-3-001/StudioProjects/Campus-connect-app-
 COCOAPODS_PARALLEL_CODE_SIGN=true
 FLUTTER_TARGET=lib/main.dart
 FLUTTER_BUILD_DIR=build
