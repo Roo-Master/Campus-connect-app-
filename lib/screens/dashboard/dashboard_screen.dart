@@ -1,3 +1,4 @@
+import 'package:campus_connect/screens/dashboard/schedule_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../ai/ai_chat_screen.dart';
@@ -13,6 +14,7 @@ import '../academic/grades_screen.dart';
 import '../events/events_screen.dart';
 import '../map/campus_map_screen.dart';
 import '../notifications/notifications_screen.dart';
+import '../profile/help_screen.dart';
 import '../profile/profile_screen.dart';
 import '../profile/settings_screen.dart';
 import '../services/fees_screen.dart';
@@ -166,21 +168,6 @@ class HomeTab extends StatelessWidget {
               },
             icon: const Icon(Icons.settings_outlined),
           ),
-          IconButton(
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => const AiChatScreen(),
-                ),
-              );
-            },
-            icon: const Icon(
-              Icons.psychology_alt,
-              size: 28,
-              color: Colors.deepPurple,
-            ),
-          )
 
         ],
       ),
@@ -190,8 +177,10 @@ class HomeTab extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             _buildHeader(user),
-            const SizedBox(height: 20),
-            QuickActionsWidget(onActionTap: _handleActionTap),
+            QuickActionsWidget(onActionTap: (action) {
+              final role = user.role ?? '';
+              _handleActionTap(action, userRole: role);
+            }),
             const SizedBox(height: 24),
             _buildUpcomingEvents(),
             const SizedBox(height: 24),
@@ -453,8 +442,10 @@ class HomeTab extends StatelessWidget {
       ),
     );
   }
+  void _handleActionTap(String action, {required String userRole}) {
+    // Only Class Rep can access Schedule
+    bool isClassRep = userRole.toLowerCase() == 'class rep';
 
-  void _handleActionTap(String action) {
     switch (action) {
       case 'courses':
         Navigator.push(
@@ -462,6 +453,7 @@ class HomeTab extends StatelessWidget {
           MaterialPageRoute(builder: (context) => const CoursesScreen()),
         );
         break;
+
       case 'grades':
         Navigator.push(
           context!,
@@ -475,23 +467,52 @@ class HomeTab extends StatelessWidget {
           MaterialPageRoute(builder: (context) => const FeesScreen()),
         );
         break;
+
       case 'transport':
         Navigator.push(
           context!,
           MaterialPageRoute(builder: (context) => const TransportScreen()),
         );
         break;
+
       case 'emergency':
         Navigator.push(
           context!,
           MaterialPageRoute(builder: (context) => const EmergencyScreen()),
         );
         break;
+
       case 'library':
+      // Implement library functionality if needed
         break;
+
+      case 'scheduler':
+        if (isClassRep) {
+          Navigator.push(
+            context!,
+            MaterialPageRoute(builder: (context) => const ScheduleScreen()),
+          );
+        } else {
+          // Show a warning/snackbar for unauthorized access
+          ScaffoldMessenger.of(context!).showSnackBar(
+            const SnackBar(
+              content: Text("Access denied. Only Class Rep can view the scheduler."),
+              backgroundColor: Colors.red,
+            ),
+          );
+        }
+        break;
+
+      default:
+      // Optional: handle unknown actions
+        ScaffoldMessenger.of(context!).showSnackBar(
+          const SnackBar(
+            content: Text("Action not recognized."),
+            backgroundColor: Colors.orange,
+          ),
+        );
     }
   }
-
   Widget _buildDrawer(BuildContext context) {
     final user = Provider.of<UserModel>(context);
     final authService = Provider.of<AuthService>(context);
@@ -519,28 +540,94 @@ class HomeTab extends StatelessWidget {
             ),
           ),
           ListTile(
-            leading: const Icon(Icons.person),
+            leading: const Icon(Icons.person,
+              color: Colors.blueAccent,
+            ),
             title: const Text('My Profile'),
-            onTap: () {},
+            onTap: () {
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => const ProfileScreen()));
+            },
           ),
           ListTile(
-            leading: const Icon(Icons.settings),
+            leading: const Icon(Icons.calendar_today,
+            color: Colors.green,
+            ),
+            title: const Text('My Schedule'),
+            onTap: () {
+              final role = user.role ?? '';
+              _handleActionTap('scheduler', userRole: role);
+            }
+          ),
+          ListTile(
+            leading: const Icon(Icons.settings,
+
+            color: Colors.blue,
+            ),
             title: const Text('Settings'),
-            onTap: () {},
+            onTap: () {
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => const SettingsScreen()));
+            },
           ),
           ListTile(
-            leading: const Icon(Icons.help_outline),
+            leading: const Icon(Icons.psychology_alt,
+              size: 28,
+              color: Colors.deepPurple,
+            ), // AI icon
+            title: const Text('AI Chat Bot'),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const AiChatScreen(),
+                ),
+              );
+            },
+          ),
+          ListTile(
+            leading: const Icon(Icons.help_outline,
+              color: Colors.brown,
+            ),
             title: const Text('Help & Support'),
-            onTap: () {},
+            onTap: () {
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => const HelpScreen()));
+            },
           ),
           const Divider(),
           ListTile(
             leading: const Icon(Icons.logout, color: Colors.red),
-            title: const Text('Logout', style: TextStyle(color: Colors.red)),
+            title: const Text(
+              'Logout',
+              style: TextStyle(color: Colors.red),
+            ),
             onTap: () async {
-              await authService.logout();
-              if (context.mounted) {
-                Navigator.of(context).pushReplacementNamed('/login');
+              // Show confirmation dialog
+              final shouldLogout = await showDialog<bool>(
+                context: context,
+                builder: (context) => AlertDialog(
+                  title: const Text('Confirm Logout'),
+                  content: const Text('Are you sure you want to logout?'),
+                  actions: [
+                    TextButton(
+                      onPressed: () => Navigator.of(context).pop(false), // Cancel
+                      child: const Text('Cancel'),
+                    ),
+                    TextButton(
+                      onPressed: () => Navigator.of(context).pop(true), // Confirm
+                      child: const Text('Logout'),
+                    ),
+                  ],
+                ),
+              );
+
+              // Only logout if user confirmed
+              if (shouldLogout == true) {
+                await authService.logout();
+                if (context.mounted) {
+                  Navigator.of(context).pushReplacementNamed('/login');
+                }
               }
             },
           ),

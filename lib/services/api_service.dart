@@ -1,3 +1,5 @@
+import 'package:flutter/widgets.dart';
+
 import '../models/course_model.dart';
 import '../models/event_model.dart';
 import '../models/grade_model.dart';
@@ -22,19 +24,19 @@ class ApiService {
       'success': true,
       'data': {
         'id': userId,
-        'name': 'John Doe',
-        'email': 'john.doe@campus.edu',
+        'name': getUserProfile(AutofillHints.username),
+        'email': getUserProfile(AutofillHints.email),
       }
     };
   }
 
   // Course APIs
-  Future<List<CourseModel>> getAvailableCourses() async {
+  Future<List<CourseModel>> getAvailableCourses(String courselistId) async {
     await _simulateNetworkDelay();
     return CourseModel.getMockCourses();
   }
 
-  Future<List<CourseModel>> getEnrolledCourses() async {
+  Future<List<CourseModel>> getEnrolledCourses(String courseId) async {
     await _simulateNetworkDelay();
     return CourseModel.getEnrolledCourses();
   }
@@ -114,7 +116,7 @@ class ApiService {
   }
 
   // Building/Map APIs
-  Future<List<BuildingModel>> getBuildings() async {
+  Future<List<BuildingModel>> getBuildings( String buildinglistId) async {
     await _simulateNetworkDelay();
     return BuildingModel.getMockBuildings();
   }
