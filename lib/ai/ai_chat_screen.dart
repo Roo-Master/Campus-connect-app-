@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
 import 'package:google_fonts/google_fonts.dart';
-import '../models/ai_chat_model.dart';
-import '../services/ai_chat_service.dart';
+import '../services/ai_chart_services.dart';
+import 'backend/ai_model.dart';
 
 class AiChatScreen extends StatefulWidget {
   const AiChatScreen({Key? key}) : super(key: key);
@@ -18,19 +18,14 @@ class _AiChatScreenState extends State<AiChatScreen> {
   final ScrollController _scrollController = ScrollController();
   final AiChatService _chatService = AiChatService();
 
-  final List<AiChatMessage> _messages = [
-    AiChatMessage(
-      role: "system",
-      content: "You are a helpful assistant.",
-    ),
+  List<AiChatMessage> _messages = [
+    AiChatMessage(role: "system", content: "You are a helpful assistant."),
   ];
 
-  StreamSubscription? _streamSubscription;
+  StreamSubscription<String>? _streamSubscription;
   bool _isLoading = false;
 
-  /* ===============================
-     SEND MESSAGE (STREAMING)
-  =============================== */
+  /// Send a message (or regenerate)
   void _sendMessage({bool regenerate = false}) {
     final text = regenerate
         ? _messages.lastWhere((m) => m.role == "user").content
@@ -40,38 +35,59 @@ class _AiChatScreenState extends State<AiChatScreen> {
 
     if (!regenerate) {
       _controller.clear();
-      _messages.add(AiChatMessage(role: "user", content: text));
+      _messages = List.from(_messages)
+        ..add(AiChatMessage(role: "user", content: text));
     }
 
-    final aiMessage =
-    AiChatMessage(role: "assistant", content: "");
+    final aiMessage = AiChatMessage(role: "assistant", content: "");
 
     setState(() {
-      _messages.add(aiMessage);
+      _messages = List.from(_messages)..add(aiMessage);
       _isLoading = true;
     });
 
     _scrollToBottom();
 
-    _streamSubscription = _chatService
-        .sendMessageStream(_messages)
-        .listen((chunk) {
-      setState(() {
-        aiMessage.content += chunk;
-      });
-      _scrollToBottom();
-    }, onDone: () {
-      setState(() => _isLoading = false);
-    }, onError: (_) {
-      setState(() {
-        aiMessage.content = "⚠️ Something went wrong.";
-        _isLoading = false;
-      });
-    });
+    // Cancel previous stream if still running
+    _streamSubscription?.cancel();
+
+    _streamSubscription =
+        _chatService.sendMessageStream(_messages).listen((chunk) {
+          // Immutable update
+          setState(() {
+            final index = _messages.indexOf(aiMessage);
+            if (index != -1) {
+              final updated = AiChatMessage(
+                role: aiMessage.role,
+                content: _messages[index].content + chunk,
+              );
+              _messages = List.from(_messages)
+                ..removeAt(index)
+                ..insert(index, updated);
+            }
+          });
+          _scrollToBottom();
+        }, onDone: () {
+          setState(() => _isLoading = false);
+        }, onError: (_) {
+          setState(() {
+            final index = _messages.indexOf(aiMessage);
+            if (index != -1) {
+              _messages = List.from(_messages)
+                ..removeAt(index)
+                ..insert(index, AiChatMessage(
+                  role: aiMessage.role,
+                  content: "⚠️ Something went wrong.",
+                ));
+            }
+            _isLoading = false;
+          });
+        });
   }
 
   void _stopGeneration() {
     _streamSubscription?.cancel();
+    _streamSubscription = null;
     setState(() => _isLoading = false);
   }
 
@@ -87,9 +103,14 @@ class _AiChatScreenState extends State<AiChatScreen> {
     });
   }
 
-  /* ===============================
-     UI
-  =============================== */
+  @override
+  void dispose() {
+    _controller.dispose();
+    _scrollController.dispose();
+    _streamSubscription?.cancel();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -120,9 +141,8 @@ class _AiChatScreenState extends State<AiChatScreen> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       CircleAvatar(
-                        backgroundColor: isUser
-                            ? Colors.blue
-                            : Colors.green,
+                        backgroundColor:
+                        isUser ? Colors.blue : Colors.green,
                         child: Text(
                           isUser ? "U" : "AI",
                           style: const TextStyle(color: Colors.white),
@@ -131,8 +151,7 @@ class _AiChatScreenState extends State<AiChatScreen> {
                       const SizedBox(width: 12),
                       Expanded(
                         child: Column(
-                          crossAxisAlignment:
-                          CrossAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             MarkdownBody(
                               data: msg.content,
@@ -153,30 +172,24 @@ class _AiChatScreenState extends State<AiChatScreen> {
                                 children: [
                                   IconButton(
                                     icon: const Icon(Icons.copy,
-                                        size: 18,
-                                        color: Colors.white70),
+                                        size: 18, color: Colors.white70),
                                     onPressed: () {
                                       Clipboard.setData(
-                                          ClipboardData(
-                                              text: msg.content));
+                                          ClipboardData(text: msg.content));
                                       ScaffoldMessenger.of(context)
                                           .showSnackBar(
-                                        const SnackBar(
-                                            content:
-                                            Text("Copied")),
+                                        const SnackBar(content: Text("Copied")),
                                       );
                                     },
                                   ),
                                   IconButton(
                                     icon: const Icon(Icons.refresh,
-                                        size: 18,
-                                        color: Colors.white70),
+                                        size: 18, color: Colors.white70),
                                     onPressed: () =>
-                                        _sendMessage(
-                                            regenerate: true),
+                                        _sendMessage(regenerate: true),
                                   ),
                                 ],
-                              )
+                              ),
                           ],
                         ),
                       ),

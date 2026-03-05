@@ -24,8 +24,6 @@ dependencies:
   smooth_page_indicator: ^1.1.0
   url_launcher: ^6.3.2
   flutter_markdown: ^0.7.0
-
-
   # Icons
   cupertino_icons: ^1.0.2
   font_awesome_flutter: ^10.6.0
@@ -34,10 +32,10 @@ dependencies:
   # google_maps_flutter: ^2.5.0
 
   # Firebase (Uncomment when ready for backend)
-  # firebase_core: ^2.24.0
-  # firebase_auth: ^4.16.0
-  # cloud_firestore: ^4.13.0
-  # firebase_messaging: ^14.7.0
+  firebase_core: ^2.24.0
+  firebase_auth: ^4.16.0
+  cloud_firestore: ^4.13.0
+  firebase_messaging: ^14.7.0
 
   # Network
   # dio: ^5.4.0
