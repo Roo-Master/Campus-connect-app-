@@ -5,30 +5,38 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c58b4bf4-9d1b-48cb-b237-74d1abe282e3" name="Changes" comment="Merge branch 'main' of https://github.com/Roo-Master/Campus-connect-app-&#10;git push origin main# the commit.">
-      <change afterPath="$PROJECT_DIR$/lib/screens/dashboard/schedule_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/dartpad/web_plugin_registrant.dart" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/dartpad/web_plugin_registrant.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/Admin_block.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/Ict_block.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/Library.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/PV.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/School_of_law_Agriculture.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/img.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/img_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/main_gate.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/sakagwa.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/sakagwa_tcblock.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/da086130bd5d661792232033a16192e0/.filecache" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/da086130bd5d661792232033a16192e0/.filecache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/da086130bd5d661792232033a16192e0/app.dill" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/da086130bd5d661792232033a16192e0/app.dill" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/da086130bd5d661792232033a16192e0/dart_build_result.json" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/da086130bd5d661792232033a16192e0/dart_build_result.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/da086130bd5d661792232033a16192e0/debug_bundle_linux-x64_assets.stamp" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/da086130bd5d661792232033a16192e0/debug_bundle_linux-x64_assets.stamp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/da086130bd5d661792232033a16192e0/flutter_assets.d" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/da086130bd5d661792232033a16192e0/flutter_assets.d" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/da086130bd5d661792232033a16192e0/kernel_snapshot_program.d" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/da086130bd5d661792232033a16192e0/kernel_snapshot_program.d" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/da086130bd5d661792232033a16192e0/kernel_snapshot_program.stamp" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/da086130bd5d661792232033a16192e0/kernel_snapshot_program.stamp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/da086130bd5d661792232033a16192e0/outputs.json" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/da086130bd5d661792232033a16192e0/outputs.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Campus-connect-app-.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Campus-connect-app-.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/caches/deviceStreaming.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/deviceStreaming.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/firebender/chat_history.db-shm" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/firebender/chat_history.db-shm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/firebender/chat_history.db-wal" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/firebender/chat_history.db-wal" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/3bf342829f4d3b1330c114bfc2c3f7f2.cache.dill.track.dill" beforeDir="false" afterPath="$PROJECT_DIR$/build/3bf342829f4d3b1330c114bfc2c3f7f2.cache.dill.track.dill" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/flutter_assets/NOTICES.Z" beforeDir="false" afterPath="$PROJECT_DIR$/build/flutter_assets/NOTICES.Z" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/6f4a15e49d0bc622ec76656f5f470141.cache.dill.track.dill" beforeDir="false" afterPath="$PROJECT_DIR$/build/6f4a15e49d0bc622ec76656f5f470141.cache.dill.track.dill" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/flutter_assets/AssetManifest.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/flutter_assets/AssetManifest.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/flutter_assets/kernel_blob.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/flutter_assets/kernel_blob.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/linux/x64/debug/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/build/linux/x64/debug/.ninja_deps" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/linux/x64/debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/build/linux/x64/debug/.ninja_log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/linux/x64/debug/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/build/linux/x64/debug/build.ninja" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/linux/x64/debug/bundle/data/flutter_assets/NOTICES.Z" beforeDir="false" afterPath="$PROJECT_DIR$/build/linux/x64/debug/bundle/data/flutter_assets/NOTICES.Z" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/linux/x64/debug/bundle/data/flutter_assets/AssetManifest.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/linux/x64/debug/bundle/data/flutter_assets/AssetManifest.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/linux/x64/debug/bundle/data/flutter_assets/kernel_blob.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/linux/x64/debug/bundle/data/flutter_assets/kernel_blob.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/linux/x64/debug/bundle/lib/liburl_launcher_linux_plugin.so" beforeDir="false" afterPath="$PROJECT_DIR$/build/linux/x64/debug/bundle/lib/liburl_launcher_linux_plugin.so" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/linux/x64/debug/intermediates_do_not_run/campus_connect" beforeDir="false" afterPath="$PROJECT_DIR$/build/linux/x64/debug/intermediates_do_not_run/campus_connect" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/linux/x64/debug/runner/CMakeFiles/campus_connect.dir/__/flutter/generated_plugin_registrant.cc.o" beforeDir="false" afterPath="$PROJECT_DIR$/build/linux/x64/debug/runner/CMakeFiles/campus_connect.dir/__/flutter/generated_plugin_registrant.cc.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/models/user_model.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/models/user_model.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/linux/x64/debug/install_manifest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/linux/x64/debug/install_manifest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/native_hooks/.last_build_id" beforeDir="false" afterPath="$PROJECT_DIR$/build/native_hooks/.last_build_id" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/screens/dashboard/dashboard_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/dashboard/dashboard_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/services/api_service.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/services/api_service.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,33 +84,37 @@
   &quot;associatedIndex&quot;: 2
 }</component>
   <component name="ProjectId" id="3AQvdh8p7TpoABtjFlWu4Fd5FC4" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;Flutter.main.dart.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.readMode.enableVisualFormatting&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
-    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;io.flutter.project.isFirstOpen&quot;: &quot;true&quot;,
-    &quot;io.flutter.reload.alreadyRun&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/roomaster/Android/Studio projects/Campus-connect-app-&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;dart.settings&quot;,
-    &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Flutter.main.dart.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.readMode.enableVisualFormatting": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "dart.analysis.tool.window.visible": "false",
+    "git-widget-placeholder": "main",
+    "io.flutter.project.isFirstOpen": "true",
+    "io.flutter.reload.alreadyRun": "true",
+    "last_opened_file_path": "/home/roomaster/Android/Studio projects/Campus-connect-app-/assets/images",
+    "settings.editor.selected.configurable": "dart.settings",
+    "show.migrate.to.gradle.popup": "false"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/assets/images" />
       <recent name="$PROJECT_DIR$/lib/screens/profile" />
       <recent name="$PROJECT_DIR$/lib" />
       <recent name="$PROJECT_DIR$/lib/screens" />
@@ -277,5 +289,15 @@
     <MESSAGE value="Merge remote-tracking branch 'origin/main'&#10;&#10;# Conflicts:&#10;#&#9;.dart_tool/flutter_build/526aa2987d41a01470a42bc1f94262b1/outputs.json&#10;#&#9;.dart_tool/flutter_build/da086130bd5d661792232033a16192e0/debug_bundle_linux-x64_assets.stamp&#10;#&#9;.dart_tool/flutter_build/da086130bd5d661792232033a16192e0/flutter_assets.d&#10;#&#9;.dart_tool/flutter_build/da086130bd5d661792232033a16192e0/kernel_snapshot_program.stamp&#10;#&#9;build/cf3067c4a694290d8fde2faded9e9b54/.filecache&#10;#&#9;build/cf3067c4a694290d8fde2faded9e9b54/dart_build.d&#10;#&#9;build/cf3067c4a694290d8fde2faded9e9b54/dart_build.stamp&#10;#&#9;build/cf3067c4a694290d8fde2faded9e9b54/dart_build_result.json&#10;#&#9;build/cf3067c4a694290d8fde2faded9e9b54/outputs.json&#10;#&#9;build/flutter_assets/kernel_blob.bin&#10;#&#9;build/linux/x64/debug/.ninja_deps&#10;#&#9;build/linux/x64/debug/.ninja_log&#10;#&#9;build/linux/x64/debug/bundle/campus_connect&#10;#&#9;build/linux/x64/debug/bundle/data/flutter_assets/kernel_blob.bin&#10;#&#9;build/linux/x64/debug/bundle/lib/liburl_launcher_linux_plugin.so&#10;#&#9;build/linux/x64/debug/install_manifest.txt&#10;#&#9;build/linux/x64/debug/intermediates_do_not_run/campus_connect&#10;#&#9;build/linux/x64/debug/plugins/url_launcher_linux/CMakeFiles/url_launcher_linux_plugin.dir/messages.g.cc.o&#10;#&#9;build/linux/x64/debug/plugins/url_launcher_linux/CMakeFiles/url_launcher_linux_plugin.dir/url_launcher_plugin.cc.o&#10;#&#9;build/linux/x64/debug/plugins/url_launcher_linux/liburl_launcher_linux_plugin.so&#10;#&#9;build/linux/x64/debug/runner/CMakeFiles/campus_connect.dir/__/flutter/generated_plugin_registrant.cc.o&#10;#&#9;build/linux/x64/debug/runner/CMakeFiles/campus_connect.dir/main.cc.o&#10;#&#9;build/linux/x64/debug/runner/CMakeFiles/campus_connect.dir/my_application.cc.o" />
     <MESSAGE value="Merge branch 'main' of https://github.com/Roo-Master/Campus-connect-app-&#10;git push origin main# the commit." />
     <option name="LAST_COMMIT_MESSAGE" value="Merge branch 'main' of https://github.com/Roo-Master/Campus-connect-app-&#10;git push origin main# the commit." />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/ai-chat-backend/main.py</url>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

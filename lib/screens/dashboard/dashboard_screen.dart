@@ -82,12 +82,16 @@ class _DashboardScreenState extends State<DashboardScreen> {
 class HomeTab extends StatelessWidget {
   const HomeTab({super.key});
 
-  BuildContext? get context => null;
+  get context => null;
 
   @override
   Widget build(BuildContext context) {
     final user = Provider.of<UserModel>(context);
     final notificationService = Provider.of<NotificationService>(context);
+
+    // Responsive padding calculation
+    final horizontalPadding = MediaQuery.of(context).size.width < 600 ? 16.0 : 24.0;
+    final verticalPadding = MediaQuery.of(context).size.width < 600 ? 20.0 : 30.0;
 
     return Scaffold(
       extendBodyBehindAppBar: true,
@@ -101,14 +105,12 @@ class HomeTab extends StatelessWidget {
             Image.asset(
               'assets/images/kisii.jpg',
               height: 40,
-
               fit: BoxFit.contain,
             ),
             const SizedBox(width: 8),
             const Text('Dashboard'),
           ],
         ),
-
         foregroundColor: Colors.white,
         actions: [
           // Notification Bell with Badge
@@ -122,7 +124,7 @@ class HomeTab extends StatelessWidget {
                         context,
                         MaterialPageRoute(builder: (context) => const NotificationsScreen()),
                       );
-                      },
+                    },
                     icon: const Icon(Icons.notifications_outlined),
                   ),
                   if (notificationService.unreadCount > 0)
@@ -135,7 +137,6 @@ class HomeTab extends StatelessWidget {
                           color: Colors.red,
                           shape: BoxShape.circle,
                         ),
-
                         constraints: const BoxConstraints(
                           minWidth: 16,
                           minHeight: 16,
@@ -153,50 +154,56 @@ class HomeTab extends StatelessWidget {
                     ),
                 ],
               );
-
             },
           ),
-
           // Settings Button
-
           IconButton(
             onPressed: () {
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => const SettingsScreen()),
               );
-              },
+            },
             icon: const Icon(Icons.settings_outlined),
           ),
-
         ],
       ),
       drawer: _buildDrawer(context),
-      body: SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            _buildHeader(user),
-            QuickActionsWidget(onActionTap: (action) {
-              final role = user.role ?? '';
-              _handleActionTap(action, userRole: role);
-            }),
-            const SizedBox(height: 24),
-            _buildUpcomingEvents(),
-            const SizedBox(height: 24),
-            _buildMyCourses(),
-            const SizedBox(height: 24),
-            _buildAcademicProgress(),
-            const SizedBox(height: 24),
-          ],
+      body: Container(
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage("assets/images/img.png"),
+            fit: BoxFit.cover,
+          ),
+        ),
+        child: SafeArea(
+          child: SingleChildScrollView(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                _buildHeader(user, verticalPadding),
+                QuickActionsWidget(onActionTap: (action) {
+                  final role = user.role ?? '';
+                  _handleActionTap(action, userRole: role);
+                }),
+                const SizedBox(height: 24),
+                _buildUpcomingEvents(horizontalPadding),
+                const SizedBox(height: 24),
+                _buildMyCourses(horizontalPadding),
+                const SizedBox(height: 24),
+                _buildAcademicProgress(horizontalPadding),
+                const SizedBox(height: 24),
+              ],
+            ),
+          ),
         ),
       ),
     );
   }
 
-  Widget _buildHeader(UserModel user) {
+  Widget _buildHeader(UserModel user, double verticalPadding) {
     return Container(
-      padding: const EdgeInsets.all(20),
+      padding: EdgeInsets.symmetric(horizontal: 20, vertical: verticalPadding),
       decoration: const BoxDecoration(
         gradient: LinearGradient(
           colors: [AppTheme.primary, AppTheme.primaryDark],
@@ -262,11 +269,11 @@ class HomeTab extends StatelessWidget {
     );
   }
 
-  Widget _buildUpcomingEvents() {
+  Widget _buildUpcomingEvents(double horizontalPadding) {
     final events = EventModel.getMockEvents().take(3).toList();
 
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 16),
+      padding: EdgeInsets.symmetric(horizontal: horizontalPadding),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -310,32 +317,32 @@ class HomeTab extends StatelessWidget {
     );
   }
 
-  Widget _buildMyCourses() {
+  Widget _buildMyCourses(double horizontalPadding) {
     final courses = CourseModel.getEnrolledCourses();
 
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 16),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
+        padding: EdgeInsets.symmetric(horizontal: horizontalPadding),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
           Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              const Text(
-                'My Courses',
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-              ),
-              TextButton(
-                onPressed: () {},
-                child: const Text('View All'),
-              ),
-            ],
-          ),
-          const SizedBox(height: 8),
-          ...courses.map((course) => Card(
-            margin: const EdgeInsets.only(bottom: 12),
-            child: ListTile(
-              leading: Container(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            const Text(
+              'My Courses',
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+            ),
+            TextButton(
+              onPressed: () {},
+              child: const Text('View All'),
+            ),
+          ],
+        ),
+        const SizedBox(height: 8),
+        ...courses.map((course) => Card(
+        margin: const EdgeInsets.only(bottom: 12),
+        child: ListTile(
+            leading: Container(
                 width: 40,
                 height: 40,
                 decoration: BoxDecoration(
@@ -343,33 +350,33 @@ class HomeTab extends StatelessWidget {
                   borderRadius: BorderRadius.circular(8),
                 ),
                 child: Center(
-                  child: Text(
-                    course.code.substring(0, 2),
-                    style: TextStyle(
-                      color: course.color,
-                      fontWeight: FontWeight.bold,
+                    child: Text(
+                      course.code.substring(0, 2),
+                      style: TextStyle(
+                        color: course.color,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
-                  ),
                 ),
-              ),
-              title: Text(course.name),
-              subtitle: Text(course.schedule),
-              trailing: const Icon(Icons.arrow_forward_ios, size: 16),
-              onTap: () {},
             ),
-          )),
-        ],
-      ),
+          title: Text(course.name),
+          subtitle: Text(course.schedule),
+          trailing: const Icon(Icons.arrow_forward_ios, size: 16),
+          onTap: () {},
+        ),
+        )),
+          ],
+        ),
     );
   }
 
-  Widget _buildAcademicProgress() {
+  Widget _buildAcademicProgress(double horizontalPadding) {
     final grades = GradeModel.getMockGrades();
     final cgpa = GradeModel.calculateCGPA(grades);
     final progress = (grades.length / 8) * 100;
 
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 16),
+      padding: EdgeInsets.symmetric(horizontal: horizontalPadding),
       child: Card(
         child: Padding(
           padding: const EdgeInsets.all(16),
@@ -442,6 +449,7 @@ class HomeTab extends StatelessWidget {
       ),
     );
   }
+
   void _handleActionTap(String action, {required String userRole}) {
     // Only Class Rep can access Schedule
     bool isClassRep = userRole.toLowerCase() == 'class rep';
@@ -513,6 +521,7 @@ class HomeTab extends StatelessWidget {
         );
     }
   }
+
   Widget _buildDrawer(BuildContext context) {
     final user = Provider.of<UserModel>(context);
     final authService = Provider.of<AuthService>(context);
@@ -550,19 +559,19 @@ class HomeTab extends StatelessWidget {
             },
           ),
           ListTile(
-            leading: const Icon(Icons.calendar_today,
-            color: Colors.green,
-            ),
-            title: const Text('My Schedule'),
-            onTap: () {
-              final role = user.role ?? '';
-              _handleActionTap('scheduler', userRole: role);
-            }
+              leading: const Icon(Icons.calendar_today,
+                color: Colors.green,
+              ),
+              title: const Text('My Schedule'),
+              onTap: () {
+                final role = user.role ?? '';
+                _handleActionTap('scheduler', userRole: role);
+              }
           ),
           ListTile(
             leading: const Icon(Icons.settings,
 
-            color: Colors.blue,
+              color: Colors.blue,
             ),
             title: const Text('Settings'),
             onTap: () {
@@ -645,6 +654,7 @@ class EventsTab extends StatelessWidget {
     return const EventsScreen();
   }
 }
+
 class EmergencyTab extends StatelessWidget {
   const EmergencyTab({super.key});
 
@@ -653,6 +663,7 @@ class EmergencyTab extends StatelessWidget {
     return const EmergencyScreen();
   }
 }
+
 class MapTab extends StatelessWidget {
   const MapTab({super.key});
 

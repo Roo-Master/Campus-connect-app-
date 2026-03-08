@@ -12,6 +12,7 @@
 /home/roomaster/Android/Studio projects/Campus-connect-app-/build/linux/x64/debug/bundle/data/flutter_assets/AssetManifest.bin
 /home/roomaster/Android/Studio projects/Campus-connect-app-/build/linux/x64/debug/bundle/data/flutter_assets/assets/images/kisii.jpg
 /home/roomaster/Android/Studio projects/Campus-connect-app-/build/linux/x64/debug/bundle/data/flutter_assets/assets/images/logo.png1
+/home/roomaster/Android/Studio projects/Campus-connect-app-/build/linux/x64/debug/bundle/data/flutter_assets/assets/images/img.png
 /home/roomaster/Android/Studio projects/Campus-connect-app-/build/linux/x64/debug/bundle/data/flutter_assets/assets/images/logo.png
 /home/roomaster/Android/Studio projects/Campus-connect-app-/build/linux/x64/debug/bundle/data/flutter_assets/assets/icons/kisii.jpg
 /home/roomaster/Android/Studio projects/Campus-connect-app-/build/linux/x64/debug/bundle/data/flutter_assets/kernel_blob.bin
