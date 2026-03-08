@@ -5,38 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c58b4bf4-9d1b-48cb-b237-74d1abe282e3" name="Changes" comment="Merge branch 'main' of https://github.com/Roo-Master/Campus-connect-app-&#10;git push origin main# the commit.">
-      <change afterPath="$PROJECT_DIR$/assets/images/Admin_block.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/Ict_block.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/Library.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/PV.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/School_of_law_Agriculture.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/img.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/img_1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/main_gate.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/sakagwa.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/sakagwa_tcblock.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/da086130bd5d661792232033a16192e0/.filecache" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/da086130bd5d661792232033a16192e0/.filecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/da086130bd5d661792232033a16192e0/app.dill" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/da086130bd5d661792232033a16192e0/app.dill" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/da086130bd5d661792232033a16192e0/debug_bundle_linux-x64_assets.stamp" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/da086130bd5d661792232033a16192e0/debug_bundle_linux-x64_assets.stamp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/da086130bd5d661792232033a16192e0/flutter_assets.d" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/da086130bd5d661792232033a16192e0/flutter_assets.d" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/da086130bd5d661792232033a16192e0/outputs.json" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/da086130bd5d661792232033a16192e0/outputs.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Campus-connect-app-.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Campus-connect-app-.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/caches/deviceStreaming.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/deviceStreaming.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/firebender/chat_history.db-shm" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/firebender/chat_history.db-shm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/firebender/chat_history.db-wal" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/firebender/chat_history.db-wal" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/3bf342829f4d3b1330c114bfc2c3f7f2.cache.dill.track.dill" beforeDir="false" afterPath="$PROJECT_DIR$/build/3bf342829f4d3b1330c114bfc2c3f7f2.cache.dill.track.dill" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/6f4a15e49d0bc622ec76656f5f470141.cache.dill.track.dill" beforeDir="false" afterPath="$PROJECT_DIR$/build/6f4a15e49d0bc622ec76656f5f470141.cache.dill.track.dill" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/flutter_assets/AssetManifest.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/flutter_assets/AssetManifest.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/flutter_assets/kernel_blob.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/flutter_assets/kernel_blob.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/linux/x64/debug/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/build/linux/x64/debug/.ninja_deps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/linux/x64/debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/build/linux/x64/debug/.ninja_log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/linux/x64/debug/bundle/data/flutter_assets/AssetManifest.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/linux/x64/debug/bundle/data/flutter_assets/AssetManifest.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/linux/x64/debug/bundle/data/flutter_assets/kernel_blob.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/linux/x64/debug/bundle/data/flutter_assets/kernel_blob.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/linux/x64/debug/install_manifest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/linux/x64/debug/install_manifest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/native_hooks/.last_build_id" beforeDir="false" afterPath="$PROJECT_DIR$/build/native_hooks/.last_build_id" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/screens/dashboard/dashboard_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/dashboard/dashboard_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -271,7 +241,23 @@
       <option name="project" value="LOCAL" />
       <updated>1772720793370</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Merge branch 'main' of https://github.com/Roo-Master/Campus-connect-app-&#10;git push origin main# the commit.">
+      <option name="closed" value="true" />
+      <created>1773004653461</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1773004653462</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Merge branch 'main' of https://github.com/Roo-Master/Campus-connect-app-&#10;git push origin main# the commit.">
+      <option name="closed" value="true" />
+      <created>1773004687058</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1773004687058</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

@@ -501,22 +501,36 @@ class HomeTab extends StatelessWidget {
             MaterialPageRoute(builder: (context) => const ScheduleScreen()),
           );
         } else {
-          // Show a warning/snackbar for unauthorized access
+          // Shouting color for unauthorized access (bright red)
           ScaffoldMessenger.of(context!).showSnackBar(
             const SnackBar(
-              content: Text("Access denied. Only Class Rep can view the scheduler."),
-              backgroundColor: Colors.red,
+              content: Text(
+                "🚫 ACCESS DENIED! Only Class Rep can view the scheduler.",
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 16,
+                ),
+              ),
+              backgroundColor: Colors.redAccent,
+              duration: Duration(seconds: 3),
             ),
           );
         }
         break;
 
       default:
-      // Optional: handle unknown actions
+      // Shouting color for unknown action (bright orange)
         ScaffoldMessenger.of(context!).showSnackBar(
           const SnackBar(
-            content: Text("Action not recognized."),
-            backgroundColor: Colors.orange,
+            content: Text(
+              "⚠️ ACTION NOT RECOGNIZED!",
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 16,
+              ),
+            ),
+            backgroundColor: Colors.deepOrangeAccent,
+            duration: Duration(seconds: 3),
           ),
         );
     }
