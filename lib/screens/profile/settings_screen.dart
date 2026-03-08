@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 import '../../config/theme.dart';
 import '../auth/login_screen.dart';
 import 'about_screen.dart';
-import 'edit_profile_screen.dart';
 import 'help_screen.dart';
 
 class SettingsScreen extends StatefulWidget {

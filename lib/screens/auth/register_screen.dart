@@ -3,10 +3,8 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../config/theme.dart';
-import '../../services/auth_service.dart';
 import '../services/profile_services.dart';
 import '../../models/user_profile.dart';
-import '../services/profile_services.dart';
 import 'login_screen.dart';
 
 class RegisterScreen extends StatefulWidget {
@@ -33,10 +31,10 @@ class _RegisterScreenState extends State<RegisterScreen> {
   bool _isLoading = false;
 
   String _selectedUserType = 'Student';
-  String? _selectedYear;
-  String? _selectedProgram;
+  String? _selectedYear = 'Year 1';
+  String? _selectedProgram = 'Degree';
 
-  final List<String> _userTypes = ['Student', 'Faculty', 'Staff'];
+  final List<String> _userTypes = ['Student', 'Faculty', 'Staff' ,'Class_Representative'];
   final List<String> _years = ['Year 1', 'Year 2', 'Year 3', 'Year 4', 'Year 5'];
   final List<String> _programs = [
     'Certificate',
@@ -289,6 +287,15 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   const SizedBox(height: 16),
                   _buildProgramAndYearFields(),
                 ],
+                if(_selectedUserType == 'Faculty' || _selectedUserType == 'Staff')...
+                [
+                  const SizedBox(height: 16),
+                  _buildDepartmentField(),
+                ],
+                if(_selectedUserType == 'Class_Representative')...[
+                  const SizedBox(height: 16),
+                  _buildProgramAndYearFields(),
+                ],
                 const SizedBox(height: 24),
 
                 // Password Section
@@ -366,6 +373,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
         return Icons.person;
       case 'Staff':
         return Icons.work;
+        case 'Class_Representative':
+          return Icons.group;
       default:
         return Icons.person;
     }
@@ -502,7 +511,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
       children: [
         Expanded(
           child: DropdownButtonFormField<String>(
-            value: _selectedProgram,
+            initialValue: _selectedProgram,
             decoration: const InputDecoration(
               labelText: 'Program',
               prefixIcon: Icon(Icons.school_outlined),
@@ -526,7 +535,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
         const SizedBox(width: 12),
         Expanded(
           child: DropdownButtonFormField<String>(
-            value: _selectedYear,
+            initialValue: _selectedYear,
             decoration: const InputDecoration(
               labelText: 'Year',
               prefixIcon: Icon(Icons.calendar_today_outlined),

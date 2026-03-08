@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../config/theme.dart';
 import '../../models/building_model.dart';
-import 'location_screen.dart';
 
 class CampusMapScreen extends StatefulWidget {
   const CampusMapScreen({super.key});

@@ -86,7 +86,7 @@ class NotificationsScreen extends StatelessWidget {
           children: [
             Row(
               children: [
-                _getTypeIcon(notification.type as NotificationType),
+                _getTypeIcon(notification.type),
                 const SizedBox(width: 12),
                 Expanded(
                   child: Text(

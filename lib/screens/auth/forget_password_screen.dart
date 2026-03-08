@@ -68,7 +68,7 @@ class _ForgetPasswordScreenState extends State<ForgetPasswordScreen> {
               textAlign: TextAlign.center,
               style: TextStyle(fontSize: 16),
             ),
-            Container(
+            SizedBox(
               width: 50, // desired width
               height: 60, // desired height
             child: TextField(

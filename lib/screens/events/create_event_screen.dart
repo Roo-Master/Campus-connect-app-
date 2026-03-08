@@ -91,7 +91,7 @@ class _CreateEventScreenState extends State<CreateEventScreen> {
 
                 // Create Event Button
                 isLoading
-                    ? Center(child: CircularProgressIndicator())
+                    ? const Center(child: CircularProgressIndicator())
                     : ElevatedButton(
                   onPressed: () async {
                     if (final_formKey.currentState!.validate()) {
@@ -112,7 +112,6 @@ class _CreateEventScreenState extends State<CreateEventScreen> {
                       );
                     }
                   },
-                  child: const Text('Create Event'),
                   style: ElevatedButton.styleFrom(
                     padding: const EdgeInsets.symmetric(vertical: 16.0),
                     textStyle: const TextStyle(fontSize: 18),
@@ -120,6 +119,7 @@ class _CreateEventScreenState extends State<CreateEventScreen> {
                       borderRadius: BorderRadius.circular(8),
                     ),
                   ),
+                  child: const Text('Create Event'),
                 ),
 
                 const SizedBox(height: 20),

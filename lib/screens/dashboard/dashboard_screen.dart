@@ -21,8 +21,6 @@ import '../services/fees_screen.dart';
 import '../services/transport_screen.dart';
 import '../emergency/emergency_screen.dart';
 import 'quick_actions_widget.dart';
-import 'news_feed_widget.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class DashboardScreen extends StatefulWidget {
   const DashboardScreen({super.key});

@@ -43,7 +43,7 @@ class SettingsScreen extends StatelessWidget {
                 trailing: Switch(
                   value: true,
                   onChanged: (value) {},
-                  activeColor: AppTheme.primary,
+                  activeThumbColor: AppTheme.primary,
                 ),
               ),
               _SettingsTile(
@@ -52,7 +52,7 @@ class SettingsScreen extends StatelessWidget {
                 trailing: Switch(
                   value: true,
                   onChanged: (value) {},
-                  activeColor: AppTheme.primary,
+                  activeThumbColor: AppTheme.primary,
                 ),
               ),
               _SettingsTile(
@@ -82,7 +82,7 @@ class SettingsScreen extends StatelessWidget {
                 trailing: Switch(
                   value: false,
                   onChanged: (value) {},
-                  activeColor: AppTheme.primary,
+                  activeThumbColor: AppTheme.primary,
                 ),
               ),
             ],
@@ -103,7 +103,7 @@ class SettingsScreen extends StatelessWidget {
                 trailing: Switch(
                   value: false,
                   onChanged: (value) {},
-                  activeColor: AppTheme.primary,
+                  activeThumbColor: AppTheme.primary,
                 ),
               ),
               _SettingsTile(

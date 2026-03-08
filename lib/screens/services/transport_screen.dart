@@ -39,7 +39,7 @@ class _TransportScreenState extends State<TransportScreen> {
             // Live Tracking Header
             Container(
               padding: const EdgeInsets.all(20),
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 gradient: LinearGradient(
                   colors: [AppTheme.primary, AppTheme.primaryDark],
                   begin: Alignment.topLeft,
@@ -48,9 +48,9 @@ class _TransportScreenState extends State<TransportScreen> {
               ),
               child: Column(
                 children: [
-                  Row(
+                  const Row(
                     mainAxisAlignment: MainAxisAlignment.center,
-                    children: const [
+                    children: [
                       Icon(Icons.directions_bus, color: Colors.white, size: 32),
                       SizedBox(width: 12),
                       Text(
@@ -144,9 +144,9 @@ class _TransportScreenState extends State<TransportScreen> {
             const SizedBox(height: 16),
 
             // Bus Routes
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16),
-              child: const Text(
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 16),
+              child: Text(
                 'Bus Routes',
                 style: TextStyle(
                   fontSize: 18,

@@ -1,6 +1,5 @@
 import 'package:campus_connect/screens/auth/splash_screen.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:campus_connect/main.dart';
 import 'package:campus_connect/models/user_model.dart';

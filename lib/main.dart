@@ -1,6 +1,5 @@
 import 'package:campus_connect/providers/language_provider.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'config/theme.dart';
 import 'models/user_model.dart';

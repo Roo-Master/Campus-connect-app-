@@ -7,7 +7,7 @@ import '../services/ai_chart_services.dart';
 import 'backend/ai_model.dart';
 
 class AiChatScreen extends StatefulWidget {
-  const AiChatScreen({Key? key}) : super(key: key);
+  const AiChatScreen({super.key});
 
   @override
   State<AiChatScreen> createState() => _AiChatScreenState();

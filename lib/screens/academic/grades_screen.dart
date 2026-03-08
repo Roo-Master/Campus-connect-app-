@@ -42,7 +42,7 @@ class _GradesScreenState extends State<GradesScreen> {
   Widget _buildCGPAHeader(double cgpa) {
     return Container(
       padding: const EdgeInsets.all(24),
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         gradient: LinearGradient(
           colors: [AppTheme.primary, AppTheme.primaryDark],
           begin: Alignment.topLeft,
