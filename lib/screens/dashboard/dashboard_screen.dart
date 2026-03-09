@@ -180,11 +180,19 @@ class HomeTab extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 _buildHeader(user, verticalPadding),
-                QuickActionsWidget(onActionTap: (action) {
-                  final role = user.role ?? '';
-                  _handleActionTap(action, userRole: role);
-                }),
-                const SizedBox(height: 24),
+                Container(
+                  padding: const EdgeInsets.all(10),
+                  decoration: BoxDecoration(
+                    color: Colors.blue.shade50, // background color
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  child: QuickActionsWidget(
+                    onActionTap: (action) {
+                      final role = user.role ?? '';
+                      _handleActionTap(action, userRole: role, context: null);
+                    },
+                  ),
+                ),
                 _buildUpcomingEvents(horizontalPadding),
                 const SizedBox(height: 24),
                 _buildMyCourses(horizontalPadding),
@@ -448,7 +456,9 @@ class HomeTab extends StatelessWidget {
     );
   }
 
-  void _handleActionTap(String action, {required String userRole}) {
+  void _handleActionTap(String action,
+
+          {required BuildContext? context, required String userRole}) {
     // Only Class Rep can access Schedule
     bool isClassRep = userRole.toLowerCase() == 'class rep';
 
@@ -577,7 +587,7 @@ class HomeTab extends StatelessWidget {
               title: const Text('My Schedule'),
               onTap: () {
                 final role = user.role ?? '';
-                _handleActionTap('scheduler', userRole: role);
+                _handleActionTap('scheduler', userRole: role, context: null);
               }
           ),
           ListTile(

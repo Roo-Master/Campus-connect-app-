@@ -15,6 +15,8 @@ class QuickActionsWidget extends StatelessWidget {
       {'icon': Icons.directions_bus, 'label': 'Transport', 'color': Colors.purple},
       {'icon': Icons.local_library, 'label': 'Library', 'color': Colors.indigo},
       {'icon': Icons.warning, 'label': 'Emergency', 'color': Colors.red},
+      {'icon': Icons.event, 'label': 'Events', 'color': Colors.cyan},
+      {'icon': Icons.class_outlined, 'label': 'Scheduler', 'color': Colors.pink},
     ];
 
     return Column(
@@ -60,6 +62,7 @@ class QuickActionsWidget extends StatelessWidget {
                       Text(
                         action['label'] as String,
                         style: const TextStyle(fontSize: 12),
+                        selectionColor:Colors.black,
                         textAlign: TextAlign.center,
                         maxLines: 1,
                         overflow: TextOverflow.ellipsis,

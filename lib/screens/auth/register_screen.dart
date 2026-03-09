@@ -84,7 +84,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
       );
 
       // Update the profile using ProfileService
-      Provider.of<ProfileService>(context, listen: false).updateUserProfile(userProfile as UserModel);
+      Provider.of<ProfileService>(context!, listen: false).updateUserProfile(userProfile as UserModel);
 
       // Show success dialog and navigate to the profile page
       if (mounted) {

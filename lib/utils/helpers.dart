@@ -93,7 +93,7 @@ class Helpers {
   static Color getEventColor(String category) {
     switch (category.toLowerCase()) {
       case 'academic':
-        return Colors.blue;
+        return Colors.amberAccent;
       case 'career':
         return Colors.green;
       case 'cultural':
@@ -102,6 +102,8 @@ class Helpers {
         return Colors.orange;
       case 'social':
         return Colors.pink;
+      case 'Scheduler':
+        return Colors.blue;
       default:
         return Colors.grey;
     }

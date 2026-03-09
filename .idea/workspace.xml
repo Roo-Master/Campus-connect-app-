@@ -5,36 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c58b4bf4-9d1b-48cb-b237-74d1abe282e3" name="Changes" comment="Merge remote-tracking branch 'origin/main'">
-      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/da086130bd5d661792232033a16192e0/kernel_snapshot_program.stamp" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/da086130bd5d661792232033a16192e0/kernel_snapshot_program.stamp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/package_graph.json" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/package_graph.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/firebender/chat_history.db-shm" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/firebender/chat_history.db-shm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/firebender/chat_history.db-wal" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/firebender/chat_history.db-wal" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/3bf342829f4d3b1330c114bfc2c3f7f2.cache.dill.track.dill" beforeDir="false" afterPath="$PROJECT_DIR$/build/3bf342829f4d3b1330c114bfc2c3f7f2.cache.dill.track.dill" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/flutter_assets/AssetManifest.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/flutter_assets/AssetManifest.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/flutter_assets/kernel_blob.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/flutter_assets/kernel_blob.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/ai/ai_chat_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/ai/ai_chat_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/config/theme.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/config/theme.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/models/building_model.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/models/building_model.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/models/notification_model.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/models/notification_model.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/screens/academic/courses_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/academic/courses_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/screens/academic/grades_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/academic/grades_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/screens/auth/forget_password_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/auth/forget_password_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/models/user_model.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/models/user_model.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/screens/auth/register_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/auth/register_screen.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/screens/dashboard/dashboard_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/dashboard/dashboard_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/screens/dashboard/schedule_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/dashboard/schedule_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/screens/emergency/emergency_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/emergency/emergency_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/screens/events/create_event_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/events/create_event_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/screens/map/campus_map_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/map/campus_map_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/screens/notifications/notifications_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/notifications/notifications_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/screens/profile/help_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/profile/help_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/screens/profile/settings_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/profile/settings_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/screens/services/transport_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/services/transport_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/screens/settings/settings_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/settings/settings_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/widget_test.dart" beforeDir="false" afterPath="$PROJECT_DIR$/test/widget_test.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/screens/dashboard/quick_actions_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/dashboard/quick_actions_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/screens/profile/profile_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/profile/profile_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/utils/helpers.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/utils/helpers.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -293,7 +270,23 @@
       <option name="project" value="LOCAL" />
       <updated>1773005004009</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="Merge remote-tracking branch 'origin/main'">
+      <option name="closed" value="true" />
+      <created>1773068647492</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1773068647492</updated>
+    </task>
+    <task id="LOCAL-00022" summary="Merge remote-tracking branch 'origin/main'">
+      <option name="closed" value="true" />
+      <created>1773068686410</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1773068686410</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

@@ -13,7 +13,6 @@ class UserModel with ChangeNotifier {
   String? profileImage;
   String? phoneNumber;
   String? address;
-  String? bloodGroup;
   String? emergencyContact;
   bool? isHosteller;
   String? hostelBlock;
@@ -41,7 +40,6 @@ class UserModel with ChangeNotifier {
     profileImage = null;
     phoneNumber = '+1 234 567 8900';
     address = '123 University Lane, Campus City';
-    bloodGroup = 'O+';
     emergencyContact = '+1 987 654 3210';
     isHosteller = true;
     hostelBlock = 'Block A';
@@ -75,7 +73,6 @@ class UserModel with ChangeNotifier {
     String? profileImage,
     String? phoneNumber,
     String? address,
-    String? bloodGroup,
     String? emergencyContact,
     bool? isHosteller,
     String? hostelBlock,
@@ -98,7 +95,6 @@ class UserModel with ChangeNotifier {
       ..profileImage = profileImage ?? this.profileImage
       ..phoneNumber = phoneNumber ?? this.phoneNumber
       ..address = address ?? this.address
-      ..bloodGroup = bloodGroup ?? this.bloodGroup
       ..emergencyContact = emergencyContact ?? this.emergencyContact
       ..isHosteller = isHosteller ?? this.isHosteller
       ..hostelBlock = hostelBlock ?? this.hostelBlock
