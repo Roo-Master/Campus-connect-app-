@@ -149,9 +149,9 @@ class _CoursesScreenState extends State<CoursesScreen> {
         builder: (context, scrollController) {
           return Container(
             padding: const EdgeInsets.all(20),
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               color: Colors.white,
-              borderRadius: const BorderRadius.vertical(top: Radius.circular(20)),
+              borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
             ),
             child: SingleChildScrollView(
               controller: scrollController,

@@ -23,8 +23,7 @@ dependencies:
   carousel_slider: ^4.2.1
   smooth_page_indicator: ^1.1.0
   url_launcher: ^6.3.2
-
-
+  flutter_markdown: ^0.7.0
   # Icons
   cupertino_icons: ^1.0.2
   font_awesome_flutter: ^10.6.0
@@ -33,10 +32,10 @@ dependencies:
   # google_maps_flutter: ^2.5.0
 
   # Firebase (Uncomment when ready for backend)
-  # firebase_core: ^2.24.0
-  # firebase_auth: ^4.16.0
-  # cloud_firestore: ^4.13.0
-  # firebase_messaging: ^14.7.0
+  firebase_core: ^2.24.0
+  firebase_auth: ^4.16.0
+  cloud_firestore: ^4.13.0
+  firebase_messaging: ^14.7.0
 
   # Network
   # dio: ^5.4.0
@@ -44,6 +43,7 @@ dependencies:
   # Charts
   # fl_chart: ^0.63.0
 
+  http: any
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -57,3 +57,12 @@ flutter:
     - assets/icons/kisii.jpg
     - assets/images/logo.png
     - assets/images/kisii.jpg
+    - assets/images/img.png
+    - assets/images/img_1.png
+    - assets/images/Admin_block.png
+    - assets/images/Ict_block.png
+    - assets/images/Library.png
+    - assets/images/main_gate.png
+    - assets/images/PV.png
+    - assets/images/sakagwa_tcblock.png
+    - assets/images/School_of_law_Agriculture.png

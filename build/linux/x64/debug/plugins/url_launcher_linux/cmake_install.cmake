@@ -1,8 +1,8 @@
-# Install script for directory: /home/roomaster/Downloads/StudioProjects-20260228T093506Z-3-001/StudioProjects/campus_connect/linux/flutter/ephemeral/.plugin_symlinks/url_launcher_linux/linux
+# Install script for directory: /home/roomaster/Android/Studio projects/Campus-connect-app-/linux/flutter/ephemeral/.plugin_symlinks/url_launcher_linux/linux
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/roomaster/Downloads/StudioProjects-20260228T093506Z-3-001/StudioProjects/campus_connect/build/linux/x64/debug/bundle")
+  set(CMAKE_INSTALL_PREFIX "/home/roomaster/Android/Studio projects/Campus-connect-app-/build/linux/x64/debug/bundle")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 

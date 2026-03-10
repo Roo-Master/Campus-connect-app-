@@ -60,20 +60,20 @@ class HelpScreen extends StatelessWidget {
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(12),
               ),
-              child: Padding(
-                padding: const EdgeInsets.all(16.0),
+              child: const Padding(
+                padding: EdgeInsets.all(16.0),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const Text(
+                    Text(
                       'Frequently Asked Questions',
                       style:
                       TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                     ),
-                    const SizedBox(height: 12),
+                    SizedBox(height: 12),
                     ExpansionTile(
-                      title: const Text('How do I reset my password?'),
-                      children: const [
+                      title: Text('How do I reset my password?'),
+                      children: [
                         Padding(
                           padding: EdgeInsets.all(8.0),
                           child: Text(
@@ -84,8 +84,8 @@ class HelpScreen extends StatelessWidget {
                       ],
                     ),
                     ExpansionTile(
-                      title: const Text('How do I change the app theme?'),
-                      children: const [
+                      title: Text('How do I change the app theme?'),
+                      children: [
                         Padding(
                           padding: EdgeInsets.all(8.0),
                           child: Text(
@@ -108,11 +108,11 @@ class HelpScreen extends StatelessWidget {
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(12),
               ),
-              child: Padding(
-                padding: const EdgeInsets.all(16.0),
+              child: const Padding(
+                padding: EdgeInsets.all(16.0),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  children: const [
+                  children: [
                     Text(
                       'Tutorials',
                       style:

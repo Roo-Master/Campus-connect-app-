@@ -15,7 +15,7 @@ class ProfileScreen extends StatefulWidget {
 
 class _ProfileScreenState extends State<ProfileScreen> {
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context,) {
     final user = Provider.of<UserModel>(context);
     final authService = Provider.of<AuthService>(context);
 
@@ -55,7 +55,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
             const SizedBox(height: 16),
 
             // Hostel Info (if applicable)
-            //if (user.isHosteller) _buildHostelInfo(user),
+            if(user.hostelBlock != null && user.roomNumber != null)
+              _buildHostelInfo( user.isHosteller as UserModel),
 
             const SizedBox(height: 24),
 
@@ -180,7 +181,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
           const Divider(),
           _buildMenuItem(Icons.location_on, 'Address', () {}),
           const Divider(),
-          _buildMenuItem(Icons.bloodtype, 'Blood Group: ${user.bloodGroup}', () {}),
         ],
       ),
     );

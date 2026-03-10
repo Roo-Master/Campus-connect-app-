@@ -1,86 +1,101 @@
 import 'dart:async';
-import 'dart:convert';
 import 'package:flutter/material.dart';
-import 'package:http/http.dart' as http;
+import 'package:flutter/services.dart';
+import 'package:flutter_markdown/flutter_markdown.dart';
+import 'package:google_fonts/google_fonts.dart';
+import '../services/ai_chart_services.dart';
+import 'backend/ai_model.dart';
 
 class AiChatScreen extends StatefulWidget {
-  const AiChatScreen({Key? key}) : super(key: key);
+  const AiChatScreen({super.key});
 
   @override
   State<AiChatScreen> createState() => _AiChatScreenState();
 }
 
 class _AiChatScreenState extends State<AiChatScreen> {
-  static const String backendUrl = "http://localhost:3000/chat"; // Replace with your backend URL
-  final _controller = TextEditingController();
-  final _scrollController = ScrollController();
+  final TextEditingController _controller = TextEditingController();
+  final ScrollController _scrollController = ScrollController();
+  final AiChatService _chatService = AiChatService();
 
-  bool _isLoading = false;
-
-  final List<ChatMessage> _messages = [
-    ChatMessage(role: 'system', message: 'You are a helpful assistant.'),
+  List<AiChatMessage> _messages = [
+    AiChatMessage(role: "system", content: "You are a helpful assistant."),
   ];
 
-  /* =========================
-     SEND MESSAGE
-  ========================= */
-  Future<void> _sendMessage({String? retryText}) async {
-    final text = retryText ?? _controller.text.trim();
+  StreamSubscription<String>? _streamSubscription;
+  bool _isLoading = false;
+
+  /// Send a message (or regenerate)
+  void _sendMessage({bool regenerate = false}) {
+    final text = regenerate
+        ? _messages.lastWhere((m) => m.role == "user").content
+        : _controller.text.trim();
+
     if (text.isEmpty || _isLoading) return;
 
-    if (retryText == null) {
-      setState(() {
-        _messages.add(ChatMessage(role: 'user', message: text));
-        _controller.clear();
-      });
+    if (!regenerate) {
+      _controller.clear();
+      _messages = List.from(_messages)
+        ..add(AiChatMessage(role: "user", content: text));
     }
 
-    final aiMessage = ChatMessage(role: 'assistant', message: '');
+    final aiMessage = AiChatMessage(role: "assistant", content: "");
+
     setState(() {
-      _messages.add(aiMessage);
+      _messages = List.from(_messages)..add(aiMessage);
       _isLoading = true;
     });
 
     _scrollToBottom();
 
-    try {
-      final response = await http.post(
-        Uri.parse(backendUrl),
-        headers: {"Content-Type": "application/json"},
-        body: jsonEncode({
-          "messages": _messages
-              .map((m) => {"role": m.role, "content": m.message})
-              .toList(),
-        }),
-      );
+    // Cancel previous stream if still running
+    _streamSubscription?.cancel();
 
-      if (response.statusCode != 200) throw Exception("Server error");
-
-      final data = jsonDecode(response.body);
-      final content = data["choices"][0]["message"]["content"] ?? "";
-
-      // Typing effect
-      for (int i = 0; i < content.length; i++) {
-        await Future.delayed(const Duration(milliseconds: 20));
-        setState(() {
-          aiMessage.message += content[i];
+    _streamSubscription =
+        _chatService.sendMessageStream(_messages).listen((chunk) {
+          // Immutable update
+          setState(() {
+            final index = _messages.indexOf(aiMessage);
+            if (index != -1) {
+              final updated = AiChatMessage(
+                role: aiMessage.role,
+                content: _messages[index].content + chunk,
+              );
+              _messages = List.from(_messages)
+                ..removeAt(index)
+                ..insert(index, updated);
+            }
+          });
+          _scrollToBottom();
+        }, onDone: () {
+          setState(() => _isLoading = false);
+        }, onError: (_) {
+          setState(() {
+            final index = _messages.indexOf(aiMessage);
+            if (index != -1) {
+              _messages = List.from(_messages)
+                ..removeAt(index)
+                ..insert(index, AiChatMessage(
+                  role: aiMessage.role,
+                  content: "⚠️ Something went wrong.",
+                ));
+            }
+            _isLoading = false;
+          });
         });
-        _scrollToBottom();
-      }
-    } catch (e) {
-      setState(() {
-        aiMessage.message = '⚠️ Error occurred. Tap to retry.';
-      });
-    } finally {
-      setState(() => _isLoading = false);
-    }
+  }
+
+  void _stopGeneration() {
+    _streamSubscription?.cancel();
+    _streamSubscription = null;
+    setState(() => _isLoading = false);
   }
 
   void _scrollToBottom() {
     WidgetsBinding.instance.addPostFrameCallback((_) {
       if (_scrollController.hasClients) {
         _scrollController.animateTo(
-          _scrollController.position.maxScrollExtent + 100,
+          _scrollController.position.maxScrollExtent + 200,
           duration: const Duration(milliseconds: 300),
           curve: Curves.easeOut,
         );
@@ -88,29 +103,21 @@ class _AiChatScreenState extends State<AiChatScreen> {
     });
   }
 
-  /* =========================
-     UI
-  ========================= */
+  @override
+  void dispose() {
+    _controller.dispose();
+    _scrollController.dispose();
+    _streamSubscription?.cancel();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      extendBodyBehindAppBar: true,
-      backgroundColor: const Color(0xFF020617),
+      backgroundColor: const Color(0xFF343541),
       appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        elevation: 0,
-        title: Row(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Image.asset(
-              'assets/images/logo.png',
-              height: 40,
-              fit: BoxFit.contain,
-            ),
-            const SizedBox(width: 8),
-            const Text('AI Chat'),
-          ],
-        ),
+        backgroundColor: const Color(0xFF202123),
+        title: const Text("ChatGPT"),
       ),
       body: Column(
         children: [
@@ -118,151 +125,122 @@ class _AiChatScreenState extends State<AiChatScreen> {
             child: ListView.builder(
               controller: _scrollController,
               itemCount: _messages.length,
-              itemBuilder: (_, i) {
-                final msg = _messages[i];
-                if (msg.role == 'system') return const SizedBox();
+              itemBuilder: (_, index) {
+                final msg = _messages[index];
+                if (msg.role == "system") return const SizedBox();
 
-                return GestureDetector(
-                  onTap: msg.message.contains('retry')
-                      ? () {
-                    final lastUserMessage = _messages
-                        .lastWhere((m) => m.role == 'user')
-                        .message;
-                    _sendMessage(retryText: lastUserMessage);
-                  }
-                      : null,
-                  child: msg.role == 'user'
-                      ? _UserMessage(message: msg.message)
-                      : _AiMessage(message: msg.message),
+                final isUser = msg.role == "user";
+
+                return Container(
+                  color: isUser
+                      ? const Color(0xFF343541)
+                      : const Color(0xFF444654),
+                  padding: const EdgeInsets.symmetric(
+                      horizontal: 16, vertical: 14),
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      CircleAvatar(
+                        backgroundColor:
+                        isUser ? Colors.blue : Colors.green,
+                        child: Text(
+                          isUser ? "U" : "AI",
+                          style: const TextStyle(color: Colors.white),
+                        ),
+                      ),
+                      const SizedBox(width: 12),
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            MarkdownBody(
+                              data: msg.content,
+                              selectable: true,
+                              styleSheet: MarkdownStyleSheet(
+                                p: GoogleFonts.inter(
+                                  color: Colors.white,
+                                  fontSize: 15,
+                                ),
+                                code: const TextStyle(
+                                  backgroundColor: Colors.black54,
+                                  color: Colors.greenAccent,
+                                ),
+                              ),
+                            ),
+                            if (!isUser)
+                              Row(
+                                children: [
+                                  IconButton(
+                                    icon: const Icon(Icons.copy,
+                                        size: 18, color: Colors.white70),
+                                    onPressed: () {
+                                      Clipboard.setData(
+                                          ClipboardData(text: msg.content));
+                                      ScaffoldMessenger.of(context)
+                                          .showSnackBar(
+                                        const SnackBar(content: Text("Copied")),
+                                      );
+                                    },
+                                  ),
+                                  IconButton(
+                                    icon: const Icon(Icons.refresh,
+                                        size: 18, color: Colors.white70),
+                                    onPressed: () =>
+                                        _sendMessage(regenerate: true),
+                                  ),
+                                ],
+                              ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
                 );
               },
             ),
           ),
-          _InputBar(
-            controller: _controller,
-            isLoading: _isLoading,
-            onSend: () => _sendMessage(),
-          ),
+          if (_isLoading)
+            Padding(
+              padding: const EdgeInsets.all(8),
+              child: TextButton(
+                onPressed: _stopGeneration,
+                child: const Text("Stop generating"),
+              ),
+            ),
+          _buildInputBar(),
         ],
       ),
     );
   }
-}
 
-/* =========================
-   MODEL
-========================= */
-class ChatMessage {
-  final String role; // system, user, assistant
-  String message;
-
-  ChatMessage({required this.role, required this.message});
-}
-
-/* =========================
-   USER MESSAGE
-========================= */
-class _UserMessage extends StatelessWidget {
-  final String message;
-
-  const _UserMessage({required this.message});
-
-  @override
-  Widget build(BuildContext context) {
-    return Align(
-      alignment: Alignment.centerRight,
-      child: Container(
-        margin: const EdgeInsets.all(8),
-        padding: const EdgeInsets.all(12),
-        decoration: BoxDecoration(
-          color: const Color(0xFF38BDF8),
-          borderRadius: BorderRadius.circular(10),
-        ),
-        child: Text(
-          message,
-          style: const TextStyle(color: Colors.black),
-        ),
-      ),
-    );
-  }
-}
-
-/* =========================
-   AI MESSAGE
-========================= */
-class _AiMessage extends StatelessWidget {
-  final String message;
-
-  const _AiMessage({required this.message});
-
-  @override
-  Widget build(BuildContext context) {
-    return Align(
-      alignment: Alignment.centerLeft,
-      child: Container(
-        margin: const EdgeInsets.all(8),
-        padding: const EdgeInsets.all(12),
-        decoration: BoxDecoration(
-          color: const Color(0xFF1E293B),
-          borderRadius: BorderRadius.circular(10),
-        ),
-        child: Text(
-          message,
-          style: const TextStyle(color: Colors.white),
-        ),
-      ),
-    );
-  }
-}
-
-/* =========================
-   INPUT BAR
-========================= */
-class _InputBar extends StatelessWidget {
-  final TextEditingController controller;
-  final bool isLoading;
-  final VoidCallback onSend;
-
-  const _InputBar({
-    required this.controller,
-    required this.isLoading,
-    required this.onSend,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(8),
+  Widget _buildInputBar() {
+    return Container(
+      padding: const EdgeInsets.all(10),
+      color: const Color(0xFF202123),
       child: Row(
         children: [
           Expanded(
             child: TextField(
-              controller: controller,
+              controller: _controller,
               textInputAction: TextInputAction.send,
-              onSubmitted: (_) => onSend(),
+              onSubmitted: (_) => _sendMessage(),
               style: const TextStyle(color: Colors.white),
               decoration: InputDecoration(
-                hintText: 'Type a message...',
-                hintStyle: TextStyle(color: Colors.grey[400]),
+                hintText: "Send a message...",
+                hintStyle: const TextStyle(color: Colors.white54),
                 filled: true,
-                fillColor: const Color(0xFF020617),
+                fillColor: const Color(0xFF40414F),
                 border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(10),
+                  borderRadius: BorderRadius.circular(30),
+                  borderSide: BorderSide.none,
                 ),
               ),
             ),
           ),
           const SizedBox(width: 8),
-          SizedBox(
-            width: 40,
-            height: 40,
-            child: isLoading
-                ? const CircularProgressIndicator()
-                : IconButton(
-              icon: const Icon(Icons.send),
-              color: Colors.white,
-              onPressed: onSend,
-            ),
+          IconButton(
+            icon: const Icon(Icons.send, color: Colors.white),
+            onPressed: _sendMessage,
           ),
         ],
       ),
