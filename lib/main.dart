@@ -1,5 +1,5 @@
+import 'package:campus_connect/providers/language_provider.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'config/theme.dart';
 import 'models/user_model.dart';
@@ -8,7 +8,7 @@ import 'screens/auth/login_screen.dart';
 import 'screens/dashboard/dashboard_screen.dart';
 import 'services/auth_service.dart';
 import 'services/notification_service.dart';
-import 'screens/auth/register_screen.dart' hide RegisterScreen;
+import 'screens/auth/register_screen.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -18,6 +18,7 @@ void main() {
         ChangeNotifierProvider(create: (_) => AuthService()),
         ChangeNotifierProvider(create: (_) => UserModel()),
         ChangeNotifierProvider(create: (_) => NotificationService()),
+        ChangeNotifierProvider(create: (_) => LanguageProvider()),
       ],
       child: const CampusConnectApp(),
     ),
@@ -35,7 +36,7 @@ class CampusConnectApp extends StatelessWidget {
       theme: AppTheme.lightTheme,
       darkTheme: AppTheme.darkTheme,
       themeMode: ThemeMode.system,
-      initialRoute: '/',
+      initialRoute: '/login',
       routes: {
         '/': (context) => const SplashScreen(),
         '/login': (context) => const LoginScreen(),

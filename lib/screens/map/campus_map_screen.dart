@@ -42,23 +42,50 @@ class _CampusMapScreenState extends State<CampusMapScreen> {
       ),
       body: Column(
         children: [
-          Container(
-            padding: const EdgeInsets.all(16),
-            color: Colors.grey.shade100,
-            child: TextField(
-              controller: _searchController,
-              onChanged: (value) => setState(() => _searchQuery = value),
-              decoration: InputDecoration(
-                hintText: 'Search buildings, rooms...',
-                prefixIcon: const Icon(Icons.search),
-                filled: true,
-                fillColor: Colors.white,
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(12),
-                  borderSide: BorderSide.none,
+          Row(
+            children: [
+              Expanded(
+                child: Container(
+                  height: 50,
+                  padding: const EdgeInsets.symmetric(horizontal: 12),
+                  decoration: BoxDecoration(
+                    color: Colors.grey.shade100,
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  child: Row(
+                    children: [
+                      const SizedBox(width: 8),
+                      Expanded(
+                        child: TextField(
+                          controller: _searchController,
+                          onChanged: (value) => setState(() => _searchQuery = value),
+                          decoration: const InputDecoration(
+                            hintText: 'Search buildings, rooms...',
+                            border: InputBorder.none,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
-            ),
+              const SizedBox(width: 8),
+              Container(
+                height: 50,
+                width: 50,
+                decoration: BoxDecoration(
+                  color: Theme.of(context).primaryColor,
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                child: IconButton(
+                  onPressed: () {
+                    // Perform search
+                    print('Search: $_searchQuery');
+                  },
+                  icon: const Icon(Icons.search, color: Colors.white),
+                ),
+              ),
+            ],
           ),
           Expanded(
             child: Row(
@@ -133,12 +160,12 @@ class _CampusMapScreenState extends State<CampusMapScreen> {
                 // Buildings List
                 Container(
                   width: 200,
-                  color: Colors.white,
+                  color: Colors.blue,
                   child: Column(
                     children: [
                       Container(
                         padding: const EdgeInsets.all(12),
-                        color: Colors.grey.shade100,
+                        color: Colors.black,
                         child: const Text(
                           'Buildings',
                           style: TextStyle(
@@ -282,27 +309,27 @@ class _CampusMapScreenState extends State<CampusMapScreen> {
                         ))
                             .toList(),
                       ),
-                      if (building.rooms.isNotEmpty) ...[
-                  const SizedBox(height: 16),
-              const Text(
-              'Rooms',
-              style: TextStyle(
-              fontSize: 16,
-              fontWeight: FontWeight.bold,
-              ),
-              ),
-              const SizedBox(height: 8),
-              ...building.rooms.map((room) => Card(
-              margin: const EdgeInsets.only(bottom: 8),
-              child: ListTile(
-              leading: const Icon(Icons.meeting_room),
-              title: Text('${room.type} ${room.number}'),
-              subtitle: Text('Floor ${room.floor} • Capacity: ${room.capacity}'),
-                trailing: const Icon(Icons.directions),
-                onTap: () {},
-              ),
-              )),
+                       if (building.rooms.isNotEmpty) ...[
+                        const SizedBox(height: 16),
+                      const Text(
+                          'Rooms',
+                           style: TextStyle(
+                            fontSize: 16,
+                             fontWeight: FontWeight.bold,
+                         ),
+                      ),
+                      const SizedBox(height: 8),
+                        ...building.rooms.map((room) => Card(
+                         margin: const EdgeInsets.only(bottom: 8), child: ListTile(
+                          leading: const Icon(Icons.meeting_room),
+                         title: Text('${room.type} ${room.number}'),
+                          subtitle: Text('Floor ${room.floor} • Capacity: ${room.capacity}'),
+                         trailing: const Icon(Icons.directions),
+                         onTap: () {},
+                         ),
+                        )),
                       ],
+
                             const SizedBox(height: 24),
                             SizedBox(
                               width: double.infinity,

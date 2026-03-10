@@ -1,0 +1,1 @@
+ /home/roomaster/Android/Studio\ projects/Campus-connect-app-/.dart_tool/flutter_build/da086130bd5d661792232033a16192e0/native_assets.json: 

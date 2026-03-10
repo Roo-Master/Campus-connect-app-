@@ -48,7 +48,7 @@ class DefaultFirebaseOptions {
     appId: '1:123456789:ios:abcdef123456',
     messagingSenderId: '123456789',
     projectId: 'campus-connect-app',
-    storageBucket: 'campus-connect-app.appspot.com',
+    storageBucket: 'campus-connect-app.apps pot.com',
     iosClientId: 'YOUR_IOS_CLIENT_ID',
     iosBundleId: 'com.campusconnect.app',
   );

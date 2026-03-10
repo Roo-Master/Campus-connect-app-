@@ -1,9 +1,10 @@
+import 'package:campus_connect/models/user_model.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:flutter/src/material/colors.dart';
 import '../../config/theme.dart';
-import '../../services/auth_service.dart';
+import '../services/profile_services.dart';
+import '../../models/user_profile.dart';
 import 'login_screen.dart';
 
 class RegisterScreen extends StatefulWidget {
@@ -30,18 +31,16 @@ class _RegisterScreenState extends State<RegisterScreen> {
   bool _isLoading = false;
 
   String _selectedUserType = 'Student';
-  String? _selectedYear;
-  String? _selectedProgram;
+  String? _selectedYear = 'Year 1';
+  String? _selectedProgram = 'Degree';
 
-  final List<String> _userTypes = ['Student', 'Faculty', 'Staff'];
+  final List<String> _userTypes = ['Student', 'Faculty', 'Staff' ,'Class_Representative'];
   final List<String> _years = ['Year 1', 'Year 2', 'Year 3', 'Year 4', 'Year 5'];
   final List<String> _programs = [
-    'B.Tech',
-    'M.Tech',
-    'B.Sc',
-    'M.Sc',
-    'BBA',
-    'MBA',
+    'Certificate',
+    'Diploma',
+    'Degree',
+    'Masters',
     'Ph.D',
   ];
 
@@ -58,6 +57,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
     super.dispose();
   }
 
+  // ✅ Updated _handleRegister method with ProfileService integration
   Future<void> _handleRegister() async {
     if (!_formKey.currentState!.validate()) return;
     if (!_acceptTerms) {
@@ -71,7 +71,22 @@ class _RegisterScreenState extends State<RegisterScreen> {
       // Simulate API call
       await Future.delayed(const Duration(seconds: 2));
 
-      // For demo purposes, show success and navigate to login
+      // Create a UserProfile object with the entered data
+      final userProfile = UserProfile (
+        firstName: _firstNameController.text,
+        lastName: _lastNameController.text,
+        email: _emailController.text,
+        phone: _phoneController.text,
+        studentId: _studentIdController.text,
+        department: _departmentController.text,
+        program: _selectedProgram,
+        year: _selectedYear,
+      );
+
+      // Update the profile using ProfileService
+      Provider.of<ProfileService>(context!, listen: false).updateUserProfile(userProfile as UserModel);
+
+      // Show success dialog and navigate to the profile page
       if (mounted) {
         _showSuccessDialog();
       }
@@ -113,7 +128,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
             ),
             const SizedBox(height: 12),
             Text(
-              'Please check your email to verify your account.',
+              'Your profile has been created successfully.',
               textAlign: TextAlign.center,
               style: TextStyle(color: Colors.grey.shade600),
             ),
@@ -141,7 +156,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
       context: context,
       builder: (context) => AlertDialog(
         title: const Text('Terms of Service'),
-        content: SingleChildScrollView(
+        content: const SingleChildScrollView(
           child: Text(
             'By using Campus Connect, you agree to the following terms:\n\n'
                 '1. You will use the app only for legitimate academic and campus-related purposes.\n\n'
@@ -170,7 +185,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
       context: context,
       builder: (context) => AlertDialog(
         title: const Text('Privacy Policy'),
-        content: SingleChildScrollView(
+        content: const SingleChildScrollView(
           child: Text(
             'Campus Connect is committed to protecting your privacy.\n\n'
                 'Information We Collect:\n'
@@ -272,6 +287,15 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   const SizedBox(height: 16),
                   _buildProgramAndYearFields(),
                 ],
+                if(_selectedUserType == 'Faculty' || _selectedUserType == 'Staff')...
+                [
+                  const SizedBox(height: 16),
+                  _buildDepartmentField(),
+                ],
+                if(_selectedUserType == 'Class_Representative')...[
+                  const SizedBox(height: 16),
+                  _buildProgramAndYearFields(),
+                ],
                 const SizedBox(height: 24),
 
                 // Password Section
@@ -349,6 +373,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
         return Icons.person;
       case 'Staff':
         return Icons.work;
+        case 'Class_Representative':
+          return Icons.group;
       default:
         return Icons.person;
     }
@@ -452,7 +478,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
       decoration: InputDecoration(
         labelText: _selectedUserType == 'Student' ? 'Student ID' : 'Employee ID',
         prefixIcon: const Icon(Icons.badge_outlined),
-        hintText: _selectedUserType == 'Student' ? '2023001' : 'EMP001',
+        hintText: _selectedUserType == 'Student' ? 'IN16/00000/01' : 'EMP001',
       ),
       validator: (value) {
         if (value == null || value.isEmpty) {
@@ -485,7 +511,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
       children: [
         Expanded(
           child: DropdownButtonFormField<String>(
-            value: _selectedProgram,
+            initialValue: _selectedProgram,
             decoration: const InputDecoration(
               labelText: 'Program',
               prefixIcon: Icon(Icons.school_outlined),
@@ -509,7 +535,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
         const SizedBox(width: 12),
         Expanded(
           child: DropdownButtonFormField<String>(
-            value: _selectedYear,
+            initialValue: _selectedYear,
             decoration: const InputDecoration(
               labelText: 'Year',
               prefixIcon: Icon(Icons.calendar_today_outlined),
@@ -533,6 +559,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
       ],
     );
   }
+
+  // ...continuing from _buildPasswordField
 
   Widget _buildPasswordField() {
     return TextFormField(
@@ -588,6 +616,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
       },
     );
   }
+
   Widget _buildTermsCheckbox() {
     return Row(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -703,3 +732,4 @@ class _RegisterScreenState extends State<RegisterScreen> {
     );
   }
 }
+

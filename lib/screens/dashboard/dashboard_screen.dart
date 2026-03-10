@@ -1,5 +1,7 @@
+import 'package:campus_connect/screens/dashboard/schedule_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import '../../ai/ai_chat_screen.dart';
 import '../../config/theme.dart';
 import '../../models/user_model.dart';
 import '../../models/event_model.dart';
@@ -11,12 +13,14 @@ import '../academic/courses_screen.dart';
 import '../academic/grades_screen.dart';
 import '../events/events_screen.dart';
 import '../map/campus_map_screen.dart';
+import '../notifications/notifications_screen.dart';
+import '../profile/help_screen.dart';
 import '../profile/profile_screen.dart';
+import '../profile/settings_screen.dart';
 import '../services/fees_screen.dart';
 import '../services/transport_screen.dart';
 import '../emergency/emergency_screen.dart';
 import 'quick_actions_widget.dart';
-import 'news_feed_widget.dart';
 
 class DashboardScreen extends StatefulWidget {
   const DashboardScreen({super.key});
@@ -76,77 +80,136 @@ class _DashboardScreenState extends State<DashboardScreen> {
 class HomeTab extends StatelessWidget {
   const HomeTab({super.key});
 
-  BuildContext? get context => null;
+  get context => null;
 
   @override
   Widget build(BuildContext context) {
     final user = Provider.of<UserModel>(context);
     final notificationService = Provider.of<NotificationService>(context);
 
+    // Responsive padding calculation
+    final horizontalPadding = MediaQuery.of(context).size.width < 600 ? 16.0 : 24.0;
+    final verticalPadding = MediaQuery.of(context).size.width < 600 ? 20.0 : 30.0;
+
     return Scaffold(
+      extendBodyBehindAppBar: true,
+      backgroundColor: Colors.blueAccent,
       appBar: AppBar(
-        title: const Text('Campus Connect'),
-        backgroundColor: AppTheme.primary,
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        title: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Image.asset(
+              'assets/images/kisii.jpg',
+              height: 40,
+              fit: BoxFit.contain,
+            ),
+            const SizedBox(width: 8),
+            const Text('Dashboard'),
+          ],
+        ),
         foregroundColor: Colors.white,
         actions: [
-          Stack(
-            children: [
-              IconButton(
-                onPressed: () {},
-                icon: const Icon(Icons.notifications_outlined),
-              ),
-              if (notificationService.unreadCount > 0)
-                Positioned(
-                  right: 8,
-                  top: 8,
-                  child: Container(
-                    padding: const EdgeInsets.all(4),
-                    decoration: const BoxDecoration(
-                      color: Colors.red,
-                      shape: BoxShape.circle,
-                    ),
-                    child: Text(
-                      '${notificationService.unreadCount}',
-                      style: const TextStyle(
-                        color: Colors.white,
-                        fontSize: 10,
-                        fontWeight: FontWeight.bold,
+          // Notification Bell with Badge
+          Consumer<NotificationService>(
+            builder: (context, notificationService, _) {
+              return Stack(
+                children: [
+                  IconButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => const NotificationsScreen()),
+                      );
+                    },
+                    icon: const Icon(Icons.notifications_outlined),
+                  ),
+                  if (notificationService.unreadCount > 0)
+                    Positioned(
+                      right: 8,
+                      top: 8,
+                      child: Container(
+                        padding: const EdgeInsets.all(4),
+                        decoration: const BoxDecoration(
+                          color: Colors.red,
+                          shape: BoxShape.circle,
+                        ),
+                        constraints: const BoxConstraints(
+                          minWidth: 16,
+                          minHeight: 16,
+                        ),
+                        child: Text(
+                          '${notificationService.unreadCount}',
+                          style: const TextStyle(
+                            color: Colors.white,
+                            fontSize: 10,
+                            fontWeight: FontWeight.bold,
+                          ),
+                          textAlign: TextAlign.center,
+                        ),
                       ),
                     ),
-                  ),
-                ),
-            ],
+                ],
+              );
+            },
           ),
+          // Settings Button
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const SettingsScreen()),
+              );
+            },
             icon: const Icon(Icons.settings_outlined),
           ),
         ],
       ),
       drawer: _buildDrawer(context),
-      body: SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            _buildHeader(user),
-            const SizedBox(height: 20),
-            QuickActionsWidget(onActionTap: _handleActionTap),
-            const SizedBox(height: 24),
-            _buildUpcomingEvents(),
-            const SizedBox(height: 24),
-            _buildMyCourses(),
-            const SizedBox(height: 24),
-            _buildAcademicProgress(),
-            const SizedBox(height: 24),
-          ],
+      body: Container(
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage("assets/images/img.png"),
+            fit: BoxFit.cover,
+          ),
+        ),
+        child: SafeArea(
+          child: SingleChildScrollView(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                _buildHeader(user, verticalPadding),
+                Container(
+                  padding: const EdgeInsets.all(10),
+                  decoration: BoxDecoration(
+                    color: Colors.blue.shade50, // background color
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  child: QuickActionsWidget(
+                    onActionTap: (action) {
+                      final role = user.role ?? '';
+                      _handleActionTap(action, userRole: role, context: null);
+                    },
+                  ),
+                ),
+                _buildUpcomingEvents(horizontalPadding),
+                const SizedBox(height: 24),
+                _buildMyCourses(horizontalPadding),
+                const SizedBox(height: 24),
+                _buildAcademicProgress(horizontalPadding),
+                const SizedBox(height: 24),
+              ],
+            ),
+          ),
         ),
       ),
     );
   }
 
-  Widget _buildHeader(UserModel user) {
+  Widget _buildHeader(UserModel user, double verticalPadding) {
     return Container(
-      padding: const EdgeInsets.all(20),
+      padding: EdgeInsets.symmetric(horizontal: 20, vertical: verticalPadding),
       decoration: const BoxDecoration(
         gradient: LinearGradient(
           colors: [AppTheme.primary, AppTheme.primaryDark],
@@ -212,11 +275,11 @@ class HomeTab extends StatelessWidget {
     );
   }
 
-  Widget _buildUpcomingEvents() {
+  Widget _buildUpcomingEvents(double horizontalPadding) {
     final events = EventModel.getMockEvents().take(3).toList();
 
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 16),
+      padding: EdgeInsets.symmetric(horizontal: horizontalPadding),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -260,32 +323,32 @@ class HomeTab extends StatelessWidget {
     );
   }
 
-  Widget _buildMyCourses() {
+  Widget _buildMyCourses(double horizontalPadding) {
     final courses = CourseModel.getEnrolledCourses();
 
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 16),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
+        padding: EdgeInsets.symmetric(horizontal: horizontalPadding),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
           Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              const Text(
-                'My Courses',
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-              ),
-              TextButton(
-                onPressed: () {},
-                child: const Text('View All'),
-              ),
-            ],
-          ),
-          const SizedBox(height: 8),
-          ...courses.map((course) => Card(
-            margin: const EdgeInsets.only(bottom: 12),
-            child: ListTile(
-              leading: Container(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            const Text(
+              'My Courses',
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+            ),
+            TextButton(
+              onPressed: () {},
+              child: const Text('View All'),
+            ),
+          ],
+        ),
+        const SizedBox(height: 8),
+        ...courses.map((course) => Card(
+        margin: const EdgeInsets.only(bottom: 12),
+        child: ListTile(
+            leading: Container(
                 width: 40,
                 height: 40,
                 decoration: BoxDecoration(
@@ -293,33 +356,33 @@ class HomeTab extends StatelessWidget {
                   borderRadius: BorderRadius.circular(8),
                 ),
                 child: Center(
-                  child: Text(
-                    course.code.substring(0, 2),
-                    style: TextStyle(
-                      color: course.color,
-                      fontWeight: FontWeight.bold,
+                    child: Text(
+                      course.code.substring(0, 2),
+                      style: TextStyle(
+                        color: course.color,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
-                  ),
                 ),
-              ),
-              title: Text(course.name),
-              subtitle: Text(course.schedule),
-              trailing: const Icon(Icons.arrow_forward_ios, size: 16),
-              onTap: () {},
             ),
-          )),
-        ],
-      ),
+          title: Text(course.name),
+          subtitle: Text(course.schedule),
+          trailing: const Icon(Icons.arrow_forward_ios, size: 16),
+          onTap: () {},
+        ),
+        )),
+          ],
+        ),
     );
   }
 
-  Widget _buildAcademicProgress() {
+  Widget _buildAcademicProgress(double horizontalPadding) {
     final grades = GradeModel.getMockGrades();
     final cgpa = GradeModel.calculateCGPA(grades);
     final progress = (grades.length / 8) * 100;
 
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 16),
+      padding: EdgeInsets.symmetric(horizontal: horizontalPadding),
       child: Card(
         child: Padding(
           padding: const EdgeInsets.all(16),
@@ -393,7 +456,12 @@ class HomeTab extends StatelessWidget {
     );
   }
 
-  void _handleActionTap(String action) {
+  void _handleActionTap(String action,
+
+          {required BuildContext? context, required String userRole}) {
+    // Only Class Rep can access Schedule
+    bool isClassRep = userRole.toLowerCase() == 'class rep';
+
     switch (action) {
       case 'courses':
         Navigator.push(
@@ -401,6 +469,7 @@ class HomeTab extends StatelessWidget {
           MaterialPageRoute(builder: (context) => const CoursesScreen()),
         );
         break;
+
       case 'grades':
         Navigator.push(
           context!,
@@ -414,20 +483,64 @@ class HomeTab extends StatelessWidget {
           MaterialPageRoute(builder: (context) => const FeesScreen()),
         );
         break;
+
       case 'transport':
         Navigator.push(
           context!,
           MaterialPageRoute(builder: (context) => const TransportScreen()),
         );
         break;
+
       case 'emergency':
         Navigator.push(
           context!,
           MaterialPageRoute(builder: (context) => const EmergencyScreen()),
         );
         break;
+
       case 'library':
+      // Implement library functionality if needed
         break;
+
+      case 'scheduler':
+        if (isClassRep) {
+          Navigator.push(
+            context!,
+            MaterialPageRoute(builder: (context) => const ScheduleScreen()),
+          );
+        } else {
+          // Shouting color for unauthorized access (bright red)
+          ScaffoldMessenger.of(context!).showSnackBar(
+            const SnackBar(
+              content: Text(
+                "🚫 ACCESS DENIED! Only Class Rep can view the scheduler.",
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 16,
+                ),
+              ),
+              backgroundColor: Colors.redAccent,
+              duration: Duration(seconds: 3),
+            ),
+          );
+        }
+        break;
+
+      default:
+      // Shouting color for unknown action (bright orange)
+        ScaffoldMessenger.of(context!).showSnackBar(
+          const SnackBar(
+            content: Text(
+              "⚠️ ACTION NOT RECOGNIZED!",
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 16,
+              ),
+            ),
+            backgroundColor: Colors.deepOrangeAccent,
+            duration: Duration(seconds: 3),
+          ),
+        );
     }
   }
 
@@ -440,7 +553,7 @@ class HomeTab extends StatelessWidget {
         padding: EdgeInsets.zero,
         children: [
           UserAccountsDrawerHeader(
-            decoration: BoxDecoration(color: AppTheme.primary),
+            decoration: const BoxDecoration(color: AppTheme.primary),
             accountName: Text(
               user.fullName,
               style: const TextStyle(fontWeight: FontWeight.bold),
@@ -458,28 +571,94 @@ class HomeTab extends StatelessWidget {
             ),
           ),
           ListTile(
-            leading: const Icon(Icons.person),
+            leading: const Icon(Icons.person,
+              color: Colors.blueAccent,
+            ),
             title: const Text('My Profile'),
-            onTap: () {},
+            onTap: () {
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => const ProfileScreen()));
+            },
           ),
           ListTile(
-            leading: const Icon(Icons.settings),
+              leading: const Icon(Icons.calendar_today,
+                color: Colors.green,
+              ),
+              title: const Text('My Schedule'),
+              onTap: () {
+                final role = user.role ?? '';
+                _handleActionTap('scheduler', userRole: role, context: null);
+              }
+          ),
+          ListTile(
+            leading: const Icon(Icons.settings,
+
+              color: Colors.blue,
+            ),
             title: const Text('Settings'),
-            onTap: () {},
+            onTap: () {
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => const SettingsScreen()));
+            },
           ),
           ListTile(
-            leading: const Icon(Icons.help_outline),
+            leading: const Icon(Icons.psychology_alt,
+              size: 28,
+              color: Colors.deepPurple,
+            ), // AI icon
+            title: const Text('AI Chat Bot'),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const AiChatScreen(),
+                ),
+              );
+            },
+          ),
+          ListTile(
+            leading: const Icon(Icons.help_outline,
+              color: Colors.brown,
+            ),
             title: const Text('Help & Support'),
-            onTap: () {},
+            onTap: () {
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => const HelpScreen()));
+            },
           ),
           const Divider(),
           ListTile(
             leading: const Icon(Icons.logout, color: Colors.red),
-            title: const Text('Logout', style: TextStyle(color: Colors.red)),
+            title: const Text(
+              'Logout',
+              style: TextStyle(color: Colors.red),
+            ),
             onTap: () async {
-              await authService.logout();
-              if (context.mounted) {
-                Navigator.of(context).pushReplacementNamed('/login');
+              // Show confirmation dialog
+              final shouldLogout = await showDialog<bool>(
+                context: context,
+                builder: (context) => AlertDialog(
+                  title: const Text('Confirm Logout'),
+                  content: const Text('Are you sure you want to logout?'),
+                  actions: [
+                    TextButton(
+                      onPressed: () => Navigator.of(context).pop(false), // Cancel
+                      child: const Text('Cancel'),
+                    ),
+                    TextButton(
+                      onPressed: () => Navigator.of(context).pop(true), // Confirm
+                      child: const Text('Logout'),
+                    ),
+                  ],
+                ),
+              );
+
+              // Only logout if user confirmed
+              if (shouldLogout == true) {
+                await authService.logout();
+                if (context.mounted) {
+                  Navigator.of(context).pushReplacementNamed('/login');
+                }
               }
             },
           ),
@@ -495,6 +674,15 @@ class EventsTab extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const EventsScreen();
+  }
+}
+
+class EmergencyTab extends StatelessWidget {
+  const EmergencyTab({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const EmergencyScreen();
   }
 }
 

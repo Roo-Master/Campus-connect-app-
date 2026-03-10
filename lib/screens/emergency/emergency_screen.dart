@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import '../../config/theme.dart';
 
 class EmergencyScreen extends StatefulWidget {
   const EmergencyScreen({super.key});
@@ -114,9 +113,9 @@ class _EmergencyScreenState extends State<EmergencyScreen> {
             const SizedBox(height: 24),
 
             // Quick Call Buttons
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16),
-              child: const Text(
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 16),
+              child: Text(
                 'Quick Call',
                 style: TextStyle(
                   fontSize: 18,
@@ -221,8 +220,8 @@ class _EmergencyScreenState extends State<EmergencyScreen> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Row(
-                      children: const [
+                    const Row(
+                      children: [
                         Icon(Icons.lightbulb, color: Colors.amber),
                         SizedBox(width: 8),
                         Text(
