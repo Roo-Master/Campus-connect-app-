@@ -1,4 +1,5 @@
 import 'package:campus_connect/providers/language_provider.dart';
+import 'package:campus_connect/screens/events/create_event_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'config/theme.dart';
@@ -42,6 +43,7 @@ class CampusConnectApp extends StatelessWidget {
         '/login': (context) => const LoginScreen(),
         '/register': (context) => const RegisterScreen(),
         '/dashboard': (context) => const DashboardScreen(),
+        '/createEvents': (context)=> const CreateEventScreen(),
       },
       onUnknownRoute: (settings) {
         return MaterialPageRoute(
