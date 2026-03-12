@@ -5,8 +5,10 @@ import 'package:provider/provider.dart';
 import '../../config/theme.dart';
 import '../../models/user_model.dart';
 import '../../services/auth_service.dart';
+import '../academic/academic_records_screen.dart';
 import '../services/profile_services.dart';
 import 'edit_profile_screen.dart';
+import 'id_card_screen.dart';
 import 'settings_screen.dart';
 
 class ProfileScreen extends StatelessWidget {
@@ -179,13 +181,23 @@ class ProfileScreen extends StatelessWidget {
           }),
 
           const Divider(),
-
-          _buildMenuItem(Icons.school, "Academic Records", () {}),
-
+          _buildMenuItem(Icons.school, "Academic Records", () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const AcademicRecordsScreen(),
+              ),
+            );
+          }),
           const Divider(),
-
-          _buildMenuItem(Icons.credit_card, "ID Card", () {}),
-
+          _buildMenuItem(Icons.credit_card, "ID Card", () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const IdCardScreen(),
+              ),
+            );
+          }),
           const Divider(),
 
           _buildMenuItem(Icons.library_books, "Library Account", () {}),
