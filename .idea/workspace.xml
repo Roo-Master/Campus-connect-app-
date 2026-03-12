@@ -5,54 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c58b4bf4-9d1b-48cb-b237-74d1abe282e3" name="Changes" comment="Modified create event screen and events_screen.dart&#10;&#10;Signed-off-by: roomaster &lt;okothregan2@gmail.com&gt;">
-      <change afterPath="$PROJECT_DIR$/backend/server.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/screens/academic/academic_records_screen.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/screens/profile/id_card_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/dartpad/web_plugin_registrant.dart" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/dartpad/web_plugin_registrant.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/dart_plugin_registrant.dart" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/dart_plugin_registrant.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/f19406c207ab9838f885eaad9213bde0/.filecache" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/f19406c207ab9838f885eaad9213bde0/.filecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/f19406c207ab9838f885eaad9213bde0/app.dill" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/f19406c207ab9838f885eaad9213bde0/app.dill" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/f19406c207ab9838f885eaad9213bde0/dart_build_result.json" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/f19406c207ab9838f885eaad9213bde0/dart_build_result.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/f19406c207ab9838f885eaad9213bde0/debug_bundle_linux-x64_assets.stamp" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/f19406c207ab9838f885eaad9213bde0/debug_bundle_linux-x64_assets.stamp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/f19406c207ab9838f885eaad9213bde0/flutter_assets.d" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/f19406c207ab9838f885eaad9213bde0/flutter_assets.d" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/f19406c207ab9838f885eaad9213bde0/kernel_snapshot_program.d" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/f19406c207ab9838f885eaad9213bde0/kernel_snapshot_program.d" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/f19406c207ab9838f885eaad9213bde0/kernel_snapshot_program.stamp" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/f19406c207ab9838f885eaad9213bde0/kernel_snapshot_program.stamp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/hooks_runner/objective_c/c5e8bf5bd7/.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/hooks_runner/objective_c/c5e8bf5bd7/.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/hooks_runner/objective_c/c5e8bf5bd7/hook.dependencies_hash_file.json" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/hooks_runner/objective_c/c5e8bf5bd7/hook.dependencies_hash_file.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/hooks_runner/objective_c/c5e8bf5bd7/output.json" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/hooks_runner/objective_c/c5e8bf5bd7/output.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/hooks_runner/shared/objective_c/.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/hooks_runner/shared/objective_c/.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/package_config.json" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/package_config.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/package_graph.json" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/package_graph.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/app/src/main/java/io/flutter/plugins/GeneratedPluginRegistrant.java" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/src/main/java/io/flutter/plugins/GeneratedPluginRegistrant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/2c8a14b3f4f5966d0e3dd6ac0a5796bc.cache.dill.track.dill" beforeDir="false" afterPath="$PROJECT_DIR$/build/2c8a14b3f4f5966d0e3dd6ac0a5796bc.cache.dill.track.dill" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/flutter_assets/NOTICES.Z" beforeDir="false" afterPath="$PROJECT_DIR$/build/flutter_assets/NOTICES.Z" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/flutter_assets/kernel_blob.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/flutter_assets/kernel_blob.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/linux/x64/debug/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/build/linux/x64/debug/.ninja_deps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/linux/x64/debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/build/linux/x64/debug/.ninja_log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/linux/x64/debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/linux/x64/debug/CMakeCache.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/linux/x64/debug/CMakeFiles/TargetDirectories.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/linux/x64/debug/CMakeFiles/TargetDirectories.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/linux/x64/debug/CMakeFiles/rules.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/build/linux/x64/debug/CMakeFiles/rules.ninja" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/linux/x64/debug/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/build/linux/x64/debug/build.ninja" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/linux/x64/debug/bundle/campus_connect" beforeDir="false" afterPath="$PROJECT_DIR$/build/linux/x64/debug/bundle/campus_connect" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/linux/x64/debug/bundle/data/flutter_assets/NOTICES.Z" beforeDir="false" afterPath="$PROJECT_DIR$/build/linux/x64/debug/bundle/data/flutter_assets/NOTICES.Z" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/linux/x64/debug/bundle/data/flutter_assets/kernel_blob.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/linux/x64/debug/bundle/data/flutter_assets/kernel_blob.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/linux/x64/debug/cmake_install.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/build/linux/x64/debug/cmake_install.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/linux/x64/debug/install_manifest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/linux/x64/debug/install_manifest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/linux/x64/debug/intermediates_do_not_run/campus_connect" beforeDir="false" afterPath="$PROJECT_DIR$/build/linux/x64/debug/intermediates_do_not_run/campus_connect" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/linux/x64/debug/runner/CMakeFiles/campus_connect.dir/__/flutter/generated_plugin_registrant.cc.o" beforeDir="false" afterPath="$PROJECT_DIR$/build/linux/x64/debug/runner/CMakeFiles/campus_connect.dir/__/flutter/generated_plugin_registrant.cc.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Runner/GeneratedPluginRegistrant.m" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Runner/GeneratedPluginRegistrant.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/models/user_model.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/models/user_model.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/models/user_profile.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/models/user_profile.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/screens/auth/register_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/auth/register_screen.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/screens/profile/profile_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/profile/profile_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/linux/flutter/generated_plugin_registrant.cc" beforeDir="false" afterPath="$PROJECT_DIR$/linux/flutter/generated_plugin_registrant.cc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/linux/flutter/generated_plugins.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/linux/flutter/generated_plugins.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/macos/Flutter/GeneratedPluginRegistrant.swift" beforeDir="false" afterPath="$PROJECT_DIR$/macos/Flutter/GeneratedPluginRegistrant.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/windows/flutter/generated_plugin_registrant.cc" beforeDir="false" afterPath="$PROJECT_DIR$/windows/flutter/generated_plugin_registrant.cc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/windows/flutter/generated_plugins.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/windows/flutter/generated_plugins.cmake" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -390,7 +347,23 @@
       <option name="project" value="LOCAL" />
       <updated>1773328546763</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="Modified create event screen and events_screen.dart&#10;&#10;Signed-off-by: roomaster &lt;okothregan2@gmail.com&gt;">
+      <option name="closed" value="true" />
+      <created>1773334099196</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1773334099196</updated>
+    </task>
+    <task id="LOCAL-00028" summary="Modified create event screen and events_screen.dart&#10;&#10;Signed-off-by: roomaster &lt;okothregan2@gmail.com&gt;">
+      <option name="closed" value="true" />
+      <created>1773334211214</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1773334211214</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="UpdateCopyrightCheckinHandler">

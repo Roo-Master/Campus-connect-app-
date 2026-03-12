@@ -143,6 +143,10 @@ class ProfileScreen extends StatelessWidget {
                     _buildStatColumn(user.program ?? "-", "Program"),
                     const SizedBox(height: 12),
                     _buildStatColumn(user.department ?? "-", "Department"),
+                    const SizedBox(
+                      height: 12,
+                    ),
+                    _buildStatColumn(user.course ?? "-", "Course"),
                   ],
                 );
               }
@@ -154,6 +158,7 @@ class ProfileScreen extends StatelessWidget {
                   _buildStatColumn(user.year ?? "-", "Year"),
                   _buildStatColumn(user.program ?? "-", "Program"),
                   _buildStatColumn(user.department ?? "-", "Department"),
+                  _buildStatColumn(user.course ?? "-", "Course"),
                 ],
               );
             },

@@ -25,6 +25,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
   final _studentIdController = TextEditingController();
   final _phoneController = TextEditingController();
   final _departmentController = TextEditingController();
+  final _courseController = TextEditingController();
 
   bool _obscurePassword = true;
   bool _obscureConfirmPassword = true;
@@ -55,6 +56,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
     _studentIdController.dispose();
     _phoneController.dispose();
     _departmentController.dispose();
+    _courseController.dispose();
     super.dispose();
   }
 
@@ -81,6 +83,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
         phone: _phoneController.text.trim(),
         studentId: _studentIdController.text.trim(),
         department: _departmentController.text.trim(),
+        course: _courseController.text.trim(),
         program: _selectedProgram,
         year: _selectedYear,
       );
@@ -302,7 +305,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 if (_selectedUserType == 'Student') ...[
                   const SizedBox(height: 16),
                   _buildProgramAndYearFields(),
-                ],
+                    _buildCourseFields(),
+                  ],
                 if(_selectedUserType == 'Faculty' || _selectedUserType == 'Staff')...
                 [
                   const SizedBox(height: 16),
@@ -311,7 +315,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 if(_selectedUserType == 'Class_Representative')...[
                   const SizedBox(height: 16),
                   _buildProgramAndYearFields(),
-                ],
+                    _buildCourseFields(),
+                  ],
                 const SizedBox(height: 24),
 
                 // Password Section
@@ -746,6 +751,23 @@ class _RegisterScreenState extends State<RegisterScreen> {
           ),
         ],
       ),
+    );
+  }
+
+  _buildCourseFields() {
+    return TextFormField(
+      controller: _departmentController,
+      decoration: const InputDecoration(
+        labelText: 'Course',
+        prefixIcon: Icon(Icons.business_outlined),
+        hintText: 'Software Engineering',
+      ),
+      validator: (value) {
+        if (value == null || value.isEmpty) {
+          return 'Course is required';
+        }
+        return null;
+      },
     );
   }
 }

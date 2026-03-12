@@ -8,6 +8,7 @@ class UserModel with ChangeNotifier {
   String? studentId;
   String? department;
   String? program;
+  String? course;
   int? year;
   String? role; // 'student', 'faculty', 'admin'
   String? profileImage;
@@ -33,8 +34,9 @@ class UserModel with ChangeNotifier {
     firstName = 'Roomaster';
     lastName = 'Register';
     studentId = 'IN16/00000/01';
-    department = 'Software Engineering';
+    department = ' Computer Science';
     program = 'B.Tech';
+    course = 'Software Engineering';
     year = 3;
     role = 'student';
     profileImage = null;
@@ -68,6 +70,7 @@ class UserModel with ChangeNotifier {
     String? studentId,
     String? department,
     String? program,
+    String? course,
     int? year,
     String? role,
     String? profileImage,
@@ -90,6 +93,7 @@ class UserModel with ChangeNotifier {
       ..studentId = studentId ?? this.studentId
       ..department = department ?? this.department
       ..program = program ?? this.program
+      ..course = course ?? this.course
       ..year = year ?? this.year
       ..role = role ?? this.role
       ..profileImage = profileImage ?? this.profileImage

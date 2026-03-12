@@ -6,6 +6,7 @@ class UserProfile {
   final String studentId;
   final String department;
   final String? program;
+  final String? course;
   final String? year;
 
   UserProfile({
@@ -16,6 +17,7 @@ class UserProfile {
     required this.studentId,
     required this.department,
     this.program,
+    this.course,
     this.year,
   });
 
