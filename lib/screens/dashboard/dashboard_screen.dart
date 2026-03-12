@@ -1,16 +1,18 @@
 import 'package:campus_connect/screens/dashboard/schedule_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+
 import '../../ai/ai_chat_screen.dart';
 import '../../config/theme.dart';
-import '../../models/user_model.dart';
-import '../../models/event_model.dart';
 import '../../models/course_model.dart';
+import '../../models/event_model.dart';
 import '../../models/grade_model.dart';
+import '../../models/user_model.dart';
 import '../../services/auth_service.dart';
 import '../../services/notification_service.dart';
 import '../academic/courses_screen.dart';
 import '../academic/grades_screen.dart';
+import '../emergency/emergency_screen.dart';
 import '../events/events_screen.dart';
 import '../map/campus_map_screen.dart';
 import '../notifications/notifications_screen.dart';
@@ -18,8 +20,8 @@ import '../profile/help_screen.dart';
 import '../profile/profile_screen.dart';
 import '../profile/settings_screen.dart';
 import '../services/fees_screen.dart';
+import '../services/profile_services.dart';
 import '../services/transport_screen.dart';
-import '../emergency/emergency_screen.dart';
 import 'quick_actions_widget.dart';
 
 class DashboardScreen extends StatefulWidget {
@@ -179,7 +181,7 @@ class HomeTab extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                _buildHeader(user, verticalPadding),
+                _buildHeader(verticalPadding),
                 Container(
                   padding: const EdgeInsets.all(10),
                   decoration: BoxDecoration(
@@ -207,74 +209,110 @@ class HomeTab extends StatelessWidget {
     );
   }
 
-  Widget _buildHeader(UserModel user, double verticalPadding) {
-    return Container(
-      padding: EdgeInsets.symmetric(horizontal: 20, vertical: verticalPadding),
-      decoration: const BoxDecoration(
-        gradient: LinearGradient(
-          colors: [AppTheme.primary, AppTheme.primaryDark],
-          begin: Alignment.topLeft,
-          end: Alignment.bottomRight,
-        ),
-      ),
-      child: Row(
-        children: [
-          CircleAvatar(
-            radius: 35,
-            backgroundColor: Colors.white,
-            child: Text(
-              user.initials,
-              style: const TextStyle(
-                fontSize: 24,
-                fontWeight: FontWeight.bold,
-                color: AppTheme.primary,
+  Widget _buildHeader(double verticalPadding) {
+    return Consumer<ProfileService>(
+      builder: (context, profileService, _) {
+        final userProfile = profileService.userProfile;
+        final user = profileService.user;
+
+        if (userProfile == null || user == null) {
+          return const SizedBox(height: 160); // placeholder height
+        }
+
+        return Container(
+          decoration: BoxDecoration(
+            color: Colors.blue, // solid fallback color
+            borderRadius: const BorderRadius.only(
+              bottomLeft: Radius.circular(24),
+              bottomRight: Radius.circular(24),
+            ),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black.withOpacity(0.25),
+                offset: const Offset(0, 6),
+                blurRadius: 12,
+              ),
+            ],
+          ),
+          child: Container(
+            height: 180, // make it taller
+            padding:
+                EdgeInsets.symmetric(horizontal: 20, vertical: verticalPadding),
+            decoration: const BoxDecoration(
+              gradient: LinearGradient(
+                colors: [Color(0xFF42A5F5), Color(0xFF1E88E5)],
+                // bright blue gradient
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+              ),
+              borderRadius: BorderRadius.only(
+                bottomLeft: Radius.circular(24),
+                bottomRight: Radius.circular(24),
               ),
             ),
-          ),
-          const SizedBox(width: 16),
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+            child: Row(
               children: [
-                Text(
-                  'Welcome, ${user.firstName}!',
-                  style: const TextStyle(
-                    color: Colors.white,
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                const SizedBox(height: 4),
-                Text(
-                  '${user.program} • Year ${user.year}',
-                  style: TextStyle(
-                    color: Colors.white.withOpacity(0.8),
-                    fontSize: 14,
-                  ),
-                ),
-                const SizedBox(height: 4),
-                Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
-                  decoration: BoxDecoration(
-                    color: Colors.white.withOpacity(0.2),
-                    borderRadius: BorderRadius.circular(8),
-                  ),
+                CircleAvatar(
+                  radius: 40, // slightly larger avatar
+                  backgroundColor: Colors.white,
                   child: Text(
-                    'ID: ${user.studentId}',
+                    userProfile.initials,
                     style: const TextStyle(
-                      color: Colors.white,
-                      fontSize: 12,
+                      fontSize: 26,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.blueAccent, // contrast with white
                     ),
+                  ),
+                ),
+                const SizedBox(width: 20),
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        'Welcome, ${userProfile.firstName}!',
+                        style: const TextStyle(
+                          color: Colors.white,
+                          fontSize: 24,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      const SizedBox(height: 6),
+                      Text(
+                        '${userProfile.program} • Year ${userProfile.year}',
+                        style: TextStyle(
+                          color: Colors.white.withOpacity(0.95),
+                          fontSize: 16,
+                        ),
+                      ),
+                      const SizedBox(height: 8),
+                      Container(
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 10, vertical: 4),
+                        decoration: BoxDecoration(
+                          color: Colors.white.withOpacity(0.3),
+                          borderRadius: BorderRadius.circular(12),
+                        ),
+                        child: Text(
+                          'ID: ${userProfile.studentId}',
+                          style: const TextStyle(
+                            color: Colors.white,
+                            fontSize: 14,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
                 ),
               ],
             ),
           ),
-        ],
-      ),
+        );
+      },
     );
   }
-
   Widget _buildUpcomingEvents(double horizontalPadding) {
     final events = EventModel.getMockEvents().take(3).toList();
 

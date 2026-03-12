@@ -20,4 +20,6 @@ class UserProfile {
   });
 
   String get fullName => '$firstName $lastName';
+
+  String get initials => '${firstName?[0] ?? ''}${lastName?[0] ?? ''}';
 }

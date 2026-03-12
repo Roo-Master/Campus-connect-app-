@@ -1,23 +1,29 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:campus_connect/models/user_profile.dart';
+
 import '../../config/theme.dart';
 import '../../models/user_model.dart';
 import '../../services/auth_service.dart';
+import '../services/profile_services.dart';
+
 import 'settings_screen.dart';
 import 'edit_profile_screen.dart';
 
-class ProfileScreen extends StatefulWidget {
+class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
 
   @override
-  State<ProfileScreen> createState() => _ProfileScreenState();
-}
-
-class _ProfileScreenState extends State<ProfileScreen> {
-  @override
-  Widget build(BuildContext context,) {
-    final user = Provider.of<UserModel>(context);
+  Widget build(BuildContext context) {
+    final profile = Provider.of<ProfileService>(context).userProfile;
     final authService = Provider.of<AuthService>(context);
+    final user = Provider.of<UserModel>(context);
+
+    if (profile == null) {
+      return const Scaffold(
+        body: Center(child: Text('No profile found')),
+      );
+    }
 
     return Scaffold(
       appBar: AppBar(
@@ -31,61 +37,52 @@ class _ProfileScreenState extends State<ProfileScreen> {
           ),
         ],
       ),
+
       body: SingleChildScrollView(
         child: Column(
           children: [
-            // Profile Header
-            _buildProfileHeader(user),
+
+            _buildProfileHeader(profile),
 
             const SizedBox(height: 24),
 
-            // Academic Stats
-            _buildAcademicStats(user),
+            _buildAcademicStats(profile),
 
             const SizedBox(height: 24),
 
-            // Profile Menu
-            _buildProfileMenu(user),
+            _buildProfileMenu(context, user),
 
             const SizedBox(height: 16),
 
-            // Personal Info
-            _buildPersonalInfo(user),
-
-            const SizedBox(height: 16),
-
-            // Hostel Info (if applicable)
-            if(user.hostelBlock != null && user.roomNumber != null)
-              _buildHostelInfo( user.isHosteller as UserModel),
+            _buildPersonalInfo(profile),
 
             const SizedBox(height: 24),
 
-            // Logout Button
-            _buildLogoutButton(authService),
+            _buildLogoutButton(context, authService),
+
           ],
         ),
       ),
     );
   }
 
-  // Profile Header Widget
-  Widget _buildProfileHeader(UserModel user) {
+  // PROFILE HEADER
+  Widget _buildProfileHeader(UserProfile user) {
     return Container(
       padding: const EdgeInsets.all(24),
       decoration: const BoxDecoration(
         gradient: LinearGradient(
           colors: [AppTheme.primary, AppTheme.primaryDark],
-          begin: Alignment.topLeft,
-          end: Alignment.bottomRight,
         ),
       ),
       child: Column(
         children: [
+
           CircleAvatar(
             radius: 50,
             backgroundColor: Colors.white,
             child: Text(
-              user.initials,
+              "${user.firstName[0] ?? ""}${user.lastName[0] ?? ""}",
               style: const TextStyle(
                 fontSize: 32,
                 fontWeight: FontWeight.bold,
@@ -93,35 +90,36 @@ class _ProfileScreenState extends State<ProfileScreen> {
               ),
             ),
           ),
+
           const SizedBox(height: 16),
+
           Text(
-            user.fullName,
+            "${user.firstName ?? ""} ${user.lastName ?? ""}",
             style: const TextStyle(
               color: Colors.white,
               fontSize: 24,
               fontWeight: FontWeight.bold,
             ),
           ),
+
           Text(
-            '${user.program} • ${user.department}',
-            style: TextStyle(
-              color: Colors.white.withOpacity(0.8),
-              fontSize: 14,
+            "${user.program ?? ""} • ${user.department ?? ""}",
+            style: const TextStyle(
+              color: Colors.white70,
             ),
           ),
+
           const SizedBox(height: 8),
+
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
             decoration: BoxDecoration(
-              color: Colors.white.withOpacity(0.2),
+              color: Colors.white24,
               borderRadius: BorderRadius.circular(20),
             ),
             child: Text(
-              'ID: ${user.studentId}',
-              style: const TextStyle(
-                color: Colors.white,
-                fontSize: 12,
-              ),
+              "ID: ${user.studentId ?? ""}",
+              style: const TextStyle(color: Colors.white),
             ),
           ),
         ],
@@ -129,19 +127,22 @@ class _ProfileScreenState extends State<ProfileScreen> {
     );
   }
 
-  // Academic Stats Widget
-  Widget _buildAcademicStats(UserModel user) {
+  // ACADEMIC STATS
+  Widget _buildAcademicStats(UserProfile user) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16),
       child: Card(
         child: Padding(
           padding: const EdgeInsets.all(16),
+
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              _buildStatColumn('${user.gpa}', 'GPA'),
-              _buildStatColumn('${user.completedCredits}', 'Credits'),
-              _buildStatColumn('Year ${user.year}', 'Status'),
+
+              _buildStatColumn(user.year ?? "-", "Year"),
+              _buildStatColumn(user.program ?? "-", "Program"),
+              _buildStatColumn(user.department ?? "-", "Department"),
+
             ],
           ),
         ),
@@ -149,108 +150,122 @@ class _ProfileScreenState extends State<ProfileScreen> {
     );
   }
 
-  // Profile Menu Widget
-  Widget _buildProfileMenu(UserModel user) {
+  // PROFILE MENU
+  Widget _buildProfileMenu(BuildContext context, UserModel user) {
     return Card(
       margin: const EdgeInsets.symmetric(horizontal: 16),
+
       child: Column(
         children: [
-          _buildMenuItem(Icons.person, 'Edit Profile', () => _navigateToEditProfile(user)),
+
+          _buildMenuItem(Icons.person, "Edit Profile", () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => EditProfileScreen(user: user),
+              ),
+            );
+          }),
+
           const Divider(),
-          _buildMenuItem(Icons.school, 'Academic Records', () {}),
+
+          _buildMenuItem(Icons.school, "Academic Records", () {}),
+
           const Divider(),
-          _buildMenuItem(Icons.credit_card, 'ID Card', () {}),
+
+          _buildMenuItem(Icons.credit_card, "ID Card", () {}),
+
           const Divider(),
-          _buildMenuItem(Icons.library_books, 'Library Account', () {}),
-          const Divider(),
-          _buildMenuItem(Icons.receipt, 'Fee History', () {}),
+
+          _buildMenuItem(Icons.library_books, "Library Account", () {}),
+
         ],
       ),
     );
   }
 
-  // Personal Info Widget
-  Widget _buildPersonalInfo(UserModel user) {
+  // PERSONAL INFO
+  Widget _buildPersonalInfo(UserProfile user) {
     return Card(
       margin: const EdgeInsets.symmetric(horizontal: 16),
+
       child: Column(
         children: [
-          _buildMenuItem(Icons.email, 'Email: ${user.email}', () {}),
+
+          _buildMenuItem(Icons.email, "Email: ${user.email ?? ""}", () {}),
+
           const Divider(),
-          _buildMenuItem(Icons.phone, 'Phone: ${user.phoneNumber}', () {}),
+
+          _buildMenuItem(Icons.phone, "Phone: ${user.phone ?? ""}", () {}),
+
           const Divider(),
-          _buildMenuItem(Icons.location_on, 'Address', () {}),
-          const Divider(),
+
+          _buildMenuItem(Icons.business, "Department: ${user.department ?? ""}", () {}),
+
         ],
       ),
     );
   }
 
-  // Hostel Info Widget
-  Widget _buildHostelInfo(UserModel user) {
-    return Card(
-      margin: const EdgeInsets.symmetric(horizontal: 16),
-      child: Column(
-        children: [
-          _buildMenuItem(Icons.hotel, 'Hostel: ${user.hostelBlock}', () {}),
-          const Divider(),
-          _buildMenuItem(Icons.meeting_room, 'Room: ${user.roomNumber}', () {}),
-        ],
-      ),
-    );
-  }
-
-  // Logout Button Widget
-  Widget _buildLogoutButton(AuthService authService) {
+  // LOGOUT BUTTON
+  Widget _buildLogoutButton(BuildContext context, AuthService authService) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16),
+
       child: SizedBox(
         width: double.infinity,
+
         child: ElevatedButton(
           onPressed: () async {
+
             await authService.logout();
+
             if (context.mounted) {
-              Navigator.of(context).pushReplacementNamed('/login');
+              Navigator.pushReplacementNamed(context, "/login");
             }
+
           },
+
           style: ElevatedButton.styleFrom(
             backgroundColor: Colors.red,
             padding: const EdgeInsets.symmetric(vertical: 16),
           ),
+
           child: const Text(
-            'Logout',
-            style: TextStyle(
-              fontSize: 16,
-              fontWeight: FontWeight.w600,
-            ),
+            "Logout",
+            style: TextStyle(fontSize: 16),
           ),
         ),
       ),
     );
   }
 
-  // Helper method to build a stat column (for GPA, Credits, etc.)
+  // STAT COLUMN
   Widget _buildStatColumn(String value, String label) {
     return Column(
       children: [
+
         Text(
           value,
           style: const TextStyle(
-            fontSize: 24,
+            fontSize: 22,
             fontWeight: FontWeight.bold,
             color: AppTheme.primary,
           ),
         ),
-        Text(
-          label,
-          style: TextStyle(color: Colors.grey.shade600),
-        ),
+
+        Text(label),
+
       ],
     );
   }
 
-  // Helper method to build menu items
-  Widget _buildMenuItem(IconData icon, String title, VoidCallback onTap) {
+  // MENU ITEM
+  Widget _buildMenuItem(
+      IconData icon,
+      String title,
+      VoidCallback onTap,
+      ) {
     return ListTile(
       leading: Icon(icon, color: AppTheme.primary),
       title: Text(title),
@@ -259,21 +274,13 @@ class _ProfileScreenState extends State<ProfileScreen> {
     );
   }
 
-  // Navigate to Edit Profile Screen
-  void _navigateToEditProfile(UserModel user) {
-    Navigator.push(
-      context,
-      MaterialPageRoute(
-        builder: (context) => EditProfileScreen(user: user),
-      ),
-    );
-  }
-
-  // Navigate to Settings Screen
+  // NAVIGATION
   void _navigateToSettingsScreen(BuildContext context) {
     Navigator.push(
       context,
-      MaterialPageRoute(builder: (context) => const SettingsScreen()),
+      MaterialPageRoute(
+        builder: (context) => const SettingsScreen(),
+      ),
     );
   }
 }

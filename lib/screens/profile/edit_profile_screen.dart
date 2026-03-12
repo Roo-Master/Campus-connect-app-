@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import '../../config/theme.dart';
 import '../../models/user_model.dart';
 
@@ -199,15 +200,43 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
   void _saveProfile() async {
     setState(() => _isSaving = true);
 
-    // Simulate API call
-    await Future.delayed(const Duration(seconds: 1));
-
-    if (mounted) {
-      setState(() => _isSaving = false);
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('Profile updated successfully!')),
+    try {
+      final updatedUser = widget.user.copyWith(
+        firstName: _firstNameController.text.trim(),
+        lastName: _lastNameController.text.trim(),
+        phoneNumber: _phoneController.text.trim(),
+        address: _addressController.text.trim(),
+        emergencyContact: _emergencyContactController.text.trim(),
       );
-      Navigator.of(context).pop();
+
+      // Update the provider user
+      final userProvider = Provider.of<UserModel>(context, listen: false);
+
+      userProvider
+        ..firstName = updatedUser.firstName
+        ..lastName = updatedUser.lastName
+        ..phoneNumber = updatedUser.phoneNumber
+        ..address = updatedUser.address
+        ..emergencyContact = updatedUser.emergencyContact;
+
+      userProvider.notifyListeners();
+
+      setState(() => _isSaving = false);
+
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(content: Text('Profile updated successfully!')),
+        );
+
+        Navigator.pop(context);
+      }
+    } catch (e) {
+      setState(() => _isSaving = false);
+
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('Failed to update profile')),
+      );
     }
   }
+
 }

@@ -1,10 +1,11 @@
-import 'package:campus_connect/models/user_model.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+
 import '../../config/theme.dart';
-import '../services/profile_services.dart';
 import '../../models/user_profile.dart';
+import '../profile/profile_screen.dart';
+import '../services/profile_services.dart';
 import 'login_screen.dart';
 
 class RegisterScreen extends StatefulWidget {
@@ -57,50 +58,58 @@ class _RegisterScreenState extends State<RegisterScreen> {
     super.dispose();
   }
 
-  // ✅ Updated _handleRegister method with ProfileService integration
-  Future<void> _handleRegister() async {
-    if (!_formKey.currentState!.validate()) return;
-    if (!_acceptTerms) {
-      _showErrorSnackBar('Please accept the terms and conditions');
+  void _handleRegister() async {
+    if (!_formKey.currentState!.validate()) {
       return;
     }
 
-    setState(() => _isLoading = true);
+    if (!_acceptTerms) {
+      _showErrorSnackBar("You must accept the Terms and Privacy Policy");
+      return;
+    }
+
+    setState(() {
+      _isLoading = true;
+    });
 
     try {
-      // Simulate API call
-      await Future.delayed(const Duration(seconds: 2));
-
-      // Create a UserProfile object with the entered data
-      final userProfile = UserProfile (
-        firstName: _firstNameController.text,
-        lastName: _lastNameController.text,
-        email: _emailController.text,
-        phone: _phoneController.text,
-        studentId: _studentIdController.text,
-        department: _departmentController.text,
+      // Create user profile
+      final userProfile = UserProfile(
+        firstName: _firstNameController.text.trim(),
+        lastName: _lastNameController.text.trim(),
+        email: _emailController.text.trim(),
+        phone: _phoneController.text.trim(),
+        studentId: _studentIdController.text.trim(),
+        department: _departmentController.text.trim(),
         program: _selectedProgram,
         year: _selectedYear,
       );
 
-      // Update the profile using ProfileService
-      Provider.of<ProfileService>(context!, listen: false).updateUserProfile(userProfile as UserModel);
+      // Save profile using Provider
+      Provider.of<ProfileService>(context, listen: false)
+          .updateUserProfile(userProfile);
 
-      // Show success dialog and navigate to the profile page
-      if (mounted) {
-        _showSuccessDialog();
-      }
+      setState(() {
+        _isLoading = false;
+      });
+
+      // Navigate to profile screen
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(
+          builder: (context) => const ProfileScreen(),
+        ),
+      );
+
     } catch (e) {
-      if (mounted) {
-        _showErrorSnackBar('Registration failed. Please try again.');
-      }
-    } finally {
-      if (mounted) {
-        setState(() => _isLoading = false);
-      }
+
+      setState(() {
+        _isLoading = false;
+      });
+
+      _showErrorSnackBar("Registration failed. Try again.");
     }
   }
-
   void _showErrorSnackBar(String message) {
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
@@ -228,9 +237,16 @@ class _RegisterScreenState extends State<RegisterScreen> {
         ),
       ),
       body: SafeArea(
-        child: SingleChildScrollView(
-          padding: const EdgeInsets.all(24),
-          child: Form(
+        child: Container(
+          decoration: const BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage("assets/images/img.png"),
+              fit: BoxFit.cover,
+            ),
+          ),
+          child: SingleChildScrollView(
+            padding: const EdgeInsets.all(24),
+            child: Form(
             key: _formKey,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -319,6 +335,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
               ],
             ),
           ),
+        ),
         ),
       ),
     );

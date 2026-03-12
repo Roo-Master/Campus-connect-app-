@@ -1,18 +1,29 @@
-import 'package:flutter/foundation.dart';
 import 'package:campus_connect/models/user_model.dart';
+import 'package:flutter/material.dart';
 
-class ProfileService extends ChangeNotifier {
-  UserModel ? _userProfile;
+import '../../models/user_profile.dart';
 
-  UserModel ? get userProfile => _userProfile;
+class ProfileService with ChangeNotifier {
+  UserProfile? _userProfile;
 
-  void updateUserProfile( UserModel  profile) {
+  UserModel? _user;
+
+  UserModel? get user => _user;
+
+  UserProfile? get userProfile => _userProfile;
+
+  void updateUserProfile(UserProfile profile) {
     _userProfile = profile;
-    notifyListeners();
+    notifyListeners(); // 🔥 This triggers UI updates in all listeners
   }
 
   void clearProfile() {
     _userProfile = null;
+    notifyListeners();
+  }
+
+  void updateUser(UserModel updatedUser) {
+     _user = updatedUser;
     notifyListeners();
   }
 }
