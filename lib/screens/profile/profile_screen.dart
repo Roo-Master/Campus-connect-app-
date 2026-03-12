@@ -1,14 +1,13 @@
+import 'package:campus_connect/models/user_profile.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:campus_connect/models/user_profile.dart';
 
 import '../../config/theme.dart';
 import '../../models/user_model.dart';
 import '../../services/auth_service.dart';
 import '../services/profile_services.dart';
-
-import 'settings_screen.dart';
 import 'edit_profile_screen.dart';
+import 'settings_screen.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
@@ -37,30 +36,27 @@ class ProfileScreen extends StatelessWidget {
           ),
         ],
       ),
-
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-
-            _buildProfileHeader(profile),
-
-            const SizedBox(height: 24),
-
-            _buildAcademicStats(profile),
-
-            const SizedBox(height: 24),
-
-            _buildProfileMenu(context, user),
-
-            const SizedBox(height: 16),
-
-            _buildPersonalInfo(profile),
-
-            const SizedBox(height: 24),
-
-            _buildLogoutButton(context, authService),
-
-          ],
+      body: Container(
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage("assets/images/img.png"),
+            fit: BoxFit.cover,
+          ),
+        ),
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              _buildProfileHeader(profile),
+              const SizedBox(height: 24),
+              _buildAcademicStats(profile),
+              const SizedBox(height: 24),
+              _buildProfileMenu(context, user),
+              const SizedBox(height: 16),
+              _buildPersonalInfo(profile),
+              const SizedBox(height: 24),
+              _buildLogoutButton(context, authService),
+            ],
+          ),
         ),
       ),
     );
@@ -127,23 +123,38 @@ class ProfileScreen extends StatelessWidget {
     );
   }
 
-  // ACADEMIC STATS
+// ACADEMIC STATS
   Widget _buildAcademicStats(UserProfile user) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16),
       child: Card(
         child: Padding(
           padding: const EdgeInsets.all(16),
+          child: LayoutBuilder(
+            builder: (context, constraints) {
+              // Phone layout
+              if (constraints.maxWidth < 400) {
+                return Column(
+                  children: [
+                    _buildStatColumn(user.year ?? "-", "Year"),
+                    const SizedBox(height: 12),
+                    _buildStatColumn(user.program ?? "-", "Program"),
+                    const SizedBox(height: 12),
+                    _buildStatColumn(user.department ?? "-", "Department"),
+                  ],
+                );
+              }
 
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-
-              _buildStatColumn(user.year ?? "-", "Year"),
-              _buildStatColumn(user.program ?? "-", "Program"),
-              _buildStatColumn(user.department ?? "-", "Department"),
-
-            ],
+              // Tablet / large screen layout
+              return Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  _buildStatColumn(user.year ?? "-", "Year"),
+                  _buildStatColumn(user.program ?? "-", "Program"),
+                  _buildStatColumn(user.department ?? "-", "Department"),
+                ],
+              );
+            },
           ),
         ),
       ),

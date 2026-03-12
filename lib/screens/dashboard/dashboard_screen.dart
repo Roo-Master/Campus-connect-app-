@@ -7,7 +7,6 @@ import '../../config/theme.dart';
 import '../../models/course_model.dart';
 import '../../models/event_model.dart';
 import '../../models/grade_model.dart';
-import '../../models/user_model.dart';
 import '../../services/auth_service.dart';
 import '../../services/notification_service.dart';
 import '../academic/courses_screen.dart';
@@ -365,23 +364,59 @@ class HomeTab extends StatelessWidget {
               final user = profileService.user;
               final profile = profileService.userProfile;
 
+              final name = profile?.firstName ?? user?.fullName ?? "";
+              final email = user?.email ?? "";
+              final initials = profile?.initials ?? user?.initials ?? "";
+
               return UserAccountsDrawerHeader(
                 decoration: const BoxDecoration(
-                  color: AppTheme.primary,
+                  gradient: LinearGradient(
+                    colors: [Color(0xFF1976D2), Color(0xFF0D47A1)],
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight,
+                  ),
                 ),
                 accountName: Text(
-                  profile?.firstName ?? user?.fullName ?? "",
+                  name,
+                  style: const TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 18,
+                  ),
                 ),
                 accountEmail: Text(
-                  user?.email ?? "",
+                  email,
+                  style: const TextStyle(fontSize: 14),
                 ),
-                currentAccountPicture: CircleAvatar(
-                  backgroundColor: Colors.white,
-                  child: Text(
-                    profile?.initials ?? user?.initials ?? "",
-                    style: const TextStyle(
-                      color: AppTheme.primary,
-                      fontWeight: FontWeight.bold,
+                currentAccountPicture: Container(
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    gradient: const LinearGradient(
+                      colors: [
+                        Color(0xFF42A5F5),
+                        Color(0xFF1E88E5),
+                      ],
+                    ),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black.withOpacity(0.3),
+                        blurRadius: 8,
+                        offset: const Offset(0, 4),
+                      ),
+                    ],
+                    border: Border.all(
+                      color: Colors.white,
+                      width: 3,
+                    ),
+                  ),
+                  child: Center(
+                    child: Text(
+                      initials,
+                      style: const TextStyle(
+                        color: Colors.white,
+                        fontSize: 22,
+                        fontWeight: FontWeight.bold,
+                        letterSpacing: 1.2,
+                      ),
                     ),
                   ),
                 ),
