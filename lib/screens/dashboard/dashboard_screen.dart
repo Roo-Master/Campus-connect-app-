@@ -82,16 +82,18 @@ class _DashboardScreenState extends State<DashboardScreen> {
 class HomeTab extends StatelessWidget {
   const HomeTab({super.key});
 
-  get context => null;
-
   @override
   Widget build(BuildContext context) {
-    final user = Provider.of<UserModel>(context);
+    final profileService = Provider.of<ProfileService>(context);
     final notificationService = Provider.of<NotificationService>(context);
 
-    // Responsive padding calculation
-    final horizontalPadding = MediaQuery.of(context).size.width < 600 ? 16.0 : 24.0;
-    final verticalPadding = MediaQuery.of(context).size.width < 600 ? 20.0 : 30.0;
+    final userProfile = profileService.userProfile;
+    final user = profileService.user;
+
+    final horizontalPadding =
+        MediaQuery.of(context).size.width < 600 ? 16.0 : 24.0;
+    final verticalPadding =
+        MediaQuery.of(context).size.width < 600 ? 20.0 : 30.0;
 
     return Scaffold(
       extendBodyBehindAppBar: true,
@@ -105,15 +107,13 @@ class HomeTab extends StatelessWidget {
             Image.asset(
               'assets/images/kisii.jpg',
               height: 40,
-              fit: BoxFit.contain,
             ),
             const SizedBox(width: 8),
-            const Text('Dashboard'),
+            const Text('Kisii University'),
           ],
         ),
         foregroundColor: Colors.white,
         actions: [
-          // Notification Bell with Badge
           Consumer<NotificationService>(
             builder: (context, notificationService, _) {
               return Stack(
@@ -122,7 +122,8 @@ class HomeTab extends StatelessWidget {
                     onPressed: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => const NotificationsScreen()),
+                        MaterialPageRoute(
+                            builder: (context) => const NotificationsScreen()),
                       );
                     },
                     icon: const Icon(Icons.notifications_outlined),
@@ -137,18 +138,12 @@ class HomeTab extends StatelessWidget {
                           color: Colors.red,
                           shape: BoxShape.circle,
                         ),
-                        constraints: const BoxConstraints(
-                          minWidth: 16,
-                          minHeight: 16,
-                        ),
                         child: Text(
                           '${notificationService.unreadCount}',
                           style: const TextStyle(
-                            color: Colors.white,
-                            fontSize: 10,
-                            fontWeight: FontWeight.bold,
-                          ),
-                          textAlign: TextAlign.center,
+                              color: Colors.white,
+                              fontSize: 10,
+                              fontWeight: FontWeight.bold),
                         ),
                       ),
                     ),
@@ -156,16 +151,15 @@ class HomeTab extends StatelessWidget {
               );
             },
           ),
-          // Settings Button
           IconButton(
+            icon: const Icon(Icons.settings_outlined),
             onPressed: () {
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => const SettingsScreen()),
               );
             },
-            icon: const Icon(Icons.settings_outlined),
-          ),
+          )
         ],
       ),
       drawer: _buildDrawer(context),
@@ -185,13 +179,14 @@ class HomeTab extends StatelessWidget {
                 Container(
                   padding: const EdgeInsets.all(10),
                   decoration: BoxDecoration(
-                    color: Colors.blue.shade50, // background color
+                    color: Colors.blue.shade50,
                     borderRadius: BorderRadius.circular(12),
                   ),
                   child: QuickActionsWidget(
                     onActionTap: (action) {
-                      final role = user.role ?? '';
-                      _handleActionTap(action, userRole: role, context: null);
+                      final role = user?.role ?? '';
+                      _handleActionTap(action,
+                          userRole: role, context: context);
                     },
                   ),
                 ),
@@ -213,15 +208,14 @@ class HomeTab extends StatelessWidget {
     return Consumer<ProfileService>(
       builder: (context, profileService, _) {
         final userProfile = profileService.userProfile;
-        final user = profileService.user;
 
-        if (userProfile == null || user == null) {
-          return const SizedBox(height: 160); // placeholder height
+        if (userProfile == null) {
+          return const SizedBox(height: 160);
         }
 
         return Container(
           decoration: BoxDecoration(
-            color: Colors.blue, // solid fallback color
+            color: Colors.blue,
             borderRadius: const BorderRadius.only(
               bottomLeft: Radius.circular(24),
               bottomRight: Radius.circular(24),
@@ -235,13 +229,12 @@ class HomeTab extends StatelessWidget {
             ],
           ),
           child: Container(
-            height: 180, // make it taller
+            height: 180,
             padding:
                 EdgeInsets.symmetric(horizontal: 20, vertical: verticalPadding),
             decoration: const BoxDecoration(
               gradient: LinearGradient(
                 colors: [Color(0xFF42A5F5), Color(0xFF1E88E5)],
-                // bright blue gradient
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight,
               ),
@@ -253,15 +246,14 @@ class HomeTab extends StatelessWidget {
             child: Row(
               children: [
                 CircleAvatar(
-                  radius: 40, // slightly larger avatar
+                  radius: 40,
                   backgroundColor: Colors.white,
                   child: Text(
                     userProfile.initials,
                     style: const TextStyle(
-                      fontSize: 26,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.blueAccent, // contrast with white
-                    ),
+                        fontSize: 26,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.blueAccent),
                   ),
                 ),
                 const SizedBox(width: 20),
@@ -273,18 +265,16 @@ class HomeTab extends StatelessWidget {
                       Text(
                         'Welcome, ${userProfile.firstName}!',
                         style: const TextStyle(
-                          color: Colors.white,
-                          fontSize: 24,
-                          fontWeight: FontWeight.bold,
-                        ),
+                            color: Colors.white,
+                            fontSize: 24,
+                            fontWeight: FontWeight.bold),
                       ),
                       const SizedBox(height: 6),
                       Text(
-                        '${userProfile.program} • Year ${userProfile.year}',
+                        '${userProfile.program} • ${userProfile.year}',
                         style: TextStyle(
-                          color: Colors.white.withOpacity(0.95),
-                          fontSize: 16,
-                        ),
+                            color: Colors.white.withOpacity(0.95),
+                            fontSize: 16),
                       ),
                       const SizedBox(height: 8),
                       Container(
@@ -295,17 +285,16 @@ class HomeTab extends StatelessWidget {
                           borderRadius: BorderRadius.circular(12),
                         ),
                         child: Text(
-                          'ID: ${userProfile.studentId}',
+                          'Student ID: ${userProfile.studentId}',
                           style: const TextStyle(
-                            color: Colors.white,
-                            fontSize: 14,
-                            fontWeight: FontWeight.bold,
-                          ),
+                              color: Colors.white,
+                              fontSize: 14,
+                              fontWeight: FontWeight.bold),
                         ),
-                      ),
+                      )
                     ],
                   ),
-                ),
+                )
               ],
             ),
           ),
@@ -313,7 +302,175 @@ class HomeTab extends StatelessWidget {
       },
     );
   }
-  Widget _buildUpcomingEvents(double horizontalPadding) {
+
+  void _handleActionTap(String action,
+      {required BuildContext context, required String userRole}) {
+    bool isClassRep = userRole.toLowerCase() == 'class rep';
+
+    switch (action) {
+      case 'courses':
+        Navigator.push(
+            context, MaterialPageRoute(builder: (_) => const CoursesScreen()));
+        break;
+
+      case 'grades':
+        Navigator.push(
+            context, MaterialPageRoute(builder: (_) => const GradesScreen()));
+        break;
+
+      case 'fees':
+        Navigator.push(
+            context, MaterialPageRoute(builder: (_) => const FeesScreen()));
+        break;
+
+      case 'transport':
+        Navigator.push(context,
+            MaterialPageRoute(builder: (_) => const TransportScreen()));
+        break;
+
+      case 'emergency':
+        Navigator.push(context,
+            MaterialPageRoute(builder: (_) => const EmergencyScreen()));
+        break;
+
+      case 'scheduler':
+        if (isClassRep) {
+          Navigator.push(context,
+              MaterialPageRoute(builder: (_) => const ScheduleScreen()));
+        } else {
+          ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(
+              content: Text(
+                  "🚫 ACCESS DENIED! Only Class Rep can view the scheduler."),
+              backgroundColor: Colors.redAccent,
+            ),
+          );
+        }
+        break;
+    }
+  }
+
+  Widget _buildDrawer(BuildContext context) {
+    final profileService = Provider.of<ProfileService>(context);
+    final user = profileService.user;
+
+    final authService = Provider.of<AuthService>(context);
+
+    return Drawer(
+      child: ListView(
+        padding: EdgeInsets.zero,
+        children: [
+          Consumer<ProfileService>(
+            builder: (context, profileService, _) {
+              final user = profileService.user;
+              final profile = profileService.userProfile;
+
+              return UserAccountsDrawerHeader(
+                decoration: const BoxDecoration(
+                  color: AppTheme.primary,
+                ),
+                accountName: Text(
+                  profile?.firstName ?? user?.fullName ?? "",
+                ),
+                accountEmail: Text(
+                  user?.email ?? "",
+                ),
+                currentAccountPicture: CircleAvatar(
+                  backgroundColor: Colors.white,
+                  child: Text(
+                    profile?.initials ?? user?.initials ?? "",
+                    style: const TextStyle(
+                      color: AppTheme.primary,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+              );
+            },
+          ),
+          ListTile(
+            leading: const Icon(Icons.person, color: Colors.blueAccent),
+            title: const Text('My Profile'),
+            onTap: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (_) => const ProfileScreen()));
+            },
+          ),
+          ListTile(
+            leading: const Icon(Icons.calendar_today, color: Colors.green),
+            title: const Text('My Schedule'),
+            onTap: () {
+              final role = user?.role ?? '';
+              _handleActionTap('scheduler', userRole: role, context: context);
+            },
+          ),
+          ListTile(
+            leading: const Icon(Icons.settings, color: Colors.blue),
+            title: const Text('Settings'),
+            onTap: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (_) => const SettingsScreen()));
+            },
+          ),
+          ListTile(
+            leading: const Icon(Icons.psychology_alt,
+                size: 28, color: Colors.deepPurple),
+            title: const Text('AI Chat Bot'),
+            onTap: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (_) => const AiChatScreen()));
+            },
+          ),
+          ListTile(
+            leading: const Icon(Icons.help_outline, color: Colors.brown),
+            title: const Text('Help & Support'),
+            onTap: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (_) => const HelpScreen()));
+            },
+          ),
+          const Divider(),
+          ListTile(
+            leading: const Icon(Icons.logout, color: Colors.red),
+            title: const Text('Logout', style: TextStyle(color: Colors.red)),
+            onTap: () async {
+              final shouldLogout = await showDialog<bool>(
+                context: context,
+                builder: (context) => AlertDialog(
+                  title: const Text('Confirm Logout'),
+                  content: const Text('Are you sure you want to logout?'),
+                  actions: [
+                    TextButton(
+                      onPressed: () {
+                        Navigator.pop(context, false);
+                      },
+                      child: const Text('Cancel'),
+                    ),
+                    TextButton(
+                      onPressed: () {
+                        Navigator.pop(context, true);
+                      },
+                      child: const Text('Logout'),
+                    )
+                  ],
+                ),
+              );
+
+              if (shouldLogout == true) {
+                await authService.logout();
+
+                if (context.mounted) {
+                  Navigator.of(context).pushReplacementNamed('/login');
+                }
+              }
+            },
+          ),
+        ],
+      ),
+    );
+  }
+
+  _buildUpcomingEvents(double horizontalPadding) {
     final events = EventModel.getMockEvents().take(3).toList();
 
     return Padding(
@@ -336,85 +493,85 @@ class HomeTab extends StatelessWidget {
           ),
           const SizedBox(height: 8),
           ...events.map((event) => Card(
-            margin: const EdgeInsets.only(bottom: 12),
-            child: ListTile(
-              leading: Container(
-                width: 50,
-                height: 50,
-                decoration: BoxDecoration(
-                  color: event.color.withOpacity(0.15),
-                  borderRadius: BorderRadius.circular(8),
+                margin: const EdgeInsets.only(bottom: 12),
+                child: ListTile(
+                  leading: Container(
+                    width: 50,
+                    height: 50,
+                    decoration: BoxDecoration(
+                      color: event.color.withOpacity(0.15),
+                      borderRadius: BorderRadius.circular(8),
+                    ),
+                    child: Icon(event.typeIcon, color: event.color),
+                  ),
+                  title: Text(
+                    event.title,
+                    style: const TextStyle(fontWeight: FontWeight.w600),
+                  ),
+                  subtitle: Text('${event.date} • ${event.startTime}'),
+                  trailing: const Icon(Icons.arrow_forward_ios, size: 16),
+                  onTap: () {},
                 ),
-                child: Icon(event.typeIcon, color: event.color),
-              ),
-              title: Text(
-                event.title,
-                style: const TextStyle(fontWeight: FontWeight.w600),
-              ),
-              subtitle: Text('${event.date} • ${event.startTime}'),
-              trailing: const Icon(Icons.arrow_forward_ios, size: 16),
-              onTap: () {},
-            ),
-          )),
+              )),
         ],
       ),
     );
   }
 
-  Widget _buildMyCourses(double horizontalPadding) {
+  _buildMyCourses(double horizontalPadding) {
     final courses = CourseModel.getEnrolledCourses();
 
     return Padding(
-        padding: EdgeInsets.symmetric(horizontal: horizontalPadding),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
+      padding: EdgeInsets.symmetric(horizontal: horizontalPadding),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
           Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            const Text(
-              'My Courses',
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-            ),
-            TextButton(
-              onPressed: () {},
-              child: const Text('View All'),
-            ),
-          ],
-        ),
-        const SizedBox(height: 8),
-        ...courses.map((course) => Card(
-        margin: const EdgeInsets.only(bottom: 12),
-        child: ListTile(
-            leading: Container(
-                width: 40,
-                height: 40,
-                decoration: BoxDecoration(
-                  color: course.color.withOpacity(0.15),
-                  borderRadius: BorderRadius.circular(8),
-                ),
-                child: Center(
-                    child: Text(
-                      course.code.substring(0, 2),
-                      style: TextStyle(
-                        color: course.color,
-                        fontWeight: FontWeight.bold,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              const Text(
+                'My Courses',
+                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+              ),
+              TextButton(
+                onPressed: () {},
+                child: const Text('View All'),
+              ),
+            ],
+          ),
+          const SizedBox(height: 8),
+          ...courses.map((course) => Card(
+                margin: const EdgeInsets.only(bottom: 12),
+                child: ListTile(
+                  leading: Container(
+                    width: 40,
+                    height: 40,
+                    decoration: BoxDecoration(
+                      color: course.color.withOpacity(0.15),
+                      borderRadius: BorderRadius.circular(8),
+                    ),
+                    child: Center(
+                      child: Text(
+                        course.code.substring(0, 2),
+                        style: TextStyle(
+                          color: course.color,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
                     ),
+                  ),
+                  title: Text(course.name),
+                  subtitle: Text(course.schedule),
+                  trailing: const Icon(Icons.arrow_forward_ios, size: 16),
+                  onTap: () {},
                 ),
-            ),
-          title: Text(course.name),
-          subtitle: Text(course.schedule),
-          trailing: const Icon(Icons.arrow_forward_ios, size: 16),
-          onTap: () {},
-        ),
-        )),
-          ],
-        ),
+              )),
+        ],
+      ),
     );
   }
 
-  Widget _buildAcademicProgress(double horizontalPadding) {
+  _buildAcademicProgress(double horizontalPadding) {
     final grades = GradeModel.getMockGrades();
     final cgpa = GradeModel.calculateCGPA(grades);
     final progress = (grades.length / 8) * 100;
@@ -479,7 +636,8 @@ class HomeTab extends StatelessWidget {
                   value: progress / 100,
                   minHeight: 10,
                   backgroundColor: Colors.grey.shade200,
-                  valueColor: const AlwaysStoppedAnimation<Color>(AppTheme.primary),
+                  valueColor:
+                      const AlwaysStoppedAnimation<Color>(AppTheme.primary),
                 ),
               ),
               const SizedBox(height: 8),
@@ -493,222 +651,10 @@ class HomeTab extends StatelessWidget {
       ),
     );
   }
-
-  void _handleActionTap(String action,
-
-          {required BuildContext? context, required String userRole}) {
-    // Only Class Rep can access Schedule
-    bool isClassRep = userRole.toLowerCase() == 'class rep';
-
-    switch (action) {
-      case 'courses':
-        Navigator.push(
-          context!,
-          MaterialPageRoute(builder: (context) => const CoursesScreen()),
-        );
-        break;
-
-      case 'grades':
-        Navigator.push(
-          context!,
-          MaterialPageRoute(builder: (context) => const GradesScreen()),
-        );
-        break;
-
-      case 'fees':
-        Navigator.push(
-          context!,
-          MaterialPageRoute(builder: (context) => const FeesScreen()),
-        );
-        break;
-
-      case 'transport':
-        Navigator.push(
-          context!,
-          MaterialPageRoute(builder: (context) => const TransportScreen()),
-        );
-        break;
-
-      case 'emergency':
-        Navigator.push(
-          context!,
-          MaterialPageRoute(builder: (context) => const EmergencyScreen()),
-        );
-        break;
-
-      case 'library':
-      // Implement library functionality if needed
-        break;
-
-      case 'scheduler':
-        if (isClassRep) {
-          Navigator.push(
-            context!,
-            MaterialPageRoute(builder: (context) => const ScheduleScreen()),
-          );
-        } else {
-          // Shouting color for unauthorized access (bright red)
-          ScaffoldMessenger.of(context!).showSnackBar(
-            const SnackBar(
-              content: Text(
-                "🚫 ACCESS DENIED! Only Class Rep can view the scheduler.",
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 16,
-                ),
-              ),
-              backgroundColor: Colors.redAccent,
-              duration: Duration(seconds: 3),
-            ),
-          );
-        }
-        break;
-
-      default:
-      // Shouting color for unknown action (bright orange)
-        ScaffoldMessenger.of(context!).showSnackBar(
-          const SnackBar(
-            content: Text(
-              "⚠️ ACTION NOT RECOGNIZED!",
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 16,
-              ),
-            ),
-            backgroundColor: Colors.deepOrangeAccent,
-            duration: Duration(seconds: 3),
-          ),
-        );
-    }
-  }
-
-  Widget _buildDrawer(BuildContext context) {
-    final user = Provider.of<UserModel>(context);
-    final authService = Provider.of<AuthService>(context);
-
-    return Drawer(
-      child: ListView(
-        padding: EdgeInsets.zero,
-        children: [
-          UserAccountsDrawerHeader(
-            decoration: const BoxDecoration(color: AppTheme.primary),
-            accountName: Text(
-              user.fullName,
-              style: const TextStyle(fontWeight: FontWeight.bold),
-            ),
-            accountEmail: Text(user.email ?? ''),
-            currentAccountPicture: CircleAvatar(
-              backgroundColor: Colors.white,
-              child: Text(
-                user.initials,
-                style: const TextStyle(
-                  color: AppTheme.primary,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-            ),
-          ),
-          ListTile(
-            leading: const Icon(Icons.person,
-              color: Colors.blueAccent,
-            ),
-            title: const Text('My Profile'),
-            onTap: () {
-              Navigator.push(
-                  context, MaterialPageRoute(builder: (context) => const ProfileScreen()));
-            },
-          ),
-          ListTile(
-              leading: const Icon(Icons.calendar_today,
-                color: Colors.green,
-              ),
-              title: const Text('My Schedule'),
-              onTap: () {
-                final role = user.role ?? '';
-                _handleActionTap('scheduler', userRole: role, context: null);
-              }
-          ),
-          ListTile(
-            leading: const Icon(Icons.settings,
-
-              color: Colors.blue,
-            ),
-            title: const Text('Settings'),
-            onTap: () {
-              Navigator.push(
-                  context, MaterialPageRoute(builder: (context) => const SettingsScreen()));
-            },
-          ),
-          ListTile(
-            leading: const Icon(Icons.psychology_alt,
-              size: 28,
-              color: Colors.deepPurple,
-            ), // AI icon
-            title: const Text('AI Chat Bot'),
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => const AiChatScreen(),
-                ),
-              );
-            },
-          ),
-          ListTile(
-            leading: const Icon(Icons.help_outline,
-              color: Colors.brown,
-            ),
-            title: const Text('Help & Support'),
-            onTap: () {
-              Navigator.push(
-                  context, MaterialPageRoute(builder: (context) => const HelpScreen()));
-            },
-          ),
-          const Divider(),
-          ListTile(
-            leading: const Icon(Icons.logout, color: Colors.red),
-            title: const Text(
-              'Logout',
-              style: TextStyle(color: Colors.red),
-            ),
-            onTap: () async {
-              // Show confirmation dialog
-              final shouldLogout = await showDialog<bool>(
-                context: context,
-                builder: (context) => AlertDialog(
-                  title: const Text('Confirm Logout'),
-                  content: const Text('Are you sure you want to logout?'),
-                  actions: [
-                    TextButton(
-                      onPressed: () => Navigator.of(context).pop(false), // Cancel
-                      child: const Text('Cancel'),
-                    ),
-                    TextButton(
-                      onPressed: () => Navigator.of(context).pop(true), // Confirm
-                      child: const Text('Logout'),
-                    ),
-                  ],
-                ),
-              );
-
-              // Only logout if user confirmed
-              if (shouldLogout == true) {
-                await authService.logout();
-                if (context.mounted) {
-                  Navigator.of(context).pushReplacementNamed('/login');
-                }
-              }
-            },
-          ),
-        ],
-      ),
-    );
-  }
 }
 
 class EventsTab extends StatelessWidget {
   const EventsTab({super.key});
-
   @override
   Widget build(BuildContext context) {
     return const EventsScreen();
@@ -717,7 +663,6 @@ class EventsTab extends StatelessWidget {
 
 class EmergencyTab extends StatelessWidget {
   const EmergencyTab({super.key});
-
   @override
   Widget build(BuildContext context) {
     return const EmergencyScreen();
@@ -726,7 +671,6 @@ class EmergencyTab extends StatelessWidget {
 
 class MapTab extends StatelessWidget {
   const MapTab({super.key});
-
   @override
   Widget build(BuildContext context) {
     return const CampusMapScreen();
@@ -735,7 +679,6 @@ class MapTab extends StatelessWidget {
 
 class ProfileTab extends StatelessWidget {
   const ProfileTab({super.key});
-
   @override
   Widget build(BuildContext context) {
     return const ProfileScreen();
