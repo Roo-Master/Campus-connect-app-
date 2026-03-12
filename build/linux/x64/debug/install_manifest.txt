@@ -1,6 +1,7 @@
 /home/roomaster/Android/Studio projects/Campus-connect-app-/build/linux/x64/debug/bundle/campus_connect
 /home/roomaster/Android/Studio projects/Campus-connect-app-/build/linux/x64/debug/bundle/data/icudtl.dat
 /home/roomaster/Android/Studio projects/Campus-connect-app-/build/linux/x64/debug/bundle/lib/libflutter_linux_gtk.so
+/home/roomaster/Android/Studio projects/Campus-connect-app-/build/linux/x64/debug/bundle/lib/libfile_selector_linux_plugin.so
 /home/roomaster/Android/Studio projects/Campus-connect-app-/build/linux/x64/debug/bundle/lib/liburl_launcher_linux_plugin.so
 /home/roomaster/Android/Studio projects/Campus-connect-app-/build/linux/x64/debug/bundle/lib/native_assets.json
 /home/roomaster/Android/Studio projects/Campus-connect-app-/build/linux/x64/debug/bundle/data/flutter_assets/version.json
