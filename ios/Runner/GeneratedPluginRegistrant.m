@@ -9,9 +9,7 @@
 #if __has_include(<camera_avfoundation/CameraPlugin.h>)
 #import <camera_avfoundation/CameraPlugin.h>
 #else
-
 @import camera_avfoundation;
-
 #endif
 
 #if __has_include(<cloud_firestore/FLTFirebaseFirestorePlugin.h>)
@@ -47,25 +45,19 @@
 #if __has_include(<google_mlkit_commons/GoogleMlKitCommonsPlugin.h>)
 #import <google_mlkit_commons/GoogleMlKitCommonsPlugin.h>
 #else
-
 @import google_mlkit_commons;
-
 #endif
 
 #if __has_include(<google_mlkit_object_detection/GoogleMlKitObjectDetectionPlugin.h>)
 #import <google_mlkit_object_detection/GoogleMlKitObjectDetectionPlugin.h>
 #else
-
 @import google_mlkit_object_detection;
-
 #endif
 
 #if __has_include(<image_picker_ios/FLTImagePickerPlugin.h>)
 #import <image_picker_ios/FLTImagePickerPlugin.h>
 #else
-
 @import image_picker_ios;
-
 #endif
 
 #if __has_include(<shared_preferences_foundation/SharedPreferencesPlugin.h>)

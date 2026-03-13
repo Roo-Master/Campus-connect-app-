@@ -30,7 +30,7 @@ class DefaultFirebaseOptions {
     apiKey: 'YOUR_API_KEY',
     appId: '1:123456789:web:abcdef123456',
     messagingSenderId: '123456789',
-    projectId: 'campus-connect-app',
+    projectId: 'campus-connect-app-93439',
     authDomain: 'campus-connect-app.firebaseapp.com',
     storageBucket: 'campus-connect-app.appspot.com',
   );
@@ -39,7 +39,7 @@ class DefaultFirebaseOptions {
     apiKey: 'YOUR_ANDROID_API_KEY',
     appId: '1:123456789:android:abcdef123456',
     messagingSenderId: '123456789',
-    projectId: 'campus-connect-app',
+    projectId: 'campus-connect-app-93439',
     storageBucket: 'campus-connect-app.appspot.com',
   );
 
@@ -47,7 +47,7 @@ class DefaultFirebaseOptions {
     apiKey: 'YOUR_IOS_API_KEY',
     appId: '1:123456789:ios:abcdef123456',
     messagingSenderId: '123456789',
-    projectId: 'campus-connect-app',
+    projectId: 'campus-connect-app-93439',
     storageBucket: 'campus-connect-app.apps pot.com',
     iosClientId: 'YOUR_IOS_CLIENT_ID',
     iosBundleId: 'com.campusconnect.app',
@@ -57,7 +57,7 @@ class DefaultFirebaseOptions {
     apiKey: 'YOUR_IOS_API_KEY',
     appId: '1:123456789:ios:abcdef123456',
     messagingSenderId: '123456789',
-    projectId: 'campus-connect-app',
+    projectId: 'campus-connect-app-93439',
     storageBucket: 'campus-connect-app.appspot.com',
     iosClientId: 'YOUR_IOS_CLIENT_ID',
     iosBundleId: 'com.campusconnect.app',
@@ -67,7 +67,7 @@ class DefaultFirebaseOptions {
     apiKey: 'YOUR_WINDOWS_API_KEY',
     appId: '1:123456789:windows:abcdef123456',
     messagingSenderId: '123456789',
-    projectId: 'campus-connect-app',
+    projectId: 'campus-connect-app-93439',
     storageBucket: 'campus-connect-app.appspot.com',
   );
 }
