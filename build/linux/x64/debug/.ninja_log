@@ -1,35 +1,35 @@
 # ninja log v6
-20	23631	1773332275116023462	/home/roomaster/Android/Studio projects/Campus-connect-app-/linux/flutter/ephemeral/libflutter_linux_gtk.so	630cf1f817294624
-20	23631	1773332275116023462	/home/roomaster/Android/Studio projects/Campus-connect-app-/linux/flutter/ephemeral/flutter_linux/fl_basic_message_channel.h	630cf1f817294624
-20	23631	1773332275116023462	/home/roomaster/Android/Studio projects/Campus-connect-app-/linux/flutter/ephemeral/flutter_linux/fl_binary_codec.h	630cf1f817294624
-20	23631	1773332275116023462	/home/roomaster/Android/Studio projects/Campus-connect-app-/linux/flutter/ephemeral/flutter_linux/fl_binary_messenger.h	630cf1f817294624
-20	23631	1773332275116023462	/home/roomaster/Android/Studio projects/Campus-connect-app-/linux/flutter/ephemeral/flutter_linux/fl_dart_project.h	630cf1f817294624
-20	23631	1773332275116023462	/home/roomaster/Android/Studio projects/Campus-connect-app-/linux/flutter/ephemeral/flutter_linux/fl_engine.h	630cf1f817294624
-20	23631	1773332275116023462	/home/roomaster/Android/Studio projects/Campus-connect-app-/linux/flutter/ephemeral/flutter_linux/fl_json_message_codec.h	630cf1f817294624
-20	23631	1773332275116023462	/home/roomaster/Android/Studio projects/Campus-connect-app-/linux/flutter/ephemeral/flutter_linux/fl_json_method_codec.h	630cf1f817294624
-20	23631	1773332275116023462	/home/roomaster/Android/Studio projects/Campus-connect-app-/linux/flutter/ephemeral/flutter_linux/fl_message_codec.h	630cf1f817294624
-20	23631	1773332275116023462	/home/roomaster/Android/Studio projects/Campus-connect-app-/linux/flutter/ephemeral/flutter_linux/fl_method_call.h	630cf1f817294624
-20	23631	1773332275116023462	/home/roomaster/Android/Studio projects/Campus-connect-app-/linux/flutter/ephemeral/flutter_linux/fl_method_channel.h	630cf1f817294624
-20	23631	1773332275116023462	/home/roomaster/Android/Studio projects/Campus-connect-app-/linux/flutter/ephemeral/flutter_linux/fl_method_codec.h	630cf1f817294624
-20	23631	1773332275116023462	/home/roomaster/Android/Studio projects/Campus-connect-app-/linux/flutter/ephemeral/flutter_linux/fl_method_response.h	630cf1f817294624
-20	23631	1773332275116023462	/home/roomaster/Android/Studio projects/Campus-connect-app-/linux/flutter/ephemeral/flutter_linux/fl_plugin_registrar.h	630cf1f817294624
-20	23631	1773332275116023462	/home/roomaster/Android/Studio projects/Campus-connect-app-/linux/flutter/ephemeral/flutter_linux/fl_plugin_registry.h	630cf1f817294624
-20	23631	1773332275116023462	/home/roomaster/Android/Studio projects/Campus-connect-app-/linux/flutter/ephemeral/flutter_linux/fl_standard_message_codec.h	630cf1f817294624
-20	23631	1773332275116023462	/home/roomaster/Android/Studio projects/Campus-connect-app-/linux/flutter/ephemeral/flutter_linux/fl_standard_method_codec.h	630cf1f817294624
-20	23631	1773332275116023462	/home/roomaster/Android/Studio projects/Campus-connect-app-/linux/flutter/ephemeral/flutter_linux/fl_string_codec.h	630cf1f817294624
-20	23631	1773332275116023462	/home/roomaster/Android/Studio projects/Campus-connect-app-/linux/flutter/ephemeral/flutter_linux/fl_value.h	630cf1f817294624
-20	23631	1773332275116023462	/home/roomaster/Android/Studio projects/Campus-connect-app-/linux/flutter/ephemeral/flutter_linux/fl_view.h	630cf1f817294624
-20	23631	1773332275116023462	/home/roomaster/Android/Studio projects/Campus-connect-app-/linux/flutter/ephemeral/flutter_linux/flutter_linux.h	630cf1f817294624
-20	23631	1773332275116023462	flutter/_phony_	630cf1f817294624
-20	23631	1773332275116023462	/home/roomaster/Android/Studio projects/Campus-connect-app-/build/linux/x64/debug/flutter/_phony_	630cf1f817294624
-23640	25976	1773332298736316387	plugins/url_launcher_linux/CMakeFiles/url_launcher_linux_plugin.dir/url_launcher_plugin.cc.o	82d66a826498dbbd
-23648	26553	1773332298744316487	runner/CMakeFiles/campus_connect.dir/main.cc.o	ff3c073704da5182
-23634	27013	1773332298732316338	plugins/file_selector_linux/CMakeFiles/file_selector_linux_plugin.dir/file_selector_plugin.cc.o	d06e4c9c223f14d5
-23638	27516	1773332298735749470	plugins/url_launcher_linux/CMakeFiles/url_launcher_linux_plugin.dir/messages.g.cc.o	67d5fd1c72cd605a
-25977	28168	1773332301073345472	runner/CMakeFiles/campus_connect.dir/__/flutter/generated_plugin_registrant.cc.o	7d6a766ede9762f8
-23649	28216	1773332298745316499	runner/CMakeFiles/campus_connect.dir/my_application.cc.o	9b4dac47f6ab154c
-23638	28231	1773332298734316363	plugins/file_selector_linux/CMakeFiles/file_selector_linux_plugin.dir/messages.g.cc.o	8e6f55a53a78217c
-28232	29921	1773332303328373555	plugins/file_selector_linux/libfile_selector_linux_plugin.so	c48659894cb9e790
-27519	29969	1773332302615364674	plugins/url_launcher_linux/liburl_launcher_linux_plugin.so	135454740b42b569
-29969	34109	1773332305065395197	intermediates_do_not_run/campus_connect	b906ea1dea2946f5
-34109	34821	1773332309205446821	CMakeFiles/install.util	6011be7c75537298
+15	23479	1773411972739320613	/home/roomaster/Android/Studio projects/Campus-connect-app-/linux/flutter/ephemeral/libflutter_linux_gtk.so	630cf1f817294624
+15	23479	1773411972739320613	/home/roomaster/Android/Studio projects/Campus-connect-app-/linux/flutter/ephemeral/flutter_linux/fl_basic_message_channel.h	630cf1f817294624
+15	23479	1773411972739320613	/home/roomaster/Android/Studio projects/Campus-connect-app-/linux/flutter/ephemeral/flutter_linux/fl_binary_codec.h	630cf1f817294624
+15	23479	1773411972739320613	/home/roomaster/Android/Studio projects/Campus-connect-app-/linux/flutter/ephemeral/flutter_linux/fl_binary_messenger.h	630cf1f817294624
+15	23479	1773411972739320613	/home/roomaster/Android/Studio projects/Campus-connect-app-/linux/flutter/ephemeral/flutter_linux/fl_dart_project.h	630cf1f817294624
+15	23479	1773411972739320613	/home/roomaster/Android/Studio projects/Campus-connect-app-/linux/flutter/ephemeral/flutter_linux/fl_engine.h	630cf1f817294624
+15	23479	1773411972739320613	/home/roomaster/Android/Studio projects/Campus-connect-app-/linux/flutter/ephemeral/flutter_linux/fl_json_message_codec.h	630cf1f817294624
+15	23479	1773411972739320613	/home/roomaster/Android/Studio projects/Campus-connect-app-/linux/flutter/ephemeral/flutter_linux/fl_json_method_codec.h	630cf1f817294624
+15	23479	1773411972739320613	/home/roomaster/Android/Studio projects/Campus-connect-app-/linux/flutter/ephemeral/flutter_linux/fl_message_codec.h	630cf1f817294624
+15	23479	1773411972739320613	/home/roomaster/Android/Studio projects/Campus-connect-app-/linux/flutter/ephemeral/flutter_linux/fl_method_call.h	630cf1f817294624
+15	23479	1773411972739320613	/home/roomaster/Android/Studio projects/Campus-connect-app-/linux/flutter/ephemeral/flutter_linux/fl_method_channel.h	630cf1f817294624
+15	23479	1773411972739320613	/home/roomaster/Android/Studio projects/Campus-connect-app-/linux/flutter/ephemeral/flutter_linux/fl_method_codec.h	630cf1f817294624
+15	23479	1773411972739320613	/home/roomaster/Android/Studio projects/Campus-connect-app-/linux/flutter/ephemeral/flutter_linux/fl_method_response.h	630cf1f817294624
+15	23479	1773411972739320613	/home/roomaster/Android/Studio projects/Campus-connect-app-/linux/flutter/ephemeral/flutter_linux/fl_plugin_registrar.h	630cf1f817294624
+15	23479	1773411972739320613	/home/roomaster/Android/Studio projects/Campus-connect-app-/linux/flutter/ephemeral/flutter_linux/fl_plugin_registry.h	630cf1f817294624
+15	23479	1773411972739320613	/home/roomaster/Android/Studio projects/Campus-connect-app-/linux/flutter/ephemeral/flutter_linux/fl_standard_message_codec.h	630cf1f817294624
+15	23479	1773411972739320613	/home/roomaster/Android/Studio projects/Campus-connect-app-/linux/flutter/ephemeral/flutter_linux/fl_standard_method_codec.h	630cf1f817294624
+15	23479	1773411972739320613	/home/roomaster/Android/Studio projects/Campus-connect-app-/linux/flutter/ephemeral/flutter_linux/fl_string_codec.h	630cf1f817294624
+15	23479	1773411972739320613	/home/roomaster/Android/Studio projects/Campus-connect-app-/linux/flutter/ephemeral/flutter_linux/fl_value.h	630cf1f817294624
+15	23479	1773411972739320613	/home/roomaster/Android/Studio projects/Campus-connect-app-/linux/flutter/ephemeral/flutter_linux/fl_view.h	630cf1f817294624
+15	23479	1773411972739320613	/home/roomaster/Android/Studio projects/Campus-connect-app-/linux/flutter/ephemeral/flutter_linux/flutter_linux.h	630cf1f817294624
+15	23479	1773411972739320613	flutter/_phony_	630cf1f817294624
+15	23479	1773411972739320613	/home/roomaster/Android/Studio projects/Campus-connect-app-/build/linux/x64/debug/flutter/_phony_	630cf1f817294624
+23485	25947	1773411996208712562	runner/CMakeFiles/campus_connect.dir/main.cc.o	ff3c073704da5182
+23486	26073	1773411996209712579	runner/CMakeFiles/campus_connect.dir/my_application.cc.o	9b4dac47f6ab154c
+23480	26542	1773411996204663634	plugins/file_selector_linux/CMakeFiles/file_selector_linux_plugin.dir/file_selector_plugin.cc.o	d06e4c9c223f14d5
+23484	26664	1773411996207712545	plugins/url_launcher_linux/CMakeFiles/url_launcher_linux_plugin.dir/url_launcher_plugin.cc.o	82d66a826498dbbd
+23480	26738	1773411996205479023	plugins/file_selector_linux/CMakeFiles/file_selector_linux_plugin.dir/messages.g.cc.o	8e6f55a53a78217c
+23483	26740	1773411996206712529	plugins/url_launcher_linux/CMakeFiles/url_launcher_linux_plugin.dir/messages.g.cc.o	67d5fd1c72cd605a
+25948	27108	1773411998671753626	runner/CMakeFiles/campus_connect.dir/__/flutter/generated_plugin_registrant.cc.o	7d6a766ede9762f8
+26739	27602	1773411999462766811	plugins/file_selector_linux/libfile_selector_linux_plugin.so	c48659894cb9e790
+26740	27608	1773411999463766827	plugins/url_launcher_linux/liburl_launcher_linux_plugin.so	135454740b42b569
+27608	28510	1773412000331781294	intermediates_do_not_run/campus_connect	b906ea1dea2946f5
+28510	29354	1773412001233796325	CMakeFiles/install.util	6011be7c75537298
