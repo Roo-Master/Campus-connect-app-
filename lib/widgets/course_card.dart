@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import '../models/course_model.dart';
 
 class CourseCard extends StatelessWidget {
@@ -126,9 +127,11 @@ class CourseCard extends StatelessWidget {
                   const Spacer(),
                   if (showActions)
                     Text(
-                      '${course.seatsAvailable} seats left',
+                      '${course.totalstudents}  student',
                       style: TextStyle(
-                        color: course.seatsAvailable < 5 ? Colors.red : Colors.grey.shade600,
+                        color: course.totalstudents < 5
+                            ? Colors.red
+                            : Colors.grey.shade600,
                         fontSize: 12,
                         fontWeight: FontWeight.w500,
                       ),

@@ -19,6 +19,7 @@ import '../profile/help_screen.dart';
 import '../profile/profile_screen.dart';
 import '../profile/settings_screen.dart';
 import '../services/fees_screen.dart';
+import '../services/hostel_screen.dart';
 import '../services/profile_services.dart';
 import '../services/transport_screen.dart';
 import 'quick_actions_widget.dart';
@@ -331,6 +332,13 @@ class HomeTab extends StatelessWidget {
         Navigator.push(context,
             MaterialPageRoute(builder: (_) => const EmergencyScreen()));
         break;
+      case 'events':
+        Navigator.push(
+            context, MaterialPageRoute(builder: (_) => const EventsScreen()));
+        break;
+      case 'hostel':
+        Navigator.push(
+            context, MaterialPageRoute(builder: (_) => const HostelScreen()));
 
       case 'scheduler':
         if (isClassRep) {

@@ -8,8 +8,7 @@ class CourseModel with ChangeNotifier {
   final String instructorEmail;
   final String description;
   final int credits;
-  final int seatsTotal;
-  int seatsTaken;
+  final int totalstudents;
   final String schedule;
   final String location;
   final String building;
@@ -28,8 +27,7 @@ class CourseModel with ChangeNotifier {
     required this.instructorEmail,
     required this.description,
     required this.credits,
-    required this.seatsTotal,
-    required this.seatsTaken,
+    required this.totalstudents,
     required this.schedule,
     required this.location,
     required this.building,
@@ -40,9 +38,6 @@ class CourseModel with ChangeNotifier {
     required this.examLocation,
     this.color = Colors.blue,
   });
-
-  int get seatsAvailable => seatsTotal - seatsTaken;
-  double get fillPercentage => seatsTaken / seatsTotal;
 
   // Mock Data
   static List<CourseModel> getMockCourses() {
@@ -55,8 +50,7 @@ class CourseModel with ChangeNotifier {
         instructorEmail: 's.smith@campus.edu',
         description: 'Advanced study of data structures and algorithms including trees, graphs, sorting, and searching.',
         credits: 4,
-        seatsTotal: 60,
-        seatsTaken: 58,
+        totalstudents: 120,
         schedule: 'Mon, Wed, Fri - 10:00 AM',
         location: 'Room 201',
         building: 'Engineering Block B',
@@ -75,8 +69,7 @@ class CourseModel with ChangeNotifier {
         instructorEmail: 'm.brown@campus.edu',
         description: 'Introduction to database design, SQL, normalization, and transaction management.',
         credits: 3,
-        seatsTotal: 50,
-        seatsTaken: 45,
+        totalstudents: 120,
         schedule: 'Tue, Thu - 2:00 PM',
         location: 'Lab 105',
         building: 'Engineering Block B',
@@ -95,8 +88,7 @@ class CourseModel with ChangeNotifier {
         instructorEmail: 'e.chen@campus.edu',
         description: 'Study of operating system concepts including processes, threads, memory management, and file systems.',
         credits: 4,
-        seatsTotal: 60,
-        seatsTaken: 52,
+        totalstudents: 120,
         schedule: 'Mon, Wed - 3:00 PM',
         location: 'Room 401',
         building: 'Engineering Block A',
@@ -115,8 +107,7 @@ class CourseModel with ChangeNotifier {
         instructorEmail: 'd.wilson@campus.edu',
         description: 'Comprehensive study of computer networking protocols, TCP/IP model, and network security.',
         credits: 3,
-        seatsTotal: 50,
-        seatsTaken: 38,
+        totalstudents: 200,
         schedule: 'Fri - 11:00 AM',
         location: 'Room 202',
         building: 'Engineering Block A',
@@ -141,8 +132,7 @@ class CourseModel with ChangeNotifier {
         instructorEmail: 's.smith@campus.edu',
         description: 'Advanced study of data structures and algorithms.',
         credits: 4,
-        seatsTotal: 60,
-        seatsTaken: 58,
+        totalstudents: 60,
         schedule: 'Mon, Wed, Fri - 10:00 AM',
         location: 'Room 201',
         building: 'Engineering Block B',
@@ -161,8 +151,7 @@ class CourseModel with ChangeNotifier {
         instructorEmail: 'm.brown@campus.edu',
         description: 'Introduction to database design and SQL.',
         credits: 3,
-        seatsTotal: 50,
-        seatsTaken: 45,
+        totalstudents: 50,
         schedule: 'Tue, Thu - 2:00 PM',
         location: 'Lab 105',
         building: 'Engineering Block B',

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import '../../config/theme.dart';
 
 class QuickActionsWidget extends StatelessWidget {
@@ -13,7 +14,7 @@ class QuickActionsWidget extends StatelessWidget {
       {'icon': Icons.grade, 'label': 'Grades', 'color': Colors.green},
       {'icon': Icons.payment, 'label': 'Fees', 'color': Colors.orange},
       {'icon': Icons.directions_bus, 'label': 'Transport', 'color': Colors.purple},
-      {'icon': Icons.local_library, 'label': 'Library', 'color': Colors.indigo},
+      {'icon': Icons.local_library, 'label': 'Hostel', 'color': Colors.indigo},
       {'icon': Icons.warning, 'label': 'Emergency', 'color': Colors.red},
       {'icon': Icons.event, 'label': 'Events', 'color': Colors.cyan},
       {'icon': Icons.class_outlined, 'label': 'Scheduler', 'color': Colors.pink},
